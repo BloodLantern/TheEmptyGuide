@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private string text = string.Empty;
+    public string Text => text;
 
-    // Update is called once per frame
-    void Update()
+    public int DisplayedCharacters { get; private set; }
+
+    public string DisplayedText { get; private set; } = string.Empty;
+
+    private TextMeshPro textMesh;
+
+    private void Start()
     {
-        
+        textMesh = FindObjectsOfType<TextMeshPro>().First(x => x.gameObject.name == "Dialogue");
     }
 }
