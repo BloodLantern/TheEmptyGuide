@@ -1,23 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class Information : MonoBehaviour
 {
-    private bool truth;
-    private bool assumption;
+    private bool isAssumption;
+    private bool isTruth;
 
-    private string information;
+    [SerializeField] string informationText;
+    private TextMeshPro informationTextUI;
 
-    // Start is called before the first frame update
-    void Start()
+    Button trueButton;
+    Button falseButton;
+
+
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //if (information.Length == 0)
+            // information = current dialogue string
     }
 }
