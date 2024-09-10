@@ -12,12 +12,14 @@ public class DialogueDisplay : MonoBehaviour
         get => dialogue;
         set
         {
-            if (dialogue == value)
+            if (dialogue == value || visible)
                 return;
             
             dialogue = value;
             textAdvanceTimer = 0f;
             DisplayedCharacters = 0;
+
+            Show();
         }
     }
     
@@ -27,12 +29,25 @@ public class DialogueDisplay : MonoBehaviour
 
     private TextMeshProUGUI textMesh;
 
+    private bool visible;
+    
+    private Vector3 initialParentPosition;
+
     private void Start() => textMesh = GetComponent<TextMeshProUGUI>();
+
+    private void Awake()
+    {
+        initialParentPosition = transform.parent.position;
+        ResetPosition();
+    }
 
     private void Update()
     {
         if (dialogue is null)
+        {
+            Hide();
             return;
+        }
 
         if (Input.GetKeyDown(KeyCode.E) && DisplayedCharacters > 0)
         {
@@ -62,4 +77,18 @@ public class DialogueDisplay : MonoBehaviour
         
         textAdvanceTimer -= Time.deltaTime;
     }
+
+    public void Show()
+    {
+        visible = true;
+        transform.parent.position = initialParentPosition;
+    }
+
+    public void Hide()
+    {
+        visible = false;
+        ResetPosition();
+    }
+    
+    private void ResetPosition() => transform.parent.position = initialParentPosition + Vector3.down * 150f;
 }
