@@ -27,15 +27,22 @@ public class Player : MonoBehaviour
     string moveKey = "Move";
     string jumpKey = "Jump";
     string guideKey = "ToggleGuide";
+    string interactKey = "Interact";
 
     //AnimatorTriggers
     string moveKeyPressed = "MoveKeyPressed";
     string jumpTrigger = "JumpTrigger";
 
+    //Jump management
     float elapsedTimeInJump = 0f;
     Vector2 jumpDirection;
     Vector2 startPos;
     Vector2 endPos;
+
+    //Interactions
+    Interactable interactable;
+    Vector2 lastDirection;
+    [SerializeField] float rayDistance = 1f;
 
     private void Awake()
     {
@@ -54,6 +61,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         currentState?.Invoke();
+        CheckForInteractable();
+        FreeInteractable();
     }
 
     void SetModeMove() {
@@ -68,6 +77,12 @@ public class Player : MonoBehaviour
         animator.SetBool(moveKeyPressed, inputs.asset[moveKey].IsPressed());
         float lHorizontal = inputs.asset[moveKey].ReadValue<Vector2>().x;
         float lVertical = inputs.asset[moveKey].ReadValue<Vector2>().y;
+
+        if (lHorizontal != 0 || lVertical !=0)  {
+            lastDirection = new Vector2(lHorizontal, lVertical);
+        }
+
+        //Movement with collisions checks
         if (!Physics2D.CircleCast(transform.position,colliderExtentSize,new Vector2(lHorizontal,0),speed * Time.deltaTime,currentMask))
         {
             transform.position += new Vector3(lHorizontal, 0) * speed * Time.deltaTime;
@@ -80,6 +95,10 @@ public class Player : MonoBehaviour
         if (inputs.asset[jumpKey].WasPressedThisFrame())
         {
             SetModeJump();
+        }
+        else if (inputs.asset[interactKey].WasPerformedThisFrame() && interactable != null)
+        {
+            interactable.Interact();
         }
     }
 
@@ -100,13 +119,34 @@ public class Player : MonoBehaviour
     {
         if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
             transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * jumpDistance * Time.deltaTime;
-
         }
 
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
             SetModeMove();
+        }
+    }
+
+    void CheckForInteractable()
+    {
+        RaycastHit2D lHit = Physics2D.CircleCast(transform.position, colliderExtentSize, lastDirection, rayDistance);
+        if (lHit.collider != null && lHit.collider.TryGetComponent<Interactable>(out Interactable lInteracter))
+        {
+            interactable = lInteracter;
+            interactable.ActivateHighlight();
+        }
+    }
+
+    void FreeInteractable()
+    {
+        if (interactable == null) return;
+
+        Vector3 distanceToInteractable = interactable.transform.position - transform.position;
+        if (distanceToInteractable.magnitude > rayDistance)
+        {
+            interactable.DeactivateHighlight();
+            interactable = null;
         }
     }
 }
