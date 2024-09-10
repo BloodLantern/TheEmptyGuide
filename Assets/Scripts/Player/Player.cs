@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -131,12 +132,24 @@ public class Player : MonoBehaviour
 
     void CheckForInteractable()
     {
-        RaycastHit2D lHit = Physics2D.CircleCast(transform.position, colliderExtentSize, lastDirection, rayDistance);
-        if (lHit.collider != null && lHit.collider.TryGetComponent<Interactable>(out Interactable lInteracter))
+        RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
+        //RaycastHit2D lHit = Physics2D.CircleCast(transform.position, colliderExtentSize, lastDirection, rayDistance);
+        Interactable lInteracter;
+        for (int i = 0; i < lHit.Length; i++)
         {
-            interactable = lInteracter;
-            interactable.ActivateHighlight();
+            if (lHit[i].collider != null)
+            {
+                lInteracter = lHit[i].collider.GetComponent<Interactable>();
+                if (lInteracter != null)
+                {
+                    interactable?.DeactivateHighlight();
+                    interactable = lInteracter;
+                    break;
+                }
+            }
         }
+
+        interactable?.ActivateHighlight();
     }
 
     void FreeInteractable()
@@ -146,7 +159,7 @@ public class Player : MonoBehaviour
         Vector3 distanceToInteractable = interactable.transform.position - transform.position;
         if (distanceToInteractable.magnitude > rayDistance)
         {
-            interactable.DeactivateHighlight();
+            interactable?.DeactivateHighlight();
             interactable = null;
         }
     }

@@ -20,12 +20,10 @@ public class Flipper : MonoBehaviour
         if (flipped)
         {
             transform.rotation = Quaternion.identity;
-            flipped = true;
         }
         else
-        {
-            transform.rotation = Quaternion.EulerRotation(0, 180, 0);
-            flipped = false;
-        }
+            transform.rotation = Quaternion.EulerRotation(0, 0, 90f);
+
+        flipped = !flipped;
     }
 }
