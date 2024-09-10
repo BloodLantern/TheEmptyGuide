@@ -1,3 +1,4 @@
+using System;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class Dialogue : MonoBehaviour
     [Tooltip("Whether this dialogue gives an information")]
     [SerializeField]
     private bool hasInformation;
+    public bool HasInformation => hasInformation;
 
     [Header("Information data")]
     [Tooltip("If empty, will instead use the dialogue text")]
@@ -29,10 +31,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField]
     private bool validInformation;
     public bool ValidInformation => validInformation;
+    
+    public bool GatekeeperInformation { get; private set; }
 
     private DialogueDisplay dialogueDisplay;
 
     private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
+
+    private void Awake() => GatekeeperInformation = TryGetComponent<Gatekeeper>(out _);
 
     private void Update()
     {

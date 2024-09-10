@@ -11,47 +11,44 @@ using UnityEngine.UI;
 
 public class Guide : MonoBehaviour
 {
-    [FormerlySerializedAs("numberOfInformationsPerPage")] [SerializeField]
-    private int numberOfInformationPerPage;
-    private int numberOfInformation = 9; // link with npc
+    private const int maxNumberOfInformationLeftPage = 10;
+    private int numberOfInformationLeft; // link with npc
+    private const int maxNumberOfInformationRightPage = 4;
+    private int numberOfInformationRight = 4; // link with npc
 
     private Image image;
     private float width, height;
 
-    private Page[] pages;
+    private Information[] leftPageInformations;
+    private Information[] rightPageInformations;
 
     private void Start()
     {
         image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
+        Information[] information = FindObjectsOfType<Information>();
+        leftPageInformations = information.Where(x => !x.isRight).ToArray();
+        leftPageInformations = information.Where(x => x.isRight).ToArray();
+        ExtractInformationFromNPCs();
 
-        int informationCount = numberOfInformation / numberOfInformationPerPage;
-        pages = new Page[numberOfInformation % numberOfInformationPerPage == 0 ? informationCount : informationCount + 1];
-
-        AddInformationToPages();
-
-        Debug.Log(pages.Length);
         width = image.rectTransform.rect.width;
         height = image.rectTransform.rect.height;
     }
 
-    private void Update() => DisplayPages();
-
-    private void AddInformationToPages()
+    private void ExtractInformationFromNPCs()
     {
-        foreach (Page page in pages)
-            page.informations.Add(new());
-    }
+        Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-    private void DisplayPages()
-    {
-        if (pages == null)
-            return;
-        
-        foreach (Page page in pages)
+        int validatedDialogues = 0;
+
+        foreach (Dialogue p in npcs)
         {
-            //page.DisplayInformation(numberOfInformation);
+            if (p.HasInformation)
+            {
+                //Information info = ;
+                //info.InformationText = p.InformationText;
+                validatedDialogues++;
+            }
         }
     }
-
-    private void ClearPages() => Array.Clear(pages, 0, pages.Length);
+    //private void ClearLeftPage() => leftPageInformations.;
 }

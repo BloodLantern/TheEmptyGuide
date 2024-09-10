@@ -6,20 +6,19 @@ using TMPro;
 
 public class Information : MonoBehaviour
 {
+    [SerializeField] public bool isRight;
     private bool isAssumption;
     private bool isTruth;
 
-    [SerializeField] string informationText;
-    private TextMeshPro informationTextUI;
+    [HideInInspector] public string InformationText;
+    private TextMeshProUGUI informationTextUI;
 
     Button trueButton;
     Button falseButton;
 
-
     private void Start()
     {
-        //informationTextUI = new TextMeshPro("test");
-        //if (information.Length == 0)
-            // information = current dialogue string
+        informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
+        Debug.Log(informationTextUI.text);
     }
 }
