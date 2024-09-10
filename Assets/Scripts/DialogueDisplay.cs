@@ -39,13 +39,12 @@ public class DialogueDisplay : MonoBehaviour
             {
                 // If the text is already displayed in its entirety, close the dialogue
                 dialogue = null;
+                return;
             }
-            else
-            {
-                // Otherwise, show the full dialogue text
-                DisplayedCharacters = textLength;
-                textAdvanceTimer = 0f;
-            }
+            
+            // Otherwise, show the full dialogue text
+            DisplayedCharacters = textLength;
+            textAdvanceTimer = 0f;
         }
 
         if (textAdvanceTimer <= 0f)
