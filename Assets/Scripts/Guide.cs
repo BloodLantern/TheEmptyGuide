@@ -22,6 +22,8 @@ public class Guide : MonoBehaviour
     private Information[] leftPageInformations;
     private Information[] rightPageInformations;
 
+    [SerializeField] private GameObject displayGuide;
+
     private void Start()
     {
         image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
@@ -32,6 +34,7 @@ public class Guide : MonoBehaviour
 
         width = image.rectTransform.rect.width;
         height = image.rectTransform.rect.height;
+        ToggleGuideDisplay();
     }
 
     private void ExtractInformationFromNPCs()
@@ -60,5 +63,8 @@ public class Guide : MonoBehaviour
     }
     //private void ClearLeftPage() => leftPageInformations.;
 
-    
+    public void ToggleGuideDisplay()
+    {
+        displayGuide.SetActive(!displayGuide.activeSelf);
+    }
 }
