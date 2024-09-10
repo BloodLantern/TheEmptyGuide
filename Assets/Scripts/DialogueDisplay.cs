@@ -39,6 +39,7 @@ public class DialogueDisplay : MonoBehaviour
     {
         textMesh = GetComponent<TextMeshProUGUI>();
         input = new();
+        input.Enable();
     }
 
     private void Awake()
