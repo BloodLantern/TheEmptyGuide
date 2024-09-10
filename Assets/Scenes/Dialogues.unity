@@ -233,7 +233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 650991430}
-  - component: {fileID: 650991429}
+  - component: {fileID: 650991431}
   m_Layer: 0
   m_Name: Test
   m_TagString: Untagged
@@ -241,23 +241,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &650991429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 650991428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 
-  textAdvanceDelay: 0.05
-  hasInformation: 0
-  informationText: 
-  validInformation: 0
 --- !u!4 &650991430
 Transform:
   m_ObjectHideFlags: 0
@@ -273,6 +256,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650991431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650991428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de168667f272af0418ad41049e50f5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: MAXIME nitro golemax
+  textAdvanceDelay: 0.05
+  hasInformation: 0
+  informationText: 
+  validInformation: 0
 --- !u!1 &830133659
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,8 +401,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 06b3bc94da0bd434d8ba14082e868383, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 06b3bc94da0bd434d8ba14082e868383, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 909611417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b159428bdd87ead4f92b5c8b340e1cf7, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cdc691a27e4bd84e8d54e1de461b3af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1685282563

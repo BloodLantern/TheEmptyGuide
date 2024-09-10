@@ -9,7 +9,7 @@ public class Information : MonoBehaviour
     private bool isAssumption;
     private bool isTruth;
 
-    [SerializeField] string informationText;
+    public string InformationText;
     private TextMeshPro informationTextUI;
 
     Button trueButton;
