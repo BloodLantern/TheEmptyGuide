@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
 public class Information : MonoBehaviour
 {
     private bool isAssumption;
@@ -17,6 +18,7 @@ public class Information : MonoBehaviour
 
     private void Start()
     {
+        //informationTextUI = new TextMeshPro("test");
         //if (information.Length == 0)
             // information = current dialogue string
     }

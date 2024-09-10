@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class Page : MonoBehaviour
 {
-    [SerializeField] UInt16 numberOfInformations;
-    private Information[] informations;
+    public List<Information> informations;
 
     private void Start()
     {
-        informations = new Information[numberOfInformations];
     }
-    public void DisplayInformations()
+
+    public void DisplayInformations(UInt16 numberOfInfos)
     {
         if (informations == null)
         {
