@@ -13,12 +13,20 @@ public class Information : MonoBehaviour
     [HideInInspector] public string InformationText;
     private TextMeshProUGUI informationTextUI;
 
-    Button trueButton;
-    Button falseButton;
-
     private void Start()
     {
         informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
-        Debug.Log(informationTextUI.text);
+    }
+    public void SetTextUI()
+    {
+        informationTextUI.text = InformationText;
+    }
+    public void OnGreenButtonClick()
+    {
+        isAssumption = true;
+    }
+    public void OnRedButtonClick()
+    {
+        isAssumption = false;
     }
 }

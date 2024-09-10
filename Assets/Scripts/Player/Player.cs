@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         inputs = new PlayerActions();
         inputs.Enable();
         colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     void Start()

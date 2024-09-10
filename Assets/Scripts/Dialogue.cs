@@ -1,7 +1,7 @@
-using System;
 using NaughtyAttributes;
 using UnityEngine;
 
+[RequireComponent(typeof(Interactable))]
 public class Dialogue : MonoBehaviour
 {
     [Tooltip("Dialogue text")]
@@ -38,12 +38,10 @@ public class Dialogue : MonoBehaviour
 
     private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
 
-    private void Awake() => GatekeeperInformation = TryGetComponent<Gatekeeper>(out _);
-
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            Display();
+        GatekeeperInformation = TryGetComponent<Gatekeeper>(out _);
+        GetComponent<Interactable>().onInteract.AddListener(Display);
     }
 
     public void Display() => dialogueDisplay.CurrentDialogue = this;

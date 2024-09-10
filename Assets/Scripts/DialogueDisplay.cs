@@ -32,8 +32,14 @@ public class DialogueDisplay : MonoBehaviour
     private bool visible;
     
     private Vector3 initialParentPosition;
+    
+    private PlayerActions input;
 
-    private void Start() => textMesh = GetComponent<TextMeshProUGUI>();
+    private void Start()
+    {
+        textMesh = GetComponent<TextMeshProUGUI>();
+        input = new();
+    }
 
     private void Awake()
     {
@@ -49,7 +55,7 @@ public class DialogueDisplay : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.E) && DisplayedCharacters > 0)
+        if (input.asset["Interact"].WasPerformedThisFrame() && DisplayedCharacters > 0)
         {
             // When interacting again while the dialogue is displayed
             int textLength = dialogue.Text.Length;

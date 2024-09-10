@@ -27,7 +27,7 @@ public class Guide : MonoBehaviour
         image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
         Information[] information = FindObjectsOfType<Information>();
         leftPageInformations = information.Where(x => !x.isRight).ToArray();
-        leftPageInformations = information.Where(x => x.isRight).ToArray();
+        rightPageInformations = information.Where(x => x.isRight).ToArray();
         ExtractInformationFromNPCs();
 
         width = image.rectTransform.rect.width;
@@ -44,11 +44,21 @@ public class Guide : MonoBehaviour
         {
             if (p.HasInformation)
             {
-                //Information info = ;
-                //info.InformationText = p.InformationText;
+                Information info;
+                if (p.GatekeeperInformation)
+                    info = rightPageInformations[validatedDialogues];
+                else
+                    info = leftPageInformations[validatedDialogues];
+
+                info.InformationText = p.InformationText;
+
+                info.SetTextUI();
+
                 validatedDialogues++;
             }
         }
     }
     //private void ClearLeftPage() => leftPageInformations.;
+
+    
 }
