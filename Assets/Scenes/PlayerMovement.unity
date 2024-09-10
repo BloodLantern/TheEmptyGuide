@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 188527215}
   - component: {fileID: 188527214}
   - component: {fileID: 188527213}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1721210394}
   - component: {fileID: 1721210395}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,8 +376,8 @@ Transform:
   m_GameObject: {fileID: 1721210393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.34209314, z: 0}
-  m_LocalScale: {x: 1, y: 0.3158, z: 1}
+  m_LocalPosition: {x: 0, y: 0.33301, z: 0}
+  m_LocalScale: {x: 1, y: 0.333968, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 188527215}

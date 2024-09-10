@@ -98,8 +98,11 @@ public class Player : MonoBehaviour
 
     void DoActionJump()
     {
-        transform.position = Vector3.Lerp(startPos,endPos,elapsedTimeInJump / timeInAir);
-        
+        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
+            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * jumpDistance * Time.deltaTime;
+
+        }
+
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
