@@ -19,16 +19,16 @@ public class Guide : MonoBehaviour
     private Image image;
     private float width, height;
 
-    public List<Information> leftPageInformations;
-    public List<Information> rightPageInformations;
+    private Information[] leftPageInformations;
+    private Information[] rightPageInformations;
 
     private void Start()
     {
         image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
-        
+        Information[] information = FindObjectsOfType<Information>();
+        leftPageInformations = information.Where(x => !x.isRight).ToArray();
+        leftPageInformations = information.Where(x => x.isRight).ToArray();
         ExtractInformationFromNPCs();
-
-        AddInformationToPages();
 
         width = image.rectTransform.rect.width;
         height = image.rectTransform.rect.height;
@@ -38,24 +38,17 @@ public class Guide : MonoBehaviour
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
+        int validatedDialogues = 0;
+
         foreach (Dialogue p in npcs)
         {
             if (p.HasInformation)
             {
-                Information info = gameObject.AddComponent<Information>();
+                //Information info = ;
                 info.InformationText = p.InformationText;
-                //informations.Add(info);
+                validatedDialogues++;
             }
         }
     }
-    private void AddInformationToPages()
-    {
-        //foreach (Page page in pages)
-            //page.informations.Add(new());
-    }
-
-  
-
-    private void ClearLeftPage() => leftPageInformations.Clear();
-    private void ClearRightPage() => rightPageInformations.Clear();
+    //private void ClearLeftPage() => leftPageInformations.;
 }
