@@ -34,6 +34,7 @@ public class Guide : MonoBehaviour
 
         width = image.rectTransform.rect.width;
         height = image.rectTransform.rect.height;
+        ToggleGuideDisplay();
     }
 
     private void ExtractInformationFromNPCs()
