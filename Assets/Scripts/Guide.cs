@@ -11,15 +11,16 @@ using UnityEngine.UI;
 
 public class Guide : MonoBehaviour
 {
-    [FormerlySerializedAs("numberOfInformationsPerPage")] [SerializeField]
-    private int numberOfInformationPerPage;
-    private int numberOfInformation = 6; // link with npc
+    private const int maxNumberOfInformationLeftPage = 10;
+    private int numberOfInformationLeft; // link with npc
+    private const int maxNumberOfInformationRightPage = 4;
+    private int numberOfInformationRight = 4; // link with npc
 
     private Image image;
     private float width, height;
 
-    private Page[] pages;
-    private List<Information> informations;
+    public List<Information> leftPageInformations;
+    public List<Information> rightPageInformations;
 
     private void Start()
     {
@@ -27,35 +28,23 @@ public class Guide : MonoBehaviour
         
         ExtractInformationFromNPCs();
 
-        int informationRatio = numberOfInformation / numberOfInformationPerPage;
-        pages = new Page[numberOfInformation % numberOfInformationPerPage == 0 ? informationRatio : informationRatio + 1];
-
         AddInformationToPages();
 
         width = image.rectTransform.rect.width;
         height = image.rectTransform.rect.height;
     }
 
-    private void Update() => DisplayPages();
-
-
     private void ExtractInformationFromNPCs()
     {
-        Dialogue[] PNJS = FindObjectsOfType<Dialogue>();
+        Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-        int counter = 0;
-        int informationRatio;
-
-        foreach (Dialogue p in PNJS)
+        foreach (Dialogue p in npcs)
         {
             if (p.HasInformation)
             {
-                counter++;
                 Information info = gameObject.AddComponent<Information>();
                 info.InformationText = p.InformationText;
-                informationRatio = counter / numberOfInformationPerPage;
-                pages[numberOfInformation % numberOfInformationPerPage == 0 ? informationRatio : informationRatio + 1].informations.Add(info);
-                informations.Add(info);
+                //informations.Add(info);
             }
         }
     }
@@ -65,16 +54,8 @@ public class Guide : MonoBehaviour
             //page.informations.Add(new());
     }
 
-    private void DisplayPages()
-    {
-        if (pages == null)
-            return;
-        
-        foreach (Page page in pages)
-        {
-            //page.DisplayInformation(numberOfInformation);
-        }
-    }
+  
 
-    private void ClearPages() => Array.Clear(pages, 0, pages.Length);
+    private void ClearLeftPage() => leftPageInformations.Clear();
+    private void ClearRightPage() => rightPageInformations.Clear();
 }
