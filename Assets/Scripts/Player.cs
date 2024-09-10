@@ -8,16 +8,38 @@ public class Player : MonoBehaviour
 {
     //Stats
     [SerializeField] float speed = 5f;
+    [SerializeField] float timeInAir = 2f;
+    [SerializeField] float jumpDistance = 3f;
+
+    [Header("Mask for jump")]
+    [SerializeField] LayerMask jumpMask;
+    [SerializeField] LayerMask groundedMask;
+    [SerializeField] SpriteRenderer sprite;
+    LayerMask currentMask;
     float colliderExtentSize;
 
+    //Component
     Action currentState;
     PlayerActions inputs;
+    Animator animator;
 
     //Inputs string 
-    string move = "Move";
+    string moveKey = "Move";
+    string jumpKey = "Jump";
+    string guideKey = "ToggleGuide";
+
+    //AnimatorTriggers
+    string moveKeyPressed = "MoveKeyPressed";
+    string jumpTrigger = "JumpTrigger";
+
+    float elapsedTimeInJump = 0f;
+    Vector2 jumpDirection;
+    Vector2 startPos;
+    Vector2 endPos;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         inputs = new PlayerActions();
         inputs.Enable();
         colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
@@ -35,21 +57,53 @@ public class Player : MonoBehaviour
     }
 
     void SetModeMove() {
+        sprite.color = Color.yellow;
+
+        currentMask = groundedMask;
         currentState = DoActionMove;
     }
 
     void DoActionMove()
     {
-        float lHorizontal = inputs.asset[move].ReadValue<Vector2>().x;
-        float lVertical = inputs.asset[move].ReadValue<Vector2>().y;
-        if (!Physics2D.CircleCast(transform.position,colliderExtentSize,new Vector2(lHorizontal,0),speed * Time.deltaTime))
+        animator.SetBool(moveKeyPressed, inputs.asset[moveKey].IsPressed());
+        float lHorizontal = inputs.asset[moveKey].ReadValue<Vector2>().x;
+        float lVertical = inputs.asset[moveKey].ReadValue<Vector2>().y;
+        if (!Physics2D.CircleCast(transform.position,colliderExtentSize,new Vector2(lHorizontal,0),speed * Time.deltaTime,currentMask))
         {
             transform.position += new Vector3(lHorizontal, 0) * speed * Time.deltaTime;
         }
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new Vector2(0, lVertical), speed * Time.deltaTime))
+        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new Vector2(0, lVertical), speed * Time.deltaTime,currentMask))
         {
             transform.position += new Vector3(0, lVertical) * speed * Time.deltaTime;
         }
 
+        if (inputs.asset[jumpKey].WasPressedThisFrame())
+        {
+            SetModeJump();
+        }
+    }
+
+    void SetModeJump() {
+        sprite.color = Color.red;
+        animator.SetTrigger(jumpTrigger);
+        currentMask = jumpMask;
+        elapsedTimeInJump = 0f;
+        
+        jumpDirection = inputs.asset[moveKey].ReadValue<Vector2>();
+        startPos = transform.position;
+        endPos = transform.position + (new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance);
+
+        currentState = DoActionJump;
+    }
+
+    void DoActionJump()
+    {
+        transform.position = Vector3.Lerp(startPos,endPos,elapsedTimeInJump / timeInAir);
+        
+        elapsedTimeInJump += Time.deltaTime;
+        if (elapsedTimeInJump > timeInAir)
+        {
+            SetModeMove();
+        }
     }
 }
