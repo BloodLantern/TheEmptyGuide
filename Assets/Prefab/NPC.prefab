@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 104896124160945812}
   - component: {fileID: 340980199308681205}
   - component: {fileID: 2571409105445408178}
-  - component: {fileID: 5001444380077186177}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -103,20 +102,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5001444380077186177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3715836450100371414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 
-  textAdvanceDelay: 0.05
-  hasInformation: 0
-  informationText: 
-  validInformation: 0
