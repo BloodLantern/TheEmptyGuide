@@ -45,7 +45,7 @@ public class Guide : MonoBehaviour
             if (p.HasInformation)
             {
                 //Information info = ;
-                info.InformationText = p.InformationText;
+                //info.InformationText = p.InformationText;
                 validatedDialogues++;
             }
         }
