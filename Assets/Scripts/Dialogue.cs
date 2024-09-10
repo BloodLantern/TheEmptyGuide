@@ -1,21 +1,45 @@
-using System.Linq;
-using TMPro;
+using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Dialogue : MonoBehaviour
 {
+    [Tooltip("Dialogue text")]
     [SerializeField]
     private string text = string.Empty;
     public string Text => text;
 
-    public int DisplayedCharacters { get; private set; }
+    [Tooltip("Delay in seconds between each character")]
+    [SerializeField]
+    private float textAdvanceDelay = 0.05f;
+    public float TextAdvanceDelay => textAdvanceDelay;
 
-    public string DisplayedText { get; private set; } = string.Empty;
+    [Tooltip("Whether this dialogue gives an information")]
+    [SerializeField]
+    private bool hasInformation;
 
-    private TextMeshPro textMesh;
+    [Header("Information data")]
+    [Tooltip("If empty, will instead use the dialogue text")]
+    [ShowIf("hasInformation")]
+    [SerializeField]
+    private string informationText = string.Empty;
+    public string InformationText => informationText == string.Empty ? text : informationText;
 
-    private void Start()
+    [Tooltip("Whether the information is true or false")]
+    [ShowIf("hasInformation")]
+    [SerializeField]
+    private bool validInformation;
+    public bool ValidInformation => validInformation;
+
+    private DialogueDisplay dialogueDisplay;
+
+    private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
+
+    private void Update()
     {
-        textMesh = FindObjectsOfType<TextMeshPro>().First(x => x.gameObject.name == "Dialogue");
+        if (Input.GetKeyDown(KeyCode.E))
+            Display();
     }
+
+    public void Display() => dialogueDisplay.CurrentDialogue = this;
 }
