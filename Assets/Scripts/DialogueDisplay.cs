@@ -12,6 +12,9 @@ public class DialogueDisplay : MonoBehaviour
         get => dialogue;
         set
         {
+            if (dialogue == value)
+                return;
+            
             dialogue = value;
             textAdvanceTimer = 0f;
             DisplayedCharacters = 0;
@@ -31,7 +34,7 @@ public class DialogueDisplay : MonoBehaviour
         if (dialogue is null)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && DisplayedCharacters > 0)
         {
             // When interacting again while the dialogue is displayed
             int textLength = dialogue.Text.Length;
@@ -39,13 +42,13 @@ public class DialogueDisplay : MonoBehaviour
             {
                 // If the text is already displayed in its entirety, close the dialogue
                 dialogue = null;
+                textMesh.text = string.Empty;
+                return;
             }
-            else
-            {
-                // Otherwise, show the full dialogue text
-                DisplayedCharacters = textLength;
-                textAdvanceTimer = 0f;
-            }
+            
+            // Otherwise, show the full dialogue text
+            DisplayedCharacters = textLength;
+            textAdvanceTimer = 0f;
         }
 
         if (textAdvanceTimer <= 0f)
