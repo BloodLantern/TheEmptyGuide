@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -11,15 +12,22 @@ public class Guide : MonoBehaviour
     private Information[] leftPageInformation;
     private Information[] rightPageInformation;
 
-    [SerializeField] private GameObject displayGuide;
+    [SerializeField]
+    private GameObject displayGuide;
+    private bool visible = true;
+    private Vector3 initialDisplayPosition;
 
     private void Start()
     {
         Information[] information = FindObjectsOfType<Information>();
-        leftPageInformation = information.Where(x => !x.isRight).ToArray();
-        rightPageInformation = information.Where(x => x.isRight).ToArray();
+        leftPageInformation = information.Where(x => !x.IsRight).ToArray();
+        rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
+    }
 
+    private void Awake()
+    {
+        initialDisplayPosition = displayGuide.transform.position;
         ToggleGuideDisplay();
     }
 
@@ -27,24 +35,32 @@ public class Guide : MonoBehaviour
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-        int validatedDialogues = 0;
+        int leftInfos = 0, rightInfos = 0;
 
         foreach (Dialogue p in npcs)
         {
             if (!p.HasInformation)
                 continue;
 
-            Information info = p.GatekeeperInformation ? rightPageInformation[validatedDialogues] : leftPageInformation[validatedDialogues];
+            Information info = p.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
             info.InformationText = p.InformationText;
             info.SetTextUI();
-
-            validatedDialogues++;
         }
     }
     //private void ClearLeftPage() => leftPageInformation.;
 
     public void ToggleGuideDisplay()
     {
-        displayGuide.SetActive(!displayGuide.activeSelf);
+        visible = !visible;
+        displayGuide.transform.position = visible ? initialDisplayPosition : initialDisplayPosition + Vector3.down * 1500f;
+    }
+
+    public void UnlockInformation(string informationText, bool rightInfo)
+    {
+        foreach (Information info in rightInfo ? rightPageInformation : leftPageInformation)
+        {
+            if (info.InformationText == informationText)
+                info.SetVisible(true);
+        }
     }
 }
