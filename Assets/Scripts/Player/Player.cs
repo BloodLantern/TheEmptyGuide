@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         
         SetModeMove();
 
-        if (SceneManager.GetActiveScene().name == "LevelTutorial")
+        if (SceneManager.GetActiveScene().name == "Level0")
         {
             
         }
@@ -168,5 +168,10 @@ public class Player : MonoBehaviour
     {
         // TODO animation from bottom
         guide?.ToggleGuideDisplay();
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene($"Level{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");
     }
 }

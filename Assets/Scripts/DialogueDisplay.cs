@@ -127,9 +127,14 @@ public class DialogueDisplay : MonoBehaviour
             return;
 
         characterImage.sprite = dialogue.Texts[DialogueTextIndex].Sprite;
-        if (!characterImage.sprite)
-            characterImage.sprite = dialogue.GetComponent<SpriteRenderer>().sprite;
-        
+        if (!characterImage.sprite && dialogue.TryGetComponent(out SpriteRenderer spriteRenderer))
+        {
+            characterImage.sprite = spriteRenderer.sprite;
+
+            if (!characterImage.sprite)
+                characterImage.sprite = dialogue.GetComponentInParent<SpriteRenderer>().sprite;
+        }
+
         characterImage.color = characterImage.sprite ? Color.white : new(0f, 0f, 0f, 0f);
     }
 }

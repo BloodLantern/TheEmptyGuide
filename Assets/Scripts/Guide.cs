@@ -1,16 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Guide : MonoBehaviour
 {
     private Information[] leftPageInformation;
     private Information[] rightPageInformation;
 
-    [SerializeField]
-    private GameObject displayGuide;
+    [FormerlySerializedAs("displayGuide")] [SerializeField]
+    private GameObject guideDisplay;
     private bool visible = true;
-    private Vector3 initialDisplayPosition;
+
+    [FormerlySerializedAs("gatekeeper")] [SerializeField]
+    private GatekeeperTrial GatekeeperTrial;
 
     private void Start()
     {
@@ -19,11 +22,6 @@ public class Guide : MonoBehaviour
         leftPageInformation = information.Where(x => !x.IsRight).ToArray();
         rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
-    }
-
-    private void Awake()
-    {
-        initialDisplayPosition = displayGuide.transform.position;
         ToggleGuideDisplay();
     }
 
@@ -48,7 +46,15 @@ public class Guide : MonoBehaviour
     public void ToggleGuideDisplay()
     {
         visible = !visible;
-        displayGuide.transform.position = visible ? initialDisplayPosition : initialDisplayPosition + Vector3.down * 1500f;
+        guideDisplay.gameObject.SetActive(!guideDisplay.gameObject.activeSelf);
+
+        if (!visible && GatekeeperTrial.gameObject.activeSelf)
+            GatekeeperTrial.gameObject.SetActive(false);
+    }
+
+    public void ToggleGatekeeperTrialDisplay()
+    {
+        GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
     }
 
     public void UnlockInformation(string informationText, bool rightInfo)

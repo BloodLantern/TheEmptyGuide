@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GatekeeperReceiver : MonoBehaviour, IDropHandler
 {
-    private int infoIndex = 0;
-    [SerializeField] private Gatekeeper gatekeeper;
+    [FormerlySerializedAs("gatekeeper")] [SerializeField]
+    private GatekeeperTrial GatekeeperTrial;
+    
     public void OnDrop(PointerEventData eventData)
     {
         Image image = GetComponent<Image>();
@@ -17,7 +19,7 @@ public class GatekeeperReceiver : MonoBehaviour, IDropHandler
             GameObject go = eventData.pointerDrag.gameObject;
             Information info = go.GetComponent<Information>();
             info.IsAssumption = true;
-            gatekeeper.informations.Add(info);
+            GatekeeperTrial.information.Add(info);
             info.IsDropped = true;
         }
         else if (image.color == Color.red)
@@ -26,21 +28,8 @@ public class GatekeeperReceiver : MonoBehaviour, IDropHandler
             GameObject go = eventData.pointerDrag.gameObject;
             Information info = go.GetComponent<Information>();
             info.IsAssumption = false;
-            gatekeeper.informations.Add(info);
+            GatekeeperTrial.information.Add(info);
             info.IsDropped = true;
         }
-        infoIndex++;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
