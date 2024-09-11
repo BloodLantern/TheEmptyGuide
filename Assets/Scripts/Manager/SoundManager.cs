@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,19 @@ public class SoundManager : MonoBehaviour
     [field: SerializeField] public EventReference _sfxJumpNSlide { get; private set; }
 
     private static SoundManager _instance;
+
+    //Sound volume management
+    private const string PATH_BUS_MASTER = "vca:/Master";
+    private const string PATH_BUS_SFX = "vca:/SFX";
+    private const string PATH_BUS_MUS = "vca:/Music";
+
+    private float _masterVolume = 1f;
+    private float _musicVolume = 1f;
+    private float _SFXVolume = 1f;
+
+    public VCA _masterBus;
+    public VCA _sfxBus;
+    public VCA _musicBus;
 
     private SoundManager() { }
 
@@ -34,6 +48,12 @@ public class SoundManager : MonoBehaviour
         else _instance = this;
 
         DontDestroyOnLoad(gameObject);
+
+        //Get VCAs
+        _masterBus = RuntimeManager.GetVCA(PATH_BUS_MASTER);
+        _musicBus = RuntimeManager.GetVCA(PATH_BUS_MUS);
+        _sfxBus = RuntimeManager.GetVCA(PATH_BUS_SFX);
+
     }
 
     // Start is called before the first frame update
