@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -48,19 +49,25 @@ public class Player : MonoBehaviour
 
     private Guide guide;
 
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        inputs = new PlayerActions();
-        inputs.Enable();
-        colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
-        sprite = GetComponent<SpriteRenderer>();
-    }
-
     private void Start()
     {
         guide = FindObjectOfType<Guide>();
+    }
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        inputs = new();
+        inputs.Enable();
+        colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
+        sprite = GetComponent<SpriteRenderer>();
+        
         SetModeMove();
+
+        if (SceneManager.GetActiveScene().name == "LevelTutorial")
+        {
+            
+        }
     }
 
     // Update is called once per frame
@@ -84,32 +91,21 @@ public class Player : MonoBehaviour
         float lHorizontal = inputs.asset[moveKey].ReadValue<Vector2>().x;
         float lVertical = inputs.asset[moveKey].ReadValue<Vector2>().y;
 
-        if (lHorizontal != 0 || lVertical !=0)  {
-            lastDirection = new Vector2(lHorizontal, lVertical);
-        }
+        if (lHorizontal != 0 || lVertical != 0)
+            lastDirection = new(lHorizontal, lVertical);
 
         //Movement with collisions checks
-        if (!Physics2D.CircleCast(transform.position,colliderExtentSize,new Vector2(lHorizontal,0),speed * Time.deltaTime,currentMask))
-        {
-            transform.position += new Vector3(lHorizontal, 0) * speed * Time.deltaTime;
-        }
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new Vector2(0, lVertical), speed * Time.deltaTime,currentMask))
-        {
-            transform.position += new Vector3(0, lVertical) * speed * Time.deltaTime;
-        }
+        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(lHorizontal, 0), speed * Time.deltaTime, currentMask))
+            transform.position += new Vector3(lHorizontal, 0) * (speed * Time.deltaTime);
+        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask))
+            transform.position += new Vector3(0, lVertical) * (speed * Time.deltaTime);
 
         if (inputs.asset[jumpKey].WasPressedThisFrame())
-        {
             SetModeJump();
-        }
-        else if (inputs.asset[interactKey].WasPerformedThisFrame() && interactable is not null)
-        {
-            interactable.Interact();
-        }
-        else if (inputs.asset[guideKey].WasPerformedThisFrame())
-        {
+        if (inputs.asset[interactKey].WasPerformedThisFrame())
+            interactable?.Interact();
+        if (inputs.asset[guideKey].WasPerformedThisFrame())
             DoActionToggleGuide();
-        }
     }
 
     private void SetModeJump() {
@@ -120,7 +116,7 @@ public class Player : MonoBehaviour
         
         jumpDirection = inputs.asset[moveKey].ReadValue<Vector2>();
         startPos = transform.position;
-        endPos = transform.position + (new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance);
+        endPos = transform.position + new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance;
 
         currentState = DoActionJump;
     }
@@ -128,7 +124,7 @@ public class Player : MonoBehaviour
     private void DoActionJump()
     {
         if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
-            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * jumpDistance * Time.deltaTime;
+            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * (jumpDistance * Time.deltaTime);
         }
 
         elapsedTimeInJump += Time.deltaTime;
@@ -171,6 +167,6 @@ public class Player : MonoBehaviour
     private void DoActionToggleGuide()
     {
         // TODO animation from bottom
-        guide.ToggleGuideDisplay();
+        guide?.ToggleGuideDisplay();
     }
 }

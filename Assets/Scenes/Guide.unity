@@ -324,6 +324,18 @@ PrefabInstance:
       propertyPath: validInformation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: qeqeqw
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].truth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name
       value: NPC (3)
@@ -478,6 +490,14 @@ PrefabInstance:
       propertyPath: hasInformation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: eeeeeeeeeeeee
+      objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name
       value: NPC (2)
@@ -561,6 +581,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: hasInformation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: wadawdaddw
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].truth
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
@@ -659,7 +691,27 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: texts.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: validInformation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: texts.Array.data[0].text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: SUIIIIIIIIIII
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].truth
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
@@ -822,6 +874,14 @@ PrefabInstance:
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: hasInformation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: tttttttttttt
       objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name

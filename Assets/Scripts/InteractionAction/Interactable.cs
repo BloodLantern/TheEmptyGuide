@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Interactable : MonoBehaviour
 {
     public UnityEvent onInteract;
