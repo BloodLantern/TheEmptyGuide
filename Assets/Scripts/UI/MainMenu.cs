@@ -19,11 +19,8 @@ public class MainMenu : MonoBehaviour
         TransitionManager.ChangeScene(1);
     }
 
-    private void Update()
+    void SettingButton()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            SoundManager.Instance.PlaySFX(SoundManager.Instance._sfxSucces, transform.position);
-        }
+
     }
 }
