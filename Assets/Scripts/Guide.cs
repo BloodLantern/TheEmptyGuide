@@ -27,18 +27,16 @@ public class Guide : MonoBehaviour
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-        int validatedDialogues = 0;
+        int leftInfos = 0, rightInfos = 0;
 
         foreach (Dialogue p in npcs)
         {
             if (!p.HasInformation)
                 continue;
 
-            Information info = p.GatekeeperInformation ? rightPageInformation[validatedDialogues] : leftPageInformation[validatedDialogues];
+            Information info = p.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
             info.InformationText = p.InformationText;
-            info.SetTextUI();
-
-            validatedDialogues++;
+            info.SetUI();
         }
     }
     //private void ClearLeftPage() => leftPageInformation.;
