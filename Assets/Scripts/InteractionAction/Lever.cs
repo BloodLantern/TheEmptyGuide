@@ -7,7 +7,8 @@ public enum LeverType
 {
     None,
     Door,
-    Color
+    Color,
+    Chest
 }
 
 [RequireComponent(typeof(Interactable))]
@@ -25,15 +26,22 @@ public class Lever : MonoBehaviour
 
     public bool EnabledState { get; private set; }
 
-    private bool DoorType => type == LeverType.Door;
-    private bool ColorType => type == LeverType.Color;
+    public bool DoorType => type == LeverType.Door;
+    public bool ColorType => type == LeverType.Color;
+    public bool ChestType => type == LeverType.Chest;
     
     [ShowIf("ColorType")]
     [SerializeField]
     private Color newColor;
+    
+    [ShowIf("ChestType")]
+    [SerializeField]
+    private Sprite newSprite;
 
     private SpriteRenderer objRenderer;
+    
     private Color oldColor;
+    private Sprite oldSprite;
 
     private void Awake()
     {
@@ -41,7 +49,10 @@ public class Lever : MonoBehaviour
         interactable.onInteract.AddListener(Toggle);
 
         if (obj && obj.TryGetComponent(out objRenderer))
+        {
             oldColor = objRenderer.color;
+            oldSprite = objRenderer.sprite;
+        }
     }
 
     private void Toggle()
@@ -60,6 +71,10 @@ public class Lever : MonoBehaviour
             
             case LeverType.Color:
                 objRenderer.color = EnabledState ? newColor : oldColor;
+                break;
+            
+            case LeverType.Chest:
+                objRenderer.sprite = EnabledState ? newSprite : oldSprite;
                 break;
             
             default:

@@ -35,12 +35,12 @@ public class Guide : MonoBehaviour
 
         foreach (Dialogue p in npcs)
         {
-            if (!p.HasInformation)
-                continue;
-
-            Information info = p.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
-            info.InformationText = p.InformationText;
-            info.SetUI();
+            foreach (DialogueInfo i in p.RewardInformation)
+            {
+                Information info = i.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
+                info.InformationText = i.Text;
+                info.SetUI();
+            }
         }
     }
 
