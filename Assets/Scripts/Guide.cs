@@ -44,7 +44,7 @@ public class Guide : MonoBehaviour
 
             Information info = p.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
             info.InformationText = p.InformationText;
-            info.SetTextUI();
+            info.SetUI();
         }
     }
     //private void ClearLeftPage() => leftPageInformation.;
@@ -60,7 +60,7 @@ public class Guide : MonoBehaviour
         foreach (Information info in rightInfo ? rightPageInformation : leftPageInformation)
         {
             if (info.InformationText == informationText)
-                info.SetVisible(true);
+                info.gameObject.SetActive(true);
         }
     }
 }
