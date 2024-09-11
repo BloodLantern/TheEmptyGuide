@@ -1,40 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-
-
 
 public class Guide : MonoBehaviour
 {
-    private const int maxNumberOfInformationLeftPage = 10;
+    private const int MaxInformationLeftPage = 10;
     private int numberOfInformationLeft; // link with npc
-    private const int maxNumberOfInformationRightPage = 4;
+    private const int MaxInformationRightPage = 4;
     private int numberOfInformationRight = 4; // link with npc
 
-    private Image image;
-    private float width, height;
+    private Information[] leftPageInformation;
+    private Information[] rightPageInformation;
 
-    private Information[] leftPageInformations;
-    private Information[] rightPageInformations;
+    [SerializeField] private GameObject displayGuide;
 
     private void Start()
     {
-        image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
         Information[] information = FindObjectsOfType<Information>();
-        leftPageInformations = information.Where(x => !x.isRight).ToArray();
-        rightPageInformations = information.Where(x => x.isRight).ToArray();
-        ExtractInformationFromNPCs();
+        leftPageInformation = information.Where(x => !x.isRight).ToArray();
+        rightPageInformation = information.Where(x => x.isRight).ToArray();
+        ExtractInformationFromNpcs();
 
-        width = image.rectTransform.rect.width;
-        height = image.rectTransform.rect.height;
+        ToggleGuideDisplay();
     }
 
-    private void ExtractInformationFromNPCs()
+    private void ExtractInformationFromNpcs()
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
@@ -42,23 +31,20 @@ public class Guide : MonoBehaviour
 
         foreach (Dialogue p in npcs)
         {
-            if (p.HasInformation)
-            {
-                Information info;
-                if (p.GatekeeperInformation)
-                    info = rightPageInformations[validatedDialogues];
-                else
-                    info = leftPageInformations[validatedDialogues];
+            if (!p.HasInformation)
+                continue;
 
-                info.InformationText = p.InformationText;
+            Information info = p.GatekeeperInformation ? rightPageInformation[validatedDialogues] : leftPageInformation[validatedDialogues];
+            info.InformationText = p.InformationText;
+            info.SetTextUI();
 
-                info.SetTextUI();
-
-                validatedDialogues++;
-            }
+            validatedDialogues++;
         }
     }
-    //private void ClearLeftPage() => leftPageInformations.;
+    //private void ClearLeftPage() => leftPageInformation.;
 
-    
+    public void ToggleGuideDisplay()
+    {
+        displayGuide.SetActive(!displayGuide.activeSelf);
+    }
 }

@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
     Vector2 lastDirection;
     [SerializeField] float rayDistance = 1f;
 
+    private Guide guide;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        guide = FindObjectOfType<Guide>();
         SetModeMove();
     }
 
@@ -101,6 +104,10 @@ public class Player : MonoBehaviour
         else if (inputs.asset[interactKey].WasPerformedThisFrame() && interactable != null)
         {
             interactable.Interact();
+        }
+        else if (inputs.asset[guideKey].WasPerformedThisFrame())
+        {
+            DoActionToggleGuide();
         }
     }
 
@@ -162,5 +169,11 @@ public class Player : MonoBehaviour
             interactable?.DeactivateHighlight();
             interactable = null;
         }
+    }
+
+    void DoActionToggleGuide()
+    {
+        // TODO animation from bottom
+        guide.ToggleGuideDisplay();
     }
 }
