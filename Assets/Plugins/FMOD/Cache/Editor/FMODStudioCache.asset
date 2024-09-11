@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/Ambiance.bank
   Name: Ambiance
   StudioPath: bank:/Ambiance
-  lastModified: 638616519300833983
+  lastModified: 638616540046118812
   FileSizes:
   - Name: Desktop
     Value: 2050
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638616519300919457
+  lastModified: 638616540046178349
   FileSizes:
   - Name: Desktop
     Value: 1078
@@ -109,7 +109,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638616521916419728
+  lastModified: 638616540046321368
   FileSizes:
   - Name: Desktop
     Value: 21408
@@ -143,7 +143,7 @@ MonoBehaviour:
   - {fileID: 7046949082048996087}
   StringsBanks:
   - {fileID: -3961521449559367713}
-  cacheTime: 638616521916419728
+  cacheTime: 638616540046321368
   cacheVersion: 131619
 --- !u!114 &1143714218056643824
 MonoBehaviour:
@@ -214,7 +214,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638616521916409726
+  lastModified: 638616540046311292
   FileSizes:
   - Name: Desktop
     Value: 1059904
@@ -261,7 +261,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638616519300899329
+  lastModified: 638616540046168203
   FileSizes:
   - Name: Desktop
     Value: 1036
