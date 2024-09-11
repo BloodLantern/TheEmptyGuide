@@ -1,14 +1,9 @@
-using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Guide : MonoBehaviour
 {
-    private const int MaxInformationLeftPage = 10;
-    private int numberOfInformationLeft; // link with npc
-    private const int MaxInformationRightPage = 4;
-    private int numberOfInformationRight = 4; // link with npc
-
     private Information[] leftPageInformation;
     private Information[] rightPageInformation;
 
@@ -19,7 +14,8 @@ public class Guide : MonoBehaviour
 
     private void Start()
     {
-        Information[] information = FindObjectsOfType<Information>();
+        List<Information> information = FindObjectsOfType<Information>().ToList();
+        information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
         leftPageInformation = information.Where(x => !x.IsRight).ToArray();
         rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
@@ -47,7 +43,6 @@ public class Guide : MonoBehaviour
             info.SetUI();
         }
     }
-    //private void ClearLeftPage() => leftPageInformation.;
 
     public void ToggleGuideDisplay()
     {
