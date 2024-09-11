@@ -9,11 +9,16 @@ public class SoundSettingMenu : MonoBehaviour
 
     void Awake()
     {
-        
+        backBtn.onClick.AddListener(CloseScreen);
     }
 
     void CloseScreen() {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        backBtn.onClick.RemoveAllListeners();
     }
 
 }

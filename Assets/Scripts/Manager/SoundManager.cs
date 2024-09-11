@@ -30,6 +30,13 @@ public class SoundManager : MonoBehaviour
     public VCA _sfxBus;
     public VCA _musicBus;
 
+    public enum volType
+    {
+        master,
+        music,
+        sfx
+    }
+
     private SoundManager() { }
 
     public static SoundManager Instance
@@ -61,6 +68,40 @@ public class SoundManager : MonoBehaviour
     {
         PlaySucces(transform.position);
     }
+
+    public float GetVolume(volType type)
+    {
+        switch (type)
+        {
+            case volType.master:
+                return _masterVolume;
+            case volType.music:
+                return _musicVolume;
+            case volType.sfx:
+                return _SFXVolume;
+            default:
+                return 0f;
+        }
+    }
+
+    public void SetVolume(volType type,float pValue)
+    {
+        switch (type)
+        {
+            case volType.master:
+                _masterBus.setVolume(pValue);
+                break;
+            case volType.music:
+                _musicBus.setVolume(pValue);
+                break;
+            case volType.sfx:
+                _sfxBus.setVolume(pValue);
+                break;
+            default:
+                break;
+        }
+    }
+
 
     public void PlaySFX(EventReference pSound, Vector3 pPosition)
     {
