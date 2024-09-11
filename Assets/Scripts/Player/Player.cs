@@ -8,76 +8,77 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     //Stats
-    [SerializeField] float speed = 5f;
-    [SerializeField] float timeInAir = 2f;
-    [SerializeField] float jumpDistance = 3f;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float timeInAir = 2f;
+    [SerializeField] private float jumpDistance = 3f;
 
     [Header("Mask for jump")]
-    [SerializeField] LayerMask jumpMask;
-    [SerializeField] LayerMask groundedMask;
-    [SerializeField] SpriteRenderer sprite;
-    LayerMask currentMask;
-    float colliderExtentSize;
+    [SerializeField]
+    private LayerMask jumpMask;
+    [SerializeField] private LayerMask groundedMask;
+    [SerializeField] private SpriteRenderer sprite;
+    private LayerMask currentMask;
+    private float colliderExtentSize;
 
     //Component
-    Action currentState;
-    PlayerActions inputs;
-    Animator animator;
+    private Action currentState;
+    private PlayerActions inputs;
+    private Animator animator;
 
     //Inputs string 
-    string moveKey = "Move";
-    string jumpKey = "Jump";
-    string guideKey = "ToggleGuide";
-    string interactKey = "Interact";
+    private string moveKey = "Move";
+    private string jumpKey = "Jump";
+    private string guideKey = "ToggleGuide";
+    private string interactKey = "Interact";
 
     //AnimatorTriggers
-    string moveKeyPressed = "MoveKeyPressed";
-    string jumpTrigger = "JumpTrigger";
+    private string moveKeyPressed = "MoveKeyPressed";
+    private string jumpTrigger = "JumpTrigger";
 
     //Jump management
-    float elapsedTimeInJump = 0f;
-    Vector2 jumpDirection;
-    Vector2 startPos;
-    Vector2 endPos;
+    private float elapsedTimeInJump = 0f;
+    private Vector2 jumpDirection;
+    private Vector2 startPos;
+    private Vector2 endPos;
 
     //Interactions
-    Interactable interactable;
-    Vector2 lastDirection;
-    [SerializeField] float rayDistance = 1f;
+    private Interactable interactable;
+    private Vector2 lastDirection;
+    [SerializeField] private float rayDistance = 1f;
 
     private Guide guide;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        inputs = new PlayerActions();
+        inputs = new();
         inputs.Enable();
         colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
         sprite = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
+    private void Start()
     {
         guide = FindObjectOfType<Guide>();
         SetModeMove();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         currentState?.Invoke();
         CheckForInteractable();
         FreeInteractable();
     }
 
-    void SetModeMove() {
+    private void SetModeMove() {
         sprite.color = Color.yellow;
 
         currentMask = groundedMask;
         currentState = DoActionMove;
     }
 
-    void DoActionMove()
+    private void DoActionMove()
     {
         animator.SetBool(moveKeyPressed, inputs.asset[moveKey].IsPressed());
         float lHorizontal = inputs.asset[moveKey].ReadValue<Vector2>().x;
@@ -90,18 +91,18 @@ public class Player : MonoBehaviour
         //Movement with collisions checks
         if (!Physics2D.CircleCast(transform.position,colliderExtentSize,new Vector2(lHorizontal,0),speed * Time.deltaTime,currentMask))
         {
-            transform.position += new Vector3(lHorizontal, 0) * speed * Time.deltaTime;
+            transform.position += new Vector3(lHorizontal, 0) * (speed * Time.deltaTime);
         }
         if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new Vector2(0, lVertical), speed * Time.deltaTime,currentMask))
         {
-            transform.position += new Vector3(0, lVertical) * speed * Time.deltaTime;
+            transform.position += new Vector3(0, lVertical) * (speed * Time.deltaTime);
         }
 
         if (inputs.asset[jumpKey].WasPressedThisFrame())
         {
             SetModeJump();
         }
-        else if (inputs.asset[interactKey].WasPerformedThisFrame() && interactable != null)
+        else if (inputs.asset[interactKey].WasPerformedThisFrame() && interactable is not null)
         {
             interactable.Interact();
         }
@@ -111,7 +112,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void SetModeJump() {
+    private void SetModeJump() {
         sprite.color = Color.red;
         animator.SetTrigger(jumpTrigger);
         currentMask = jumpMask;
@@ -119,15 +120,15 @@ public class Player : MonoBehaviour
         
         jumpDirection = inputs.asset[moveKey].ReadValue<Vector2>();
         startPos = transform.position;
-        endPos = transform.position + (new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance);
+        endPos = transform.position + new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance;
 
         currentState = DoActionJump;
     }
 
-    void DoActionJump()
+    private void DoActionJump()
     {
         if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
-            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * jumpDistance * Time.deltaTime;
+            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * (jumpDistance * Time.deltaTime);
         }
 
         elapsedTimeInJump += Time.deltaTime;
@@ -137,41 +138,37 @@ public class Player : MonoBehaviour
         }
     }
 
-    void CheckForInteractable()
+    private void CheckForInteractable()
     {
         RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
-        //RaycastHit2D lHit = Physics2D.CircleCast(transform.position, colliderExtentSize, lastDirection, rayDistance);
-        Interactable lInteracter;
-        for (int i = 0; i < lHit.Length; i++)
+        foreach (RaycastHit2D hit in lHit)
         {
-            if (lHit[i].collider != null)
-            {
-                lInteracter = lHit[i].collider.GetComponent<Interactable>();
-                if (lInteracter != null)
-                {
-                    interactable?.DeactivateHighlight();
-                    interactable = lInteracter;
-                    break;
-                }
-            }
+            Interactable lInteracter = hit.collider?.GetComponent<Interactable>();
+            if (lInteracter is null)
+                continue;
+            
+            interactable?.DeactivateHighlight();
+            interactable = lInteracter;
+            break;
         }
 
         interactable?.ActivateHighlight();
     }
 
-    void FreeInteractable()
+    private void FreeInteractable()
     {
-        if (interactable == null) return;
+        if (interactable is null)
+            return;
 
         Vector3 distanceToInteractable = interactable.transform.position - transform.position;
-        if (distanceToInteractable.magnitude > rayDistance)
-        {
-            interactable?.DeactivateHighlight();
-            interactable = null;
-        }
+        if (distanceToInteractable.sqrMagnitude <= rayDistance * rayDistance)
+            return;
+        
+        interactable?.DeactivateHighlight();
+        interactable = null;
     }
 
-    void DoActionToggleGuide()
+    private void DoActionToggleGuide()
     {
         // TODO animation from bottom
         guide?.ToggleGuideDisplay();

@@ -1,32 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class Information : MonoBehaviour
 {
-    [SerializeField] public bool isRight;
+    public bool IsRight;
     private bool isAssumption;
     private bool isTruth;
 
-    [HideInInspector] public string InformationText;
+    public string InformationText { get; set; }
     private TextMeshProUGUI informationTextUI;
+
+    [SerializeField]
+    private Button toggleButton;
 
     private void Start()
     {
         informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
     }
-    public void SetTextUI()
+    
+    public void SetUI()
     {
+        informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
         informationTextUI.text = InformationText;
+        gameObject.SetActive(true);
     }
-    public void OnGreenButtonClick()
+
+    public void ToggleButton()
     {
-        isAssumption = true;
+        isAssumption = !isAssumption;
+        if (isAssumption)
+            toggleButton.image.color = Color.green;
+        else
+            toggleButton.image.color = Color.red;
     }
-    public void OnRedButtonClick()
+
+    public void ToggleButtonUI()
     {
-        isAssumption = false;
+        toggleButton.gameObject.SetActive(!toggleButton.gameObject.activeSelf);
     }
 }

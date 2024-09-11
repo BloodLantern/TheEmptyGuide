@@ -16,7 +16,7 @@ public class Dialogue : MonoBehaviour
 
     [Tooltip("Whether this dialogue gives an information")]
     [SerializeField]
-    private bool hasInformation;
+    private bool hasInformation = true;
     public bool HasInformation => hasInformation;
 
     [Header("Information data")]

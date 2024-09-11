@@ -35,11 +35,14 @@ public class DialogueDisplay : MonoBehaviour
     
     private PlayerActions input;
 
+    private Guide guide;
+
     private void Start()
     {
         textMesh = GetComponent<TextMeshProUGUI>();
         input = new();
         input.Enable();
+        guide = FindObjectOfType<Guide>();
     }
 
     private void Awake()
@@ -62,7 +65,8 @@ public class DialogueDisplay : MonoBehaviour
             int textLength = dialogue.Text.Length;
             if (DisplayedCharacters >= textLength)
             {
-                // If the text is already displayed in its entirety, close the dialogue
+                // If the text is already displayed in its entirety, unlock the information in the guide and close the dialogue
+                guide.UnlockInformation(dialogue.InformationText, dialogue.GatekeeperInformation);
                 dialogue = null;
                 textMesh.text = string.Empty;
                 return;
@@ -97,5 +101,5 @@ public class DialogueDisplay : MonoBehaviour
         ResetPosition();
     }
     
-    private void ResetPosition() => transform.parent.position = initialParentPosition + Vector3.down * 150f;
+    private void ResetPosition() => transform.parent.position = initialParentPosition + Vector3.down * 1500f;
 }
