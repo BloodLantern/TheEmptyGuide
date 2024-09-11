@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 [Serializable]
@@ -32,7 +33,6 @@ public struct DialogueInfo
     public bool GatekeeperInformation => gatekeeperInformation;
 }
 
-[RequireComponent(typeof(Interactable))]
 public class Dialogue : MonoBehaviour
 {
     public const float TextAdvanceDelay = 0.05f;
@@ -47,9 +47,17 @@ public class Dialogue : MonoBehaviour
 
     private DialogueDisplay dialogueDisplay;
 
+    [SerializeField]
+    private UnityEvent onDialogueEnd;
+    public UnityEvent OnDialogueEnd => onDialogueEnd;
+
     private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
 
-    private void Awake() => GetComponent<Interactable>().onInteract.AddListener(Display);
+    private void Awake()
+    {
+        if (TryGetComponent(out Interactable i))
+            i.onInteract.AddListener(Display);
+    }
 
     public void Display() => dialogueDisplay.CurrentDialogue = this;
 }

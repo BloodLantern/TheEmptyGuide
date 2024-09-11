@@ -77,6 +77,7 @@ public class DialogueDisplay : MonoBehaviour
                     // Unlock the information in the guide and close the dialogue
                     foreach (DialogueInfo info in dialogue.RewardInformation)
                         guide.UnlockInformation(info.Text, info.GatekeeperInformation);
+                    dialogue.OnDialogueEnd.Invoke();
                     dialogue = null;
                     textMesh.text = string.Empty;
                     return;
