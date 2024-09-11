@@ -5,9 +5,9 @@ using TMPro;
 public class Information : MonoBehaviour
 {
     public bool IsRight;
-    private bool isAssumption;
-    private bool isTruth;
-
+    public bool isAssumption;
+    public bool isTruth;
+    public Vector3 initialPosition;
     public string InformationText { get; set; }
     private TextMeshProUGUI informationTextUI;
 
@@ -17,6 +17,7 @@ public class Information : MonoBehaviour
     private void Start()
     {
         informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
+        initialPosition = transform.localPosition;
     }
     
     public void SetUI()
