@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-//using UnityEngine.EventSystems;
 
 namespace FMODUnity
 {
-    public abstract class EventHandler : MonoBehaviour 
+    public abstract class EventHandler : MonoBehaviour
     {
         public string CollisionTag = "";
 
@@ -102,8 +101,6 @@ namespace FMODUnity
         {
             HandleGameEvent(EmitterGameEvent.ObjectMouseUp);
         }
-
-        
 
         protected abstract void HandleGameEvent(EmitterGameEvent gameEvent);
     }
