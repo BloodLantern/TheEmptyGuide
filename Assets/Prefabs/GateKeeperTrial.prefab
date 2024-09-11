@@ -449,9 +449,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3888514947904145086}
-  - component: {fileID: 413195793795856269}
+  - component: {fileID: 2726272023238130501}
   m_Layer: 0
-  m_Name: GatekeeperTrial
+  m_Name: GateKeeperTrial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ Transform:
   - {fileID: 6743384498130451155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &413195793795856269
+--- !u!114 &2726272023238130501
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,13 +487,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3652024198628103612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ffeb8463fab3f46abdf497e35b194b, type: 3}
+  m_Script: {fileID: 11500000, guid: f79704d6df4a62e46b7055c19b7dcece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  informations: []
-  numberOfInformation: 5
+  information: []
   leftValue: {fileID: 6153673640694806112}
   rightValue: {fileID: 3327334452758672449}
+  correctDialogue: {fileID: 0}
 --- !u!1 &3653840318838136227
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e3b02cb8c48d4780aa0260dc89fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatekeeper: {fileID: 413195793795856269}
+  GatekeeperTrial: {fileID: 2726272023238130501}
 --- !u!1 &6783006763418590047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,4 +1284,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e3b02cb8c48d4780aa0260dc89fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gatekeeper: {fileID: 413195793795856269}
+  GatekeeperTrial: {fileID: 2726272023238130501}

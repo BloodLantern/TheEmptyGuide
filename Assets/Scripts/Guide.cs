@@ -8,11 +8,11 @@ public class Guide : MonoBehaviour
     private Information[] leftPageInformation;
     private Information[] rightPageInformation;
 
-    [FormerlySerializedAs("displayGuide")] [SerializeField]
+    [SerializeField]
     private GameObject guideDisplay;
     private bool visible = true;
 
-    [FormerlySerializedAs("gatekeeper")] [SerializeField]
+    [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
 
     private void Start()

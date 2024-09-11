@@ -1,23 +1,24 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     //Stats
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private float timeInAir = 2f;
-    [SerializeField] private float jumpDistance = 3f;
+    [SerializeField]
+    private float speed = 5f;
+    [SerializeField]
+    private float timeInAir = 2f;
+    [SerializeField]
+    private float jumpDistance = 3f;
 
-    [Header("Mask for jump")]
+    [Tooltip("Mask for jump")]
     [SerializeField]
     private LayerMask jumpMask;
-    [SerializeField] private LayerMask groundedMask;
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField]
+    private LayerMask groundedMask;
+    [SerializeField]
+    private SpriteRenderer sprite;
     private LayerMask currentMask;
     private float colliderExtentSize;
 
@@ -27,17 +28,20 @@ public class Player : MonoBehaviour
     private Animator animator;
 
     //Inputs string 
-    private string moveKey = "Move";
-    private string jumpKey = "Jump";
-    private string guideKey = "ToggleGuide";
-    private string interactKey = "Interact";
+    private const string MoveKey = "Move";
+    private const string JumpKey = "Jump";
+    private const string GuideKey = "ToggleGuide";
+    private const string InteractKey = "Interact";
 
     //AnimatorTriggers
-    private string moveKeyPressed = "MoveKeyPressed";
-    private string jumpTrigger = "JumpTrigger";
+    private const string MoveKeyPressed = "MoveKeyPressed";
+    private const string JumpTrigger = "JumpTrigger";
+    
+    private static readonly int MoveKeyPressedId = Animator.StringToHash(MoveKeyPressed);
+    private static readonly int JumpTriggerId = Animator.StringToHash(JumpTrigger);
 
     //Jump management
-    private float elapsedTimeInJump = 0f;
+    private float elapsedTimeInJump;
     private Vector2 jumpDirection;
     private Vector2 startPos;
     private Vector2 endPos;
@@ -45,13 +49,14 @@ public class Player : MonoBehaviour
     //Interactions
     private Interactable interactable;
     private Vector2 lastDirection;
-    [SerializeField] private float rayDistance = 1f;
+    [SerializeField]
+    private float rayDistance = 1f;
 
     private Guide guide;
 
     private void Start()
     {
-        guide = FindObjectOfType<Guide>();
+        guide = GetComponent<Guide>();
     }
 
     private void Awake()
@@ -87,9 +92,9 @@ public class Player : MonoBehaviour
 
     private void DoActionMove()
     {
-        animator.SetBool(moveKeyPressed, inputs.asset[moveKey].IsPressed());
-        float lHorizontal = inputs.asset[moveKey].ReadValue<Vector2>().x;
-        float lVertical = inputs.asset[moveKey].ReadValue<Vector2>().y;
+        animator.SetBool(MoveKeyPressedId, inputs.asset[MoveKey].IsPressed());
+        float lHorizontal = inputs.asset[MoveKey].ReadValue<Vector2>().x;
+        float lVertical = inputs.asset[MoveKey].ReadValue<Vector2>().y;
 
         if (lHorizontal != 0 || lVertical != 0)
             lastDirection = new(lHorizontal, lVertical);
@@ -100,21 +105,21 @@ public class Player : MonoBehaviour
         if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask))
             transform.position += new Vector3(0, lVertical) * (speed * Time.deltaTime);
 
-        if (inputs.asset[jumpKey].WasPressedThisFrame())
+        if (inputs.asset[JumpKey].WasPressedThisFrame())
             SetModeJump();
-        if (inputs.asset[interactKey].WasPerformedThisFrame())
+        if (inputs.asset[InteractKey].WasPerformedThisFrame())
             interactable?.Interact();
-        if (inputs.asset[guideKey].WasPerformedThisFrame())
-            DoActionToggleGuide();
+        if (inputs.asset[GuideKey].WasPerformedThisFrame())
+            SetModeGuide();
     }
 
     private void SetModeJump() {
         sprite.color = Color.red;
-        animator.SetTrigger(jumpTrigger);
+        animator.SetTrigger(JumpTriggerId);
         currentMask = jumpMask;
         elapsedTimeInJump = 0f;
         
-        jumpDirection = inputs.asset[moveKey].ReadValue<Vector2>();
+        jumpDirection = inputs.asset[MoveKey].ReadValue<Vector2>();
         startPos = transform.position;
         endPos = transform.position + new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance;
 
@@ -164,10 +169,21 @@ public class Player : MonoBehaviour
         interactable = null;
     }
 
-    private void DoActionToggleGuide()
+    private void SetModeGuide()
     {
         // TODO animation from bottom
-        guide?.ToggleGuideDisplay();
+        guide.ToggleGuideDisplay();
+        
+        currentState = DoActionGuide;
+    }
+
+    private void DoActionGuide()
+    {
+        if (!inputs.asset[GuideKey].WasPerformedThisFrame())
+            return;
+        
+        guide.ToggleGuideDisplay();
+        SetModeMove();
     }
 
     public void LoadNextScene()

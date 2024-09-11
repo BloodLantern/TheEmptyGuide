@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GatekeeperReceiver : MonoBehaviour, IDropHandler
 {
-    [FormerlySerializedAs("gatekeeper")] [SerializeField]
+    [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
     
     public void OnDrop(PointerEventData eventData)
