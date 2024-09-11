@@ -5,9 +5,11 @@ using TMPro;
 public class Information : MonoBehaviour
 {
     public bool IsRight;
-    public bool isAssumption;
-    public bool isTruth;
+    public bool IsAssumption;
+    public bool IsTruth;
     public Vector3 initialPosition;
+
+    public bool IsDropped = false;
     public string InformationText { get; set; }
     private TextMeshProUGUI informationTextUI;
 
@@ -29,11 +31,10 @@ public class Information : MonoBehaviour
 
     public void ToggleButton()
     {
-        isAssumption = !isAssumption;
-        if (isAssumption)
-            toggleButton.image.color = Color.green;
-        else
+        if (toggleButton.image.color == Color.green)
             toggleButton.image.color = Color.red;
+        else
+            toggleButton.image.color = Color.green;
     }
 
     public void ToggleButtonUI()

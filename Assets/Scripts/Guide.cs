@@ -40,6 +40,7 @@ public class Guide : MonoBehaviour
 
             Information info = p.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
             info.InformationText = p.InformationText;
+            info.IsTruth = p.ValidInformation;
             info.SetUI();
         }
     }
