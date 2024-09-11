@@ -174,6 +174,6 @@ public class Player : MonoBehaviour
     void DoActionToggleGuide()
     {
         // TODO animation from bottom
-        guide.ToggleGuideDisplay();
+        guide?.ToggleGuideDisplay();
     }
 }
