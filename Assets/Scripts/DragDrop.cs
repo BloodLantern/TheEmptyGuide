@@ -31,8 +31,11 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.blocksRaycasts = true;
         Information info = GetComponent<Information>();
         transform.localPosition = info.initialPosition;
-        info.IsDropped = false;
-        info.gameObject.SetActive(false);
+        if (info.IsDropped)
+        {
+            info.IsDropped = false;
+            info.gameObject.SetActive(false);
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
