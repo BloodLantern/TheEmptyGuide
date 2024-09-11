@@ -12,9 +12,7 @@ public class Information : MonoBehaviour
     private TextMeshProUGUI informationTextUI;
 
     [SerializeField]
-    private Button trueButton;
-    [SerializeField]
-    private Button falseButton;
+    private Button toggleButton;
 
     private void Start()
     {
@@ -27,22 +25,18 @@ public class Information : MonoBehaviour
         informationTextUI.text = InformationText;
         gameObject.SetActive(true);
     }
-    public void OnGreenButtonClick()
+
+    public void ToggleButton()
     {
-        isAssumption = true;
-        trueButton.image.color = Color.white; // selected color
-        falseButton.image.color = Color.red; // base color
-    }
-    public void OnRedButtonClick()
-    {
-        isAssumption = false;
-        falseButton.image.color = Color.white; // selected color
-        trueButton.image.color = Color.green; // base color
+        isAssumption = !isAssumption;
+        if (isAssumption)
+            toggleButton.image.color = Color.green;
+        else
+            toggleButton.image.color = Color.red;
     }
 
     public void ToggleButtonUI()
     {
-        trueButton.gameObject.SetActive(!trueButton.gameObject.activeSelf);
-        falseButton.gameObject.SetActive(!falseButton.gameObject.activeSelf);
+        toggleButton.gameObject.SetActive(!toggleButton.gameObject.activeSelf);
     }
 }
