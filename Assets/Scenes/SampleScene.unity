@@ -197,106 +197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 49373223}
   m_CullTransparentMesh: 1
---- !u!1 &88127054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 88127056}
-  - component: {fileID: 88127055}
-  m_Layer: 0
-  m_Name: SoundManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &88127055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88127054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ca83a612cee6b46b75582a570f72ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <_sfxSucces>k__BackingField:
-    Guid:
-      Data1: -1032940638
-      Data2: 1257861113
-      Data3: -1086369117
-      Data4: 51354173
-    Path: event:/SFX
-  <_sfxDeath>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxDamagePlayer>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxDamageFoe>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxWin>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxKeyboard>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxValidateWord>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxJumpNSlide>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
---- !u!4 &88127056
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88127054}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.394567, y: 1.6117059, z: 1.2376432}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &179906741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,8 +987,9 @@ GameObject:
   - component: {fileID: 776940630}
   - component: {fileID: 776940629}
   - component: {fileID: 776940628}
+  - component: {fileID: 776940632}
   m_Layer: 5
-  m_Name: SettingCanvas
+  m_Name: SoundSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1180,6 +1081,74 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &776940632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776940627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ca83a612cee6b46b75582a570f72ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <_sfxSucces>k__BackingField:
+    Guid:
+      Data1: -1032940638
+      Data2: 1257861113
+      Data3: -1086369117
+      Data4: 51354173
+    Path: event:/SFX
+  <_sfxDeath>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxDamagePlayer>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxDamageFoe>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxWin>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxKeyboard>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxValidateWord>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <_sfxJumpNSlide>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &970223694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,7 +1713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48000002, y: 0.53374296}
   m_AnchorMax: {x: 0.67300004, y: 0.59000003}
-  m_AnchoredPosition: {x: 0.000045776, y: 0}
+  m_AnchoredPosition: {x: 0.000045776367, y: 0}
   m_SizeDelta: {x: 0.000030518, y: -0.000020981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439862162
@@ -2179,7 +2148,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48000002, y: 0.64250475}
   m_AnchorMax: {x: 0.67300004, y: 0.6987524}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0.000022888}
+  m_AnchoredPosition: {x: -0.000015258789, y: 0.000022888184}
   m_SizeDelta: {x: 0, y: 0.000013351}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692951642
@@ -2532,7 +2501,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48000002, y: 0.43624768}
   m_AnchorMax: {x: 0.67300004, y: 0.4924953}
-  m_AnchoredPosition: {x: 0.000045776367, y: -0.000022888}
+  m_AnchoredPosition: {x: 0.000045776367, y: -0.000022888184}
   m_SizeDelta: {x: 0.00013733, y: 0.000047684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993178893
@@ -2593,6 +2562,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1779229565}
-  - {fileID: 88127056}
   - {fileID: 363319241}
   - {fileID: 776940631}
