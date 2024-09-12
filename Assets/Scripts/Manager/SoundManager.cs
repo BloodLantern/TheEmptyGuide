@@ -7,13 +7,6 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [field: SerializeField] public EventReference _sfxSucces { get; private set; }
-    [field: SerializeField] public EventReference _sfxDeath { get; private set; }
-    [field: SerializeField] public EventReference _sfxDamagePlayer { get; private set; }
-    [field: SerializeField] public EventReference _sfxDamageFoe { get; private set; }
-    [field: SerializeField] public EventReference _sfxWin { get; private set; }
-    [field: SerializeField] public EventReference _sfxKeyboard { get; private set; }
-    [field: SerializeField] public EventReference _sfxValidateWord { get; private set; }
-    [field: SerializeField] public EventReference _sfxJumpNSlide { get; private set; }
 
     private static SoundManager _instance;
 
@@ -74,10 +67,13 @@ public class SoundManager : MonoBehaviour
         switch (type)
         {
             case volType.master:
+                _masterBus.getVolume(out _masterVolume);
                 return _masterVolume;
             case volType.music:
+                _musicBus.getVolume(out _musicVolume);
                 return _musicVolume;
             case volType.sfx:
+                _sfxBus.getVolume(out _SFXVolume);
                 return _SFXVolume;
             default:
                 return 0f;
