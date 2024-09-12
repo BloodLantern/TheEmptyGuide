@@ -287,7 +287,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.35
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 2956624509211724996}
   - component: {fileID: 8513201810102798715}
   m_Layer: 5
-  m_Name: masterSlider (2)
+  m_Name: sfxSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,12 +361,12 @@ RectTransform:
   - {fileID: 541627620923676393}
   - {fileID: 6095743308368481254}
   - {fileID: 6939315962146504411}
-  m_Father: {fileID: 6260187004703558169}
+  m_Father: {fileID: 6768541207953019852}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.48000002, y: 0.43624768}
   m_AnchorMax: {x: 0.753, y: 0.4924953}
-  m_AnchoredPosition: {x: -58.734604, y: -103.135284}
-  m_SizeDelta: {x: 386.52426, y: 57.329964}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0.00025177002}
+  m_SizeDelta: {x: 0, y: 0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8513201810102798715
 MonoBehaviour:
@@ -724,7 +724,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5975709572708105204}
-  - {fileID: 2956624509211724996}
   m_Father: {fileID: 3866933258134860959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -765,7 +764,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
+  m_AnchoredPosition: {x: -5.000023, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4617075011120711231
@@ -860,7 +859,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.35
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1195,6 +1194,7 @@ RectTransform:
   - {fileID: 8921982889086631647}
   - {fileID: 6548178249220552192}
   - {fileID: 3866933258134860959}
+  - {fileID: 2956624509211724996}
   - {fileID: 6808431132362892388}
   - {fileID: 7862971495543037255}
   - {fileID: 1976435523867286997}
@@ -1282,6 +1282,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backBtn: {fileID: 6416483156872555076}
+  masterSlider: {fileID: 8950407105561222365}
+  sfxSlider: {fileID: 8513201810102798715}
+  musicSlider: {fileID: 2094002868228186582}
 --- !u!1 &7624596051790319908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1452,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54.35
+  m_fontSize: 27.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1577,7 +1580,7 @@ GameObject:
   - component: {fileID: 3866933258134860959}
   - component: {fileID: 2094002868228186582}
   m_Layer: 5
-  m_Name: masterSlider (1)
+  m_Name: musicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
