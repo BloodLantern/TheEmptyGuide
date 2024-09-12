@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoadEvent: 1
-  UnloadEvent: 0
+  UnloadEvent: 2
   Banks:
   - Music
   - SFX
@@ -94,7 +94,7 @@ MonoBehaviour:
     Path: event:/SFX/Ambiance/Ambiance_Marecage
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0

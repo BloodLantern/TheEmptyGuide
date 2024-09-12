@@ -67,10 +67,13 @@ public class SoundManager : MonoBehaviour
         switch (type)
         {
             case volType.master:
+                _masterBus.getVolume(out _masterVolume);
                 return _masterVolume;
             case volType.music:
+                _musicBus.getVolume(out _musicVolume);
                 return _musicVolume;
             case volType.sfx:
+                _sfxBus.getVolume(out _SFXVolume);
                 return _SFXVolume;
             default:
                 return 0f;

@@ -132,41 +132,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 10}
-  m_Size: {x: 5, y: 15}
+  m_Offset: {x: -0.8204043, y: 4.0606174}
+  m_Size: {x: 3.3591914, y: 7.0359173}
   m_Direction: 0
---- !u!1 &7883089968641233230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1d0b3bb089653d048b35863358aa0eb4, type: 3}
-  m_PrefabInstance: {fileID: 7674577214705299699}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9056252160882575661}
-  - component: {fileID: 9098515345792004754}
-  m_Layer: 0
-  m_Name: 'Chara POULPI Anim (Missing Prefab with guid: 1d0b3bb089653d048b35863358aa0eb4)'
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9056252160882575661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 1d0b3bb089653d048b35863358aa0eb4, type: 3}
-  m_PrefabInstance: {fileID: 7674577214705299699}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7883089968641233230}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5844285257387682139}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7674577214705299699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -227,6 +195,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 9098515345792004754}
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1d0b3bb089653d048b35863358aa0eb4, type: 3}
+--- !u!1 &7883089968641233230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8653719598885068355, guid: 1d0b3bb089653d048b35863358aa0eb4, type: 3}
+  m_PrefabInstance: {fileID: 7674577214705299699}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &9098515345792004754
 Animator:
   serializedVersion: 5
@@ -248,3 +221,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &9056252160882575661 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7552582706839291426, guid: 1d0b3bb089653d048b35863358aa0eb4, type: 3}
+  m_PrefabInstance: {fileID: 7674577214705299699}
+  m_PrefabAsset: {fileID: 0}
