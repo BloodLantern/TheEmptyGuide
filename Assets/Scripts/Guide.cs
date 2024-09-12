@@ -6,11 +6,11 @@ using UnityEngine.Serialization;
 public class Guide : MonoBehaviour
 {
     private Information[] leftPageInformation;
-    private Information[] rightPageInformation;
+    private static Information[] rightPageInformation = new Information[4];
 
     [SerializeField]
     private GameObject guideDisplay;
-    private bool visible = true;
+    public bool Visible { get; private set; } = true;
 
     [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
@@ -23,6 +23,10 @@ public class Guide : MonoBehaviour
         rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
         ToggleGuideDisplay();
+        foreach (Information info in leftPageInformation)
+        {
+            info.gameObject.SetActive(false);
+        }
     }
 
     private void ExtractInformationFromNpcs()
@@ -45,15 +49,13 @@ public class Guide : MonoBehaviour
 
     public void ToggleGuideDisplay()
     {
-        visible = !visible;
+        Visible = !Visible;
         guideDisplay.gameObject.SetActive(!guideDisplay.gameObject.activeSelf);
 
-        if (!visible && GatekeeperTrial.gameObject.activeSelf)
+        if (!Visible && GatekeeperTrial.gameObject.activeSelf)
             GatekeeperTrial.gameObject.SetActive(false);
         
-        
     }
-
     public void ToggleGatekeeperTrialDisplay()
     {
         GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);

@@ -24,7 +24,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     {
         if (!info.IsDraggable)
             return;
-        canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
     }
 
@@ -32,7 +31,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     {
         if (!info.IsDraggable)
             return;
-        rectTransform.anchoredPosition += eventData.delta * canvas.scaleFactor;
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor*1.5f;
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -40,7 +39,6 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         if (!info.IsDraggable)
             return;
 
-        canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         transform.localPosition = info.initialPosition;
         if (info.IsDropped)
