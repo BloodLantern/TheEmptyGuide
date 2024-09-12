@@ -2,10 +2,10 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{a204acba-3b62-4eb3-bda5-db756e61034f}">
 		<property name="color">
-			<value>Green</value>
+			<value>Green Light 1</value>
 		</property>
 		<property name="name">
-			<value>Ambiance_Underworld</value>
+			<value>Ambiance_Grotte</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -32,7 +32,7 @@
 			<destination>{3b627705-f8bb-4aaa-8457-67f1726b234d}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{10db1a3e-923c-41eb-ab71-82c5b76e27c5}</destination>
+			<destination>{624cc9db-0844-48ef-a18a-ef2b061545c5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{d62de5bc-9f0a-43a3-bab3-63766f66babf}">
@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{80139e05-9fc7-44a2-a68f-6c45194751ca}">
+		<property name="color">
+			<value>Green Light 1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{72de0134-8c03-4192-bd3e-d48873d10b8b}</destination>
 		</relationship>
@@ -53,7 +56,7 @@
 			<destination>{c8de4c81-b6db-4a8c-8666-db85f5e98254}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{7812f692-6d6f-4b4e-99cb-d36d04289119}</destination>
+			<destination>{34587f3e-a6c2-4ef4-a217-5bcd9ede84c3}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{e36a3648-0d51-4f36-aa3b-f2d3993c0f2d}" />
