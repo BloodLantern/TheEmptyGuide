@@ -511,6 +511,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 298682247}
   image: {fileID: 2135101864}
+  cycleTime: 2
+  sceneIndex: 0
+  fade: {fileID: 648397440309619855, guid: cd4390abe378cd44da06b490fdee0631, type: 3}
 --- !u!1 &1847723836
 GameObject:
   m_ObjectHideFlags: 0

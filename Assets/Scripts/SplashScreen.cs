@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SplashScreen : MonoBehaviour
@@ -14,10 +15,13 @@ public class SplashScreen : MonoBehaviour
     Color imageColor;
 
     bool appearing = true;
+    bool sceneChanged = false;
     float elapsed = 0f;
 
     [SerializeField] float cycleTime = 2f;
     [SerializeField] int sceneIndex = 0;
+
+    [SerializeField] Transition fade;
 
     private void Start()
     {
@@ -36,9 +40,10 @@ public class SplashScreen : MonoBehaviour
         text.color = new Color(textColor.r, textColor.g, textColor.b, lRatio);
         image.color = new Color(imageColor.r, imageColor.g, imageColor.b, lRatio);
 
-        if (Input.anyKey)
+        if (Input.anyKey && !sceneChanged)
         {
-            TransitionManager.ChangeScene(sceneIndex);
+            sceneChanged = true;
+            TransitionManager.ChangeScene(fade,sceneIndex);
         }
     }
 }
