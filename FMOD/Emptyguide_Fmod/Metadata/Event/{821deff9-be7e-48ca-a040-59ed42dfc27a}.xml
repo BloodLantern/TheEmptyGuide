@@ -8,7 +8,7 @@
 			<value>UI_Toad_Win</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{25c0eafd-907d-46bd-a4ab-84c5f268ddab}</destination>
@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{cb5711a4-53fb-47a6-b4af-2622a47ff8c0}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{9faf274c-8de3-43b7-9f52-af7c9f562f15}</destination>
+		</relationship>
 		<relationship name="banks">
 			<destination>{9d9add6f-e8d2-4902-b807-1e1736d7df5e}</destination>
 		</relationship>
@@ -41,6 +44,9 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{495a5e56-788b-4b63-97ad-767df0012e33}">
+		<relationship name="modules">
+			<destination>{c2b9c7c3-7a60-40be-825d-6bafcc50c0cc}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{ce67d2e5-14f7-439c-9d4f-58ba00060903}</destination>
 		</relationship>
@@ -56,12 +62,21 @@
 			<destination>{1157c04c-24d7-4b51-9b37-42babb0a9c54}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{b50e12f4-f31e-4678-84b1-c30f51e6af8c}" />
+	<object class="EventAutomatableProperties" id="{b50e12f4-f31e-4678-84b1-c30f51e6af8c}">
+		<property name="maxVoices">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{edde3fd5-6573-4590-a5e8-d52877f53995}" />
 	<object class="Timeline" id="{cb5711a4-53fb-47a6-b4af-2622a47ff8c0}">
 		<property name="isProxyEnabled">
 			<value>false</value>
 		</property>
+	</object>
+	<object class="ActionSheet" id="{9faf274c-8de3-43b7-9f52-af7c9f562f15}">
+		<relationship name="modules">
+			<destination>{c2b9c7c3-7a60-40be-825d-6bafcc50c0cc}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{ce67d2e5-14f7-439c-9d4f-58ba00060903}">
 		<relationship name="effectChain">
@@ -72,6 +87,14 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{d7502b80-75ae-445b-9446-6b1eb0075546}</destination>
+		</relationship>
+	</object>
+	<object class="MultiSound" id="{c2b9c7c3-7a60-40be-825d-6bafcc50c0cc}">
+		<property name="playbackMode">
+			<value>1</value>
+		</property>
+		<relationship name="sounds">
+			<destination>{d6d897cb-49d9-4049-9e39-d6873e48c574}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{20e34a95-8f74-4c77-8c1f-4ce83f0b137d}">
@@ -86,6 +109,34 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d03704fb-f29c-4a5b-9e68-842157f3ef8c}" />
+	<object class="SingleSound" id="{d6d897cb-49d9-4049-9e39-d6873e48c574}">
+		<property name="startOffset">
+			<value>5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{5e21753b-09ba-4b34-ba0b-7d43fa551c9c}</destination>
+		</relationship>
+		<relationship name="audioFile">
+			<destination>{3f1aaa47-2df4-4f33-be79-dffc31514a48}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{391ee898-508e-4642-80c1-52dfcb09804f}" />
 	<object class="MixerBusFader" id="{5248dc49-dfa9-45fe-b205-4266784fb2a4}" />
+	<object class="ADSRModulator" id="{5e21753b-09ba-4b34-ba0b-7d43fa551c9c}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>40</value>
+		</property>
+		<property name="releaseTime">
+			<value>580</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 </objects>
