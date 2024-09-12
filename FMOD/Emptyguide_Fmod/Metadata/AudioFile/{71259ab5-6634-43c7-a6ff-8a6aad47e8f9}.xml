@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{71259ab5-6634-43c7-a6ff-8a6aad47e8f9}">
+		<property name="assetPath">
+			<value>Levier.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.24405895691609977</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b12d6ef2-dd02-4076-8179-7fffcabfdfd7}</destination>
+		</relationship>
+	</object>
+</objects>

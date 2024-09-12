@@ -8,7 +8,7 @@ public enum LeverType
     None,
     Door,
     Color,
-    Chest
+    Sprite
 }
 
 [RequireComponent(typeof(Interactable))]
@@ -28,13 +28,13 @@ public class Lever : MonoBehaviour
 
     public bool DoorType => type == LeverType.Door;
     public bool ColorType => type == LeverType.Color;
-    public bool ChestType => type == LeverType.Chest;
+    public bool SpriteType => type == LeverType.Sprite;
     
     [ShowIf("ColorType")]
     [SerializeField]
     private Color newColor;
     
-    [ShowIf("ChestType")]
+    [ShowIf("SpriteType")]
     [SerializeField]
     private Sprite newSprite;
 
@@ -57,6 +57,9 @@ public class Lever : MonoBehaviour
 
     private void Toggle()
     {
+        if (EnabledState)
+            return;
+        
         EnabledState = !EnabledState;
         
         switch (type)
@@ -73,7 +76,7 @@ public class Lever : MonoBehaviour
                 objRenderer.color = EnabledState ? newColor : oldColor;
                 break;
             
-            case LeverType.Chest:
+            case LeverType.Sprite:
                 objRenderer.sprite = EnabledState ? newSprite : oldSprite;
                 break;
             

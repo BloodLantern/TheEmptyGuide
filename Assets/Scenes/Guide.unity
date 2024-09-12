@@ -507,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 1339599889}
+      objectReference: {fileID: 0}
     - target: {fileID: 5844285257387682139, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.78
@@ -642,11 +642,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
---- !u!212 &1339599889 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7605353907381116496, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
-  m_PrefabInstance: {fileID: 1203758480}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1339599890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 923027059810124629, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}

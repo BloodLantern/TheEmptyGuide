@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{5256d236-fd3e-4c29-838c-f1bfa30bf48a}">
 		<property name="color">
-			<value>Green</value>
+			<value>Green Light 1</value>
 		</property>
 		<property name="name">
 			<value>Ambiance_Plage</value>
@@ -32,7 +32,7 @@
 			<destination>{c5f4bf41-f22c-4f2a-b57b-1911b17fb23c}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{10db1a3e-923c-41eb-ab71-82c5b76e27c5}</destination>
+			<destination>{624cc9db-0844-48ef-a18a-ef2b061545c5}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{60848c3f-74f4-4c43-9aa5-140b4a1c7d8c}">
@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{4b5e2694-9dcc-4327-b18c-6b82e11faf4b}">
+		<property name="color">
+			<value>Green Light 1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{f6937dd8-97ed-434e-8584-6af97dd2fd31}</destination>
 		</relationship>
@@ -53,7 +56,7 @@
 			<destination>{cb689d31-3066-4a78-9cf2-496622cd4b92}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{7812f692-6d6f-4b4e-99cb-d36d04289119}</destination>
+			<destination>{34587f3e-a6c2-4ef4-a217-5bcd9ede84c3}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{a3243322-0c7e-4f3b-8633-2b385416e39f}" />

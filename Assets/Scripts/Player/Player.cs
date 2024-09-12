@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class Player : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float timeInAir = 2f;
     [SerializeField]
-    private float jumpDistance = 3f;
+    private float jumpHeight = 1f;
 
     [Tooltip("Mask for jump")]
     [SerializeField]
@@ -34,17 +35,16 @@ public class Player : MonoBehaviour
     private const string InteractKey = "Interact";
 
     //AnimatorTriggers
-    private const string MoveKeyPressed = "MoveKeyPressed";
-    private const string JumpTrigger = "JumpTrigger";
+    private const string RunAnimState = "Running";
+    private const string JumpAnimState = "Jump";
     
-    private static readonly int MoveKeyPressedId = Animator.StringToHash(MoveKeyPressed);
-    private static readonly int JumpTriggerId = Animator.StringToHash(JumpTrigger);
+    private static readonly int RunAnimStateId = Animator.StringToHash(RunAnimState);
+    private static readonly int JumpAnimStateId = Animator.StringToHash(JumpAnimState);
 
     //Jump management
     private float elapsedTimeInJump;
-    private Vector2 jumpDirection;
-    private Vector2 startPos;
-    private Vector2 endPos;
+    private float jumpStartY;
+    private Transform animatorTransform;
 
     //Interactions
     private Interactable interactable;
@@ -61,11 +61,21 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         inputs = new();
         inputs.Enable();
         colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
         sprite = GetComponent<SpriteRenderer>();
+
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            Transform t = transform.GetChild(i);
+            if (!t.TryGetComponent<Animator>(out _))
+                continue;
+            
+            animatorTransform = t;
+            break;
+        }
         
         SetModeMove();
 
@@ -83,18 +93,21 @@ public class Player : MonoBehaviour
         FreeInteractable();
     }
 
-    public void SetModeMove() {
-        sprite.color = Color.yellow;
-
+    public void SetModeMove()
+    {
         currentMask = groundedMask;
         currentState = DoActionMove;
     }
 
     private void DoActionMove()
     {
-        animator.SetBool(MoveKeyPressedId, inputs.asset[MoveKey].IsPressed());
+        animator.SetBool(RunAnimStateId, inputs.asset[MoveKey].IsPressed());
         float lHorizontal = inputs.asset[MoveKey].ReadValue<Vector2>().x;
         float lVertical = inputs.asset[MoveKey].ReadValue<Vector2>().y;
+
+        float scaleXAbs = Mathf.Abs(transform.localScale.x);
+        if (lHorizontal != 0f)
+            transform.localScale = new(lHorizontal > 0f ? -scaleXAbs : scaleXAbs, transform.localScale.y, transform.localScale.z);
 
         if (lHorizontal != 0 || lVertical != 0)
             lastDirection = new(lHorizontal, lVertical);
@@ -113,28 +126,33 @@ public class Player : MonoBehaviour
             SetModeGuide();
     }
 
-    private void SetModeJump() {
-        sprite.color = Color.red;
-        animator.SetTrigger(JumpTriggerId);
+    private void SetModeJump()
+    {
+        animator.SetTrigger(JumpAnimStateId);
         currentMask = jumpMask;
         elapsedTimeInJump = 0f;
-        
-        jumpDirection = inputs.asset[MoveKey].ReadValue<Vector2>();
-        startPos = transform.position;
-        endPos = transform.position + new Vector3(jumpDirection.x,jumpDirection.y)* jumpDistance;
+        jumpStartY = animatorTransform.position.y;
 
         currentState = DoActionJump;
     }
 
     private void DoActionJump()
     {
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
-            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * (jumpDistance * Time.deltaTime);
-        }
+        float progress = elapsedTimeInJump / timeInAir;
+        float newY = progress switch
+        {
+            < 0.4f => jumpStartY,
+            < 0.7f => Mathf.Lerp(jumpStartY, jumpStartY + jumpHeight, (progress - 0.4f) / 0.3f),
+            < 0.75f => jumpStartY + jumpHeight,
+            _ => Mathf.Lerp(jumpStartY + jumpHeight, jumpStartY, (progress - 0.75f) / 0.25f),
+        };
+        
+        animatorTransform.position = new(animatorTransform.position.x, newY, animatorTransform.position.z);
 
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
+            animatorTransform.position = new(animatorTransform.position.x, jumpStartY, animatorTransform.position.z);
             SetModeMove();
         }
     }
@@ -171,7 +189,6 @@ public class Player : MonoBehaviour
 
     public void SetModeGuide()
     {
-        // TODO animation from bottom
         guide.ToggleGuideDisplay();
         
         currentState = DoActionGuide;
@@ -179,7 +196,7 @@ public class Player : MonoBehaviour
 
     public void SetModeDummy()
     {
-        currentState = () => { };
+        currentState = null;
     }
 
     private void DoActionGuide()
