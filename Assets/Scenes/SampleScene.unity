@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420030}
   - component: {fileID: 519420034}
-  - component: {fileID: 519420036}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -288,7 +288,7 @@ MonoBehaviour:
     Path: event:/Music
   Event: 
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -462,10 +462,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 2835564714204498797, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000091552734
-      objectReference: {fileID: 0}
     - target: {fileID: 4127281620368903962, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -546,10 +542,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
-      propertyPath: soundSettingPrefab
-      value: 
-      objectReference: {fileID: 6506034827199238614, guid: 57e161dbb3a009a4cb932fc689964240, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
