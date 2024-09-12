@@ -27,7 +27,6 @@ public class GatekeeperTrial : MonoBehaviour
                     numberOfInformation++;
             }
         }
-
         guide = FindObjectOfType<Guide>();
     }
 
@@ -67,7 +66,9 @@ public class GatekeeperTrial : MonoBehaviour
     {
         NumberOfInformationDropped = 0;
         if (CheckInformations() == numberOfInformation)
+        {
             return true;
+        }
         return false;
     }
 }
