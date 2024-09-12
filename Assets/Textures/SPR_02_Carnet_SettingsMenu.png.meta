@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -95,7 +95,574 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_0
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1040
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b9de691fe4a02469e7bb758a3e7e48
+      internalID: 1218467316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_1
+      rect:
+        serializedVersion: 2
+        x: 2804
+        y: 939
+        width: 359
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 713ceb3ad0bfcc24596e1846c0e73a32
+      internalID: -964295885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 91
+        width: 1161
+        height: 878
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1db7966f8c813748809730f777d975d
+      internalID: -37795154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_3
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 605
+        width: 354
+        height: 424
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305d038ed7ac82747a3d9139854a42cd
+      internalID: 38302441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_4
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 919
+        width: 42
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e75135684c3a51468f276d80d745d71
+      internalID: -1851644002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_5
+      rect:
+        serializedVersion: 2
+        x: 1936
+        y: 913
+        width: 349
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0074c4cd481c76843ac68a9e693dd27c
+      internalID: 294059581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_6
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 935
+        width: 397
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c9145a3851056429a6ad5c5b0cc047
+      internalID: -1326894905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_7
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 788
+        width: 321
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77688a6a8da55a34ca75fe094b1be4f3
+      internalID: 68999531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_8
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 744
+        width: 90
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a054831674eb6341a63dd8790c3ea2a
+      internalID: -1987019217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_9
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 750
+        width: 362
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1466bd683e7af5f4fb640494fb2c057b
+      internalID: 1840074218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_10
+      rect:
+        serializedVersion: 2
+        x: 1951
+        y: 778
+        width: 17
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b7db8b1b55cd24e82d79a48694fdd1
+      internalID: 65754899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_11
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 764
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8aad3bd713a0644587a1a5129e1ae38
+      internalID: 1833808528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_12
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 269
+        width: 694
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc6ae2e84ae34540b75ee7477c09702
+      internalID: -833933621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_13
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 587
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a74d13befea364e428b48d67bc00706b
+      internalID: -1469390412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_14
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 419
+        width: 76
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97679dbd363cd134ba506664648a85f8
+      internalID: 2019981223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_15
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 510
+        width: 39
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfccdba8b1642045879d82876d7cb7b
+      internalID: -2054850762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_16
+      rect:
+        serializedVersion: 2
+        x: 2881
+        y: 391
+        width: 104
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ae96e8630a4114b96d20eb721ca02a
+      internalID: 2129056328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_17
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 426
+        width: 81
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5e7d587a547864fa96ce46da005afe
+      internalID: 1008027520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_18
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 276
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef3be969c4ca1f48b2ea4f745c2b806
+      internalID: -885160634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_19
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 282
+        width: 68
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff16958e5897124eab4db1fbb82c99f
+      internalID: 1003311050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_20
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 278
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16490ace915a94346bab9c7729b19803
+      internalID: 1040199864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_21
+      rect:
+        serializedVersion: 2
+        x: 2899
+        y: 219
+        width: 86
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d90f50e94825c45934e988a3de3745
+      internalID: 1618486304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_22
+      rect:
+        serializedVersion: 2
+        x: 1252
+        y: 56
+        width: 151
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7dbfd1392cd7f4db01de2658258bb4
+      internalID: 916114461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_23
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 53
+        width: 162
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 006c7fd8741035444afc880fee330037
+      internalID: 743226845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_24
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 57
+        width: 162
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dea370247117fa4eb21d7df242d4d4f
+      internalID: -1508428473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_25
+      rect:
+        serializedVersion: 2
+        x: 2362
+        y: 64
+        width: 151
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e38eebe20020e944b35382e36c07d84
+      internalID: 1623137941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_02_Carnet_SettingsMenu_26
+      rect:
+        serializedVersion: 2
+        x: 2909
+        y: 61
+        width: 73
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6d42d8b4dc2dd41beb637949a2c2d0
+      internalID: -349662972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +673,34 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SPR_02_Carnet_SettingsMenu_0: 1218467316
+      SPR_02_Carnet_SettingsMenu_1: -964295885
+      SPR_02_Carnet_SettingsMenu_10: 65754899
+      SPR_02_Carnet_SettingsMenu_11: 1833808528
+      SPR_02_Carnet_SettingsMenu_12: -833933621
+      SPR_02_Carnet_SettingsMenu_13: -1469390412
+      SPR_02_Carnet_SettingsMenu_14: 2019981223
+      SPR_02_Carnet_SettingsMenu_15: -2054850762
+      SPR_02_Carnet_SettingsMenu_16: 2129056328
+      SPR_02_Carnet_SettingsMenu_17: 1008027520
+      SPR_02_Carnet_SettingsMenu_18: -885160634
+      SPR_02_Carnet_SettingsMenu_19: 1003311050
+      SPR_02_Carnet_SettingsMenu_2: -37795154
+      SPR_02_Carnet_SettingsMenu_20: 1040199864
+      SPR_02_Carnet_SettingsMenu_21: 1618486304
+      SPR_02_Carnet_SettingsMenu_22: 916114461
+      SPR_02_Carnet_SettingsMenu_23: 743226845
+      SPR_02_Carnet_SettingsMenu_24: -1508428473
+      SPR_02_Carnet_SettingsMenu_25: 1623137941
+      SPR_02_Carnet_SettingsMenu_26: -349662972
+      SPR_02_Carnet_SettingsMenu_3: 38302441
+      SPR_02_Carnet_SettingsMenu_4: -1851644002
+      SPR_02_Carnet_SettingsMenu_5: 294059581
+      SPR_02_Carnet_SettingsMenu_6: -1326894905
+      SPR_02_Carnet_SettingsMenu_7: 68999531
+      SPR_02_Carnet_SettingsMenu_8: -1987019217
+      SPR_02_Carnet_SettingsMenu_9: 1840074218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

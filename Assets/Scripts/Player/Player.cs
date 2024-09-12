@@ -201,11 +201,11 @@ public class Player : MonoBehaviour
 
     private void DoActionGuide()
     {
-        if (!inputs.asset[GuideKey].WasPerformedThisFrame())
-            return;
-        
-        guide.ToggleGuideDisplay();
-        SetModeMove();
+        if (inputs.asset[GuideKey].WasPerformedThisFrame())
+            guide.ToggleGuideDisplay();
+
+        if (!guide.Visible)
+            SetModeMove();
     }
 
     public void LoadNextScene()
