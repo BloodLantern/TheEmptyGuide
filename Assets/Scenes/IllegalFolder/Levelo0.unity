@@ -175,6 +175,22 @@ PrefabInstance:
       propertyPath: rewardInformation.Array.data[3].gatekeeperInformation
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1339599892}
+    - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4444426411966641861, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
       propertyPath: texts.Array.size
       value: 3
@@ -426,9 +442,81 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 196401452359693572, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 534465839477781055, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 913940008930385770, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 953555266557573027, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953555266557573027, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 953555266557573027, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985076218360212576, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096221664532882661, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603515650437365161, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603515650437365161, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3603515650437365161, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3667965406457845453, guid: 045ce292c7261e24085072056deadef3, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018512825395592169, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5212304288433943963, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446670839910597287, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: correctDialogue
+      value: 
+      objectReference: {fileID: 1626683367}
+    - target: {fileID: 6304568336155645564, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420218435253546098, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7464481985208448507, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8263951305813884563, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8780789099131260949, guid: 045ce292c7261e24085072056deadef3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -507,7 +595,7 @@ PrefabInstance:
     - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1339599889}
     - target: {fileID: 5844285257387682139, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.78
@@ -642,6 +730,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+--- !u!212 &1339599889 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7605353907381116496, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
+  m_PrefabInstance: {fileID: 1203758480}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1339599890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 923027059810124629, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
@@ -733,6 +826,10 @@ PrefabInstance:
       propertyPath: rewardInformation.Array.data[0].text
       value: Maxime voucher
       objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].truth
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name
       value: NPC (1)
@@ -747,6 +844,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 104896124160945812, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
   m_PrefabInstance: {fileID: 1372076256}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1626683367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+  m_PrefabInstance: {fileID: 234798760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718345306
 GameObject:
   m_ObjectHideFlags: 0
