@@ -21,7 +21,7 @@ public class SoundSettingMenu : MonoBehaviour
         masterSlider.value = SoundManager.Instance.GetVolume(SoundManager.volType.master);
         musicSlider.value = SoundManager.Instance.GetVolume(SoundManager.volType.music);
         sfxSlider.value = SoundManager.Instance.GetVolume(SoundManager.volType.sfx);
-
+        print(SoundManager.Instance.GetVolume(SoundManager.volType.master));
         masterSlider.onValueChanged.AddListener(SetMasterVolume);
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSFXVolume);

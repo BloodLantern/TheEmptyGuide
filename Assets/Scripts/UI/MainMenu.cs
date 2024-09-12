@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
     void PlayButton()
     {
         TransitionManager.ChangeScene(playScene);
+        
     }
 
     void CreditButton()
