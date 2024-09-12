@@ -314,7 +314,7 @@ MonoBehaviour:
   Banks:
   - Music
   - SFX
-  - 
+  - UI
   CollisionTag: 
   PreloadSamples: 0
 --- !u!1 &527474786
@@ -362,55 +362,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <_sfxSucces>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxDeath>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxDamagePlayer>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxDamageFoe>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxWin>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxKeyboard>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxValidateWord>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <_sfxJumpNSlide>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
