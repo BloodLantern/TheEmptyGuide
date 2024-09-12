@@ -171,7 +171,6 @@ public class Player : MonoBehaviour
 
     public void SetModeGuide()
     {
-        // TODO animation from bottom
         guide.ToggleGuideDisplay();
         
         currentState = DoActionGuide;

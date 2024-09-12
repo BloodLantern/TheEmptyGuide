@@ -213,7 +213,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.7
+  m_fontSize: 48.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -734,7 +734,7 @@ GameObject:
   - component: {fileID: 932915254539761157}
   - component: {fileID: 5727748222593683019}
   - component: {fileID: 5004631525690655214}
-  - component: {fileID: 5132996448850608041}
+  - component: {fileID: 5319874808386804259}
   m_Layer: 5
   m_Name: PauseManager
   m_TagString: Untagged
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5132996448850608041
+--- !u!114 &5319874808386804259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -834,9 +834,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9024039006974556682}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fda474c6195e2344c93d968e70590d29, type: 3}
+  m_Script: {fileID: 11500000, guid: ded115ce134f08a48b72efca4c891232, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 7686370563079395783}
-  quitBtn: {fileID: 1827217793735785855}
-  resumeBtn: {fileID: 3481955350785811862}
+  quitBtn: {fileID: 3481955350785811862}
+  resumeBtn: {fileID: 1827217793735785855}

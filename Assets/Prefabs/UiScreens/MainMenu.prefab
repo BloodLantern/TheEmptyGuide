@@ -243,6 +243,7 @@ MonoBehaviour:
   setting: {fileID: 3492092882039220110}
   quit: {fileID: 5405754172570438493}
   credit: {fileID: 1567316128283610493}
+  soundSettingPrefab: {fileID: 6506034827199238614, guid: 57e161dbb3a009a4cb932fc689964240, type: 3}
 --- !u!1 &3548179484639842877
 GameObject:
   m_ObjectHideFlags: 0
