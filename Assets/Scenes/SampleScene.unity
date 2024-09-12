@@ -547,6 +547,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditTransition
+      value: 
+      objectReference: {fileID: 648397440309619855, guid: cd4390abe378cd44da06b490fdee0631, type: 3}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
       propertyPath: soundSettingPrefab
       value: 
       objectReference: {fileID: 6506034827199238614, guid: 57e161dbb3a009a4cb932fc689964240, type: 3}
