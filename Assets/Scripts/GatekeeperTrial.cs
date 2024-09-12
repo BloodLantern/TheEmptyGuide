@@ -59,6 +59,7 @@ public class GatekeeperTrial : MonoBehaviour
             if (information.IsTruth == information.IsAssumption)
                 validInfo++;
         }
+        Debug.Log(validInfo);
         return validInfo;
     }
 

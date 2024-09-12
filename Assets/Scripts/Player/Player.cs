@@ -197,6 +197,6 @@ public class Player : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene($"Level{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");
+        SceneManager.LoadScene($"Levelo{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");
     }
 }
