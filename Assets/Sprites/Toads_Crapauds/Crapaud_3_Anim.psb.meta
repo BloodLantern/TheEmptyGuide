@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 68b8cc93e71fca248beea9835f89406d
+guid: 871db0cd62aad224fa4fa43d57a39699
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,18 +94,18 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: TENTAC 1
+  - name: Visage
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 614
-      y: 1233
-      width: 388
-      height: 548
-    spriteID: 57405961427d0aa43b49becc521c15a4
+      x: 1172
+      y: 1688
+      width: 806
+      height: 509
+    spriteID: f9685c96b329da846ae7d69dddca3944
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -113,20 +113,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 614, y: 1233}
-    spritePosition: {x: 454, y: 908}
-  - name: TENTAC 2
+    uvTransform: {x: 1172, y: 1688}
+    spritePosition: {x: 496, y: 1257}
+  - name: Capuche
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1090
-      y: 854
-      width: 211
-      height: 642
-    spriteID: 3ad02841be1a47349aaa26ea5162470c
+      x: 725
+      y: 2472
+      width: 1032
+      height: 684
+    spriteID: 4768f62bfb5589246baf81bbf745dd23
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -134,20 +134,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1090, y: 854}
-    spritePosition: {x: 274, y: 801}
-  - name: TENTAC 3
+    uvTransform: {x: 725, y: 2472}
+    spritePosition: {x: 395, y: 1157}
+  - name: Main_Droite
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1324
-      y: 4
-      width: 286
-      height: 483
-    spriteID: 2f3c094f659c22a4f8f98006f83269f9
+      x: 1172
+      y: 2205
+      width: 468
+      height: 250
+    spriteID: 48cc026ad9a94c249817f0925fe7d079
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -155,9 +155,9 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1324, y: 4}
-    spritePosition: {x: 149, y: 976}
-  - name: HEAD
+    uvTransform: {x: 1172, y: 2205}
+    spritePosition: {x: 1208, y: 620}
+  - name: Main_Gauche
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -166,9 +166,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 602
-      height: 1022
-    spriteID: 36400869b51692a40b6fa63860236473
+      width: 1838
+      height: 847
+    spriteID: 5e8d7d3ecbedc3448941ad4d8d6c25bf
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -177,8 +177,8 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-    spritePosition: {x: 230, y: 871}
-  - name: ARM
+    spritePosition: {x: 82, y: 844}
+  - name: Jambe_Droite
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -186,10 +186,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 1034
-      width: 405
-      height: 894
-    spriteID: f5fe2306d04a1d2459c9489ebf5e3446
+      y: 1688
+      width: 1160
+      height: 776
+    spriteID: 8dd5427fe37fb1f4b9abb689ce6dc133
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -197,20 +197,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 1034}
-    spritePosition: {x: 499, y: 656}
-  - name: PIED 1
+    uvTransform: {x: 4, y: 1688}
+    spritePosition: {x: 599, y: 34}
+  - name: Jambe_Gauche
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1090
-      y: 4
-      width: 226
-      height: 842
-    spriteID: 3685ea5a2a340874f826ae2239514c41
+      x: 4
+      y: 2472
+      width: 713
+      height: 1009
+    spriteID: ce95aff25393c1c4199cf854b1f2c057
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,20 +218,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1090, y: 4}
-    spritePosition: {x: 597, y: 12}
-  - name: PIED 3
+    uvTransform: {x: 4, y: 2472}
+    spritePosition: {x: 121, y: 46}
+  - name: Corps
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 1090
-      y: 1504
-      width: 129
-      height: 274
-    spriteID: 4623aa3e46f6dd842bfcfe7770fa72cd
+      x: 4
+      y: 859
+      width: 1411
+      height: 821
+    spriteID: c2c0cf21e185a3542b9f65ca3473ec2a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -239,20 +239,20 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 1090, y: 1504}
-    spritePosition: {x: 475, y: 45}
-  - name: SALOPET
+    uvTransform: {x: 4, y: 859}
+    spritePosition: {x: 218, y: 567}
+  - name: Ventre
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 614
-      y: 4
-      width: 468
-      height: 1221
-    spriteID: 076108d50ab155c44a7231995d5a4ce0
+      x: 725
+      y: 3164
+      width: 706
+      height: 808
+    spriteID: 185a68ba3f76e764c86b1145f132287a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -260,29 +260,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 614, y: 4}
-    spritePosition: {x: 322, y: 74}
-  - name: PIED2
-    originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 614
-      y: 1789
-      width: 242
-      height: 188
-    spriteID: 746b697001753a444952523cb25a8f34
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 614, y: 1789}
-    spritePosition: {x: 258, y: 45}
+    uvTransform: {x: 725, y: 3164}
+    spritePosition: {x: 560, y: 363}
   characterData:
     bones: []
     parts: []
@@ -319,202 +298,92 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
-  - name: TENTAC 1
-    spriteName: TENTAC 1
+  - name: Visage
+    spriteName: Visage
     isGroup: 0
     parentIndex: -1
-    spriteID: 57405961427d0aa43b49becc521c15a4
-    layerID: 44
-    mosaicPosition: {x: 614, y: 1233}
+    spriteID: f9685c96b329da846ae7d69dddca3944
+    layerID: 88
+    mosaicPosition: {x: 1172, y: 1688}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: TENTAC 2
-    spriteName: TENTAC 2
+  - name: Capuche
+    spriteName: Capuche
     isGroup: 0
     parentIndex: -1
-    spriteID: 3ad02841be1a47349aaa26ea5162470c
-    layerID: 48
-    mosaicPosition: {x: 1090, y: 854}
+    spriteID: 4768f62bfb5589246baf81bbf745dd23
+    layerID: 90
+    mosaicPosition: {x: 725, y: 2472}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: TENTAC 3
-    spriteName: TENTAC 3
+  - name: Main_Droite
+    spriteName: Main_Droite
     isGroup: 0
     parentIndex: -1
-    spriteID: 2f3c094f659c22a4f8f98006f83269f9
-    layerID: 50
-    mosaicPosition: {x: 1324, y: 4}
+    spriteID: 48cc026ad9a94c249817f0925fe7d079
+    layerID: 87
+    mosaicPosition: {x: 1172, y: 2205}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: HEAD
-    spriteName: HEAD
+  - name: Main_Gauche
+    spriteName: Main_Gauche
     isGroup: 0
     parentIndex: -1
-    spriteID: 36400869b51692a40b6fa63860236473
-    layerID: 19
+    spriteID: 5e8d7d3ecbedc3448941ad4d8d6c25bf
+    layerID: 95
     mosaicPosition: {x: 4, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: ARM
-    spriteName: ARM
+  - name: Jambe_Droite
+    spriteName: Jambe_Droite
     isGroup: 0
     parentIndex: -1
-    spriteID: f5fe2306d04a1d2459c9489ebf5e3446
-    layerID: 22
-    mosaicPosition: {x: 4, y: 1034}
+    spriteID: 8dd5427fe37fb1f4b9abb689ce6dc133
+    layerID: 91
+    mosaicPosition: {x: 4, y: 1688}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: PIED 1
-    spriteName: PIED 1
+  - name: Jambe_Gauche
+    spriteName: Jambe_Gauche
     isGroup: 0
     parentIndex: -1
-    spriteID: 3685ea5a2a340874f826ae2239514c41
-    layerID: 29
-    mosaicPosition: {x: 1090, y: 4}
+    spriteID: ce95aff25393c1c4199cf854b1f2c057
+    layerID: 93
+    mosaicPosition: {x: 4, y: 2472}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: PIED 3
-    spriteName: PIED 3
+  - name: Corps
+    spriteName: Corps
     isGroup: 0
     parentIndex: -1
-    spriteID: 4623aa3e46f6dd842bfcfe7770fa72cd
-    layerID: 38
-    mosaicPosition: {x: 1090, y: 1504}
+    spriteID: c2c0cf21e185a3542b9f65ca3473ec2a
+    layerID: 92
+    mosaicPosition: {x: 4, y: 859}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: SALOPET
-    spriteName: SALOPET
+  - name: Ventre
+    spriteName: Ventre
     isGroup: 0
     parentIndex: -1
-    spriteID: 076108d50ab155c44a7231995d5a4ce0
-    layerID: 25
-    mosaicPosition: {x: 614, y: 4}
+    spriteID: 185a68ba3f76e764c86b1145f132287a
+    layerID: 94
+    mosaicPosition: {x: 725, y: 3164}
     flatten: 0
     isImported: 1
     isVisible: 1
-  - name: PIED2
-    spriteName: PIED2
-    isGroup: 0
-    parentIndex: -1
-    spriteID: 746b697001753a444952523cb25a8f34
-    layerID: 33
-    mosaicPosition: {x: 614, y: 1789}
-    flatten: 0
-    isImported: 1
-    isVisible: 1
-  - name: NON
-    spriteName: 
-    isGroup: 1
-    parentIndex: -1
-    spriteID: b97addae1719af440b3ed3ac28c90877
-    layerID: 41
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Calque 1
-    spriteName: 
-    isGroup: 0
-    parentIndex: 9
-    spriteID: 5e308a1963f75aa4aa5dc1bcecdbf61c
-    layerID: 6
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 0
-  - name: Calque 6
-    spriteName: 
-    isGroup: 0
-    parentIndex: 9
-    spriteID: 5175e11b794c06f4498958035a8c095a
-    layerID: 15
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 5
-    spriteName: 
-    isGroup: 0
-    parentIndex: 9
-    spriteID: 6716997c750f9274b965fa51ff6112cc
-    layerID: 14
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Groupe 1
-    spriteName: 
-    isGroup: 1
-    parentIndex: 9
-    spriteID: 054c7877a0750fa4bade904b01254438
-    layerID: 11
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 2
-    spriteName: 
-    isGroup: 0
-    parentIndex: 13
-    spriteID: aa0b8b1895deba241828267a4bac3c03
-    layerID: 8
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 4
-    spriteName: 
-    isGroup: 0
-    parentIndex: 13
-    spriteID: f619a7254480d5142a801aa5b91c49da
-    layerID: 10
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 3
-    spriteName: 
-    isGroup: 0
-    parentIndex: 13
-    spriteID: 9ed167e689432754d982fb4db464eae5
-    layerID: 9
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Grenouille gaga concepts
-    spriteName: 
-    isGroup: 0
-    parentIndex: 9
-    spriteID: 90c1e70dcfb30c54cb092e994ac61084
-    layerID: 2
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 0
-    spriteName: 
-    isGroup: 0
-    parentIndex: 9
-    spriteID: e7c930be5ce700340a9b78b0173b60ef
-    layerID: 40
-    mosaicPosition: {x: 0, y: 0}
-    flatten: 0
-    isImported: 0
-    isVisible: 1
-  - name: Calque 7
+  - name: "Arri\xE8re-plan"
     spriteName: 
     isGroup: 0
     parentIndex: -1
-    spriteID: 55c9671c7fe4b054586a3a1c312420bc
-    layerID: 53
+    spriteID: dc8b144443c765446a455befaeaec42f
+    layerID: 1
     mosaicPosition: {x: 0, y: 0}
     flatten: 0
     isImported: 0
