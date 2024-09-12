@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class GatekeeperTrial : MonoBehaviour
 {
-    public List<Information> information;
+    public List<Information> Information;
+    public List<Information> RightInformation;
     private int numberOfInformation;
+    private const int numberOfRightInformation = 4;
+    [HideInInspector] public int NumberOfInformationDropped;
 
     [SerializeField] TextMeshProUGUI leftValue;
     [SerializeField] TextMeshProUGUI rightValue;
 
     private Guide guide;
 
-    [SerializeField]
-    private Dialogue correctDialogue;
+    [SerializeField] private Dialogue correctDialogue;
 
     private void Start()
     {
@@ -27,16 +29,14 @@ public class GatekeeperTrial : MonoBehaviour
         }
 
         guide = FindObjectOfType<Guide>();
-
-        gameObject.SetActive(false);
     }
 
     private void Update()
     {
         rightValue.text = numberOfInformation.ToString();
-        if (information.Count == numberOfInformation)
+        leftValue.text = NumberOfInformationDropped.ToString();
+        if (Information.Count == numberOfInformation)
         {
-            Debug.Log(IsValidatedByGatekeeper());
             if (IsValidatedByGatekeeper())
             {
                 guide.ToggleGuideDisplay();
@@ -44,18 +44,18 @@ public class GatekeeperTrial : MonoBehaviour
             }
             else
             {
-                foreach (Information information in information)
+                foreach (Information information in Information)
                 {
                     information.gameObject.SetActive(true);
                 }
-                information.Clear();
+                Information.Clear();
             }
         }
     }
     private int CheckInformations()
     {
         int validInfo = 0;
-        foreach (Information information in information)
+        foreach (Information information in Information)
         {
             if (information.IsTruth == information.IsAssumption)
                 validInfo++;
@@ -65,6 +65,7 @@ public class GatekeeperTrial : MonoBehaviour
 
     private bool IsValidatedByGatekeeper()
     {
+        NumberOfInformationDropped = 0;
         if (CheckInformations() == numberOfInformation)
             return true;
         return false;

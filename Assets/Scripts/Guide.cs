@@ -50,11 +50,17 @@ public class Guide : MonoBehaviour
 
         if (!visible && GatekeeperTrial.gameObject.activeSelf)
             GatekeeperTrial.gameObject.SetActive(false);
+        
+        
     }
 
     public void ToggleGatekeeperTrialDisplay()
     {
         GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
+        foreach (Information info in leftPageInformation)
+        {
+            info.IsDraggable = !info.IsDraggable;
+        }
     }
 
     public void UnlockInformation(string informationText, bool rightInfo)

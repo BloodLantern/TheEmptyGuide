@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     [SerializeField]
     private Canvas canvas;
@@ -12,36 +12,41 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
 
+    private Information info;
+
     private void Awake()
     {
+        info = GetComponent<Information>();
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (!info.IsDraggable)
+            return;
         canvasGroup.alpha = .6f;
         canvasGroup.blocksRaycasts = false;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (!info.IsDraggable)
+            return;
+        rectTransform.anchoredPosition += eventData.delta * canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (!info.IsDraggable)
+            return;
+
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        Information info = GetComponent<Information>();
         transform.localPosition = info.initialPosition;
         if (info.IsDropped)
         {
             info.IsDropped = false;
             info.gameObject.SetActive(false);
         }
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
     }
 }
