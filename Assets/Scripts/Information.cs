@@ -7,6 +7,7 @@ public class Information : MonoBehaviour
     public bool IsRight;
     public bool IsAssumption;
     public bool IsTruth;
+    public bool IsDraggable;
     public Vector3 initialPosition;
 
     public bool IsDropped = false;
