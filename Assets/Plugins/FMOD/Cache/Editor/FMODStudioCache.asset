@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638617540182731721
+  lastModified: 638617562232396384
   FileSizes:
   - Name: Desktop
     Value: 3876640
@@ -136,7 +136,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638617540183976610
+  lastModified: 638617562232416402
   FileSizes:
   - Name: Desktop
     Value: 121984
@@ -496,7 +496,7 @@ MonoBehaviour:
   - {fileID: -4028183952181680838}
   StringsBanks:
   - {fileID: 8515601790336064562}
-  cacheTime: 638617540183976610
+  cacheTime: 638617562232416402
   cacheVersion: 131619
 --- !u!114 &183032835756681691
 MonoBehaviour:
@@ -702,7 +702,7 @@ MonoBehaviour:
   Path: FMOD/Emptyguide_Fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638617540151742022
+  lastModified: 638617562232211241
   FileSizes:
   - Name: Desktop
     Value: 1999488
