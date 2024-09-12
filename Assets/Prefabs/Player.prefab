@@ -160,7 +160,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   sprite: {fileID: 0}
-  rayDistance: 1
+  rayDistance: 1.7
 --- !u!58 &5394559288089673425
 CircleCollider2D:
   m_ObjectHideFlags: 0

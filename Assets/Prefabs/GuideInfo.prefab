@@ -413,6 +413,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4114608161049416545}
   - component: {fileID: 9125263204253674442}
+  - component: {fileID: 785653555302868470}
+  - component: {fileID: 8337430221376092925}
   m_Layer: 5
   m_Name: GuideInfo
   m_TagString: Untagged
@@ -454,4 +456,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRight: 0
+  isAssumption: 0
+  isTruth: 0
   toggleButton: {fileID: 5382948282223092733}
+--- !u!114 &785653555302868470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656478376933435725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf89125e5b36fc742a2630f77fbc6bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  canvasGroup: {fileID: 8337430221376092925}
+--- !u!225 &8337430221376092925
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8656478376933435725}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
