@@ -449,7 +449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3888514947904145086}
-  - component: {fileID: 2726272023238130501}
+  - component: {fileID: 3755673900230149626}
   m_Layer: 0
   m_Name: GateKeeperTrial
   m_TagString: Untagged
@@ -478,7 +478,7 @@ Transform:
   - {fileID: 6743384498130451155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2726272023238130501
+--- !u!114 &3755673900230149626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,7 +487,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3652024198628103612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79704d6df4a62e46b7055c19b7dcece, type: 3}
+  m_Script: {fileID: 11500000, guid: c1ffeb8463fab3f46abdf497e35b194b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   information: []
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e3b02cb8c48d4780aa0260dc89fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GatekeeperTrial: {fileID: 2726272023238130501}
+  GatekeeperTrial: {fileID: 3755673900230149626}
 --- !u!1 &6783006763418590047
 GameObject:
   m_ObjectHideFlags: 0
@@ -1207,7 +1207,7 @@ GameObject:
   - component: {fileID: 5000285303458239723}
   - component: {fileID: 5208028264461365552}
   - component: {fileID: 8709949259670620374}
-  - component: {fileID: 9222771777263723350}
+  - component: {fileID: 331817448920195811}
   m_Layer: 0
   m_Name: RightKeeper
   m_TagString: Untagged
@@ -1272,7 +1272,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &9222771777263723350
+--- !u!114 &331817448920195811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1284,4 +1284,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01e3b02cb8c48d4780aa0260dc89fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GatekeeperTrial: {fileID: 2726272023238130501}
+  GatekeeperTrial: {fileID: 3755673900230149626}

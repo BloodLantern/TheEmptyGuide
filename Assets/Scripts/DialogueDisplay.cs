@@ -43,12 +43,15 @@ public class DialogueDisplay : MonoBehaviour
 
     [SerializeField]
     private Image characterImage;
+    
+    private Player player;
 
     private void Start()
     {
         input = new();
         input.Enable();
         guide = FindObjectOfType<Guide>();
+        player = FindObjectOfType<Player>();
     }
 
     private void Update()
@@ -77,9 +80,10 @@ public class DialogueDisplay : MonoBehaviour
                     // Unlock the information in the guide and close the dialogue
                     foreach (DialogueInfo info in dialogue.RewardInformation)
                         guide.UnlockInformation(info.Text, info.GatekeeperInformation);
+                    Hide();
+                    textMesh.text = string.Empty;
                     dialogue.OnDialogueEnd.Invoke();
                     dialogue = null;
-                    textMesh.text = string.Empty;
                     return;
                 }
             }
@@ -106,12 +110,14 @@ public class DialogueDisplay : MonoBehaviour
     public void Show()
     {
         visible = true;
+        player.SetModeDummy();
         gameObject.SetActive(true);
     }
 
     public void Hide()
     {
         visible = false;
+        player.SetModeMove();
         gameObject.SetActive(false);
     }
 

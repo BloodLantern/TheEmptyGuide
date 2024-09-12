@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
         FreeInteractable();
     }
 
-    private void SetModeMove() {
+    public void SetModeMove() {
         sprite.color = Color.yellow;
 
         currentMask = groundedMask;
@@ -169,12 +169,17 @@ public class Player : MonoBehaviour
         interactable = null;
     }
 
-    private void SetModeGuide()
+    public void SetModeGuide()
     {
         // TODO animation from bottom
         guide.ToggleGuideDisplay();
         
         currentState = DoActionGuide;
+    }
+
+    public void SetModeDummy()
+    {
+        currentState = () => { };
     }
 
     private void DoActionGuide()
