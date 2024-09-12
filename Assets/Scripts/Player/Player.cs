@@ -11,12 +11,16 @@ public class Player : MonoBehaviour
     private float timeInAir = 2f;
     [SerializeField]
     private float jumpDistance = 3f;
+    private float jumpHeigth = 3f;
+    Transform playerRenderer;
 
     [Tooltip("Mask for jump")]
     [SerializeField]
     private LayerMask jumpMask;
     [SerializeField]
     private LayerMask groundedMask;
+    [SerializeField]
+    LayerMask onlyJumpLayer;
     [SerializeField]
     private SpriteRenderer sprite;
     private LayerMask currentMask;
@@ -52,11 +56,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float rayDistance = 1f;
 
+    [SerializeField] AnimationCurve jumpCurve;
+
     private Guide guide;
 
     private void Start()
     {
+        
         guide = GetComponent<Guide>();
+        SetModeMove();
     }
 
     private void Awake()
@@ -66,8 +74,8 @@ public class Player : MonoBehaviour
         inputs.Enable();
         colliderExtentSize = GetComponent<Collider2D>().bounds.extents.x;
         sprite = GetComponent<SpriteRenderer>();
-        
-        SetModeMove();
+        playerRenderer = transform.GetChild(0);
+
 
         if (SceneManager.GetActiveScene().name == "Level0")
         {
@@ -85,14 +93,14 @@ public class Player : MonoBehaviour
 
     public void SetModeMove() {
         sprite.color = Color.yellow;
-
+        playerRenderer.transform.localPosition = new Vector3(0, .5f);
         currentMask = groundedMask;
         currentState = DoActionMove;
     }
 
     private void DoActionMove()
     {
-        animator.SetBool(MoveKeyPressedId, inputs.asset[MoveKey].IsPressed());
+        animator?.SetBool(MoveKeyPressedId, inputs.asset[MoveKey].IsPressed());
         float lHorizontal = inputs.asset[MoveKey].ReadValue<Vector2>().x;
         float lVertical = inputs.asset[MoveKey].ReadValue<Vector2>().y;
 
@@ -115,7 +123,8 @@ public class Player : MonoBehaviour
 
     private void SetModeJump() {
         sprite.color = Color.red;
-        animator.SetTrigger(JumpTriggerId);
+        animator?.SetTrigger(JumpTriggerId);
+
         currentMask = jumpMask;
         elapsedTimeInJump = 0f;
         
@@ -128,13 +137,20 @@ public class Player : MonoBehaviour
 
     private void DoActionJump()
     {
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, currentMask)) {
-            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * (jumpDistance * Time.deltaTime);
+        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, jumpDirection, speed * Time.deltaTime, groundedMask)) {
+            transform.position += new Vector3(jumpDirection.x, jumpDirection.y) * jumpDistance * Time.deltaTime;
         }
+
+        float lRatio = elapsedTimeInJump / timeInAir;
+        playerRenderer.transform.localPosition = new Vector3(0, 0.5f +(jumpHeigth * jumpCurve.Evaluate(lRatio)),0);
 
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
+            if (Physics2D.OverlapCircle(transform.position,colliderExtentSize,onlyJumpLayer))
+            {
+                transform.position = startPos;
+            }
             SetModeMove();
         }
     }
