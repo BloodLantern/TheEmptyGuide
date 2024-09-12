@@ -54,7 +54,10 @@ MonoBehaviour:
   - text: "Je ne demande que 4 informations, ce n'est pas bien cher pay\xE9, vous
       ne trouvez pas, l'ami ?"
     sprite: {fileID: 0}
-  rewardInformation: []
+  rewardInformation:
+  - text: 
+    truth: 0
+    gatekeeperInformation: 1
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:

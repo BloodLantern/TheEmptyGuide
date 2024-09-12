@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26af6615adb6f7c4b84ee0acc08396f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  type: 3
   obj: {fileID: 0}
   newColor: {r: 0, g: 0, b: 0, a: 0}
   newSprite: {fileID: 0}
