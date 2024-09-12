@@ -11,6 +11,7 @@ public class Guide : MonoBehaviour
     [SerializeField]
     private GameObject guideDisplay;
     public bool Visible { get; private set; } = true;
+    public bool IsOnGateKeeperTrial;
 
     [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
@@ -58,6 +59,7 @@ public class Guide : MonoBehaviour
     }
     public void ToggleGatekeeperTrialDisplay()
     {
+        IsOnGateKeeperTrial = !IsOnGateKeeperTrial;
         GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
         foreach (Information info in leftPageInformation)
         {

@@ -17,6 +17,8 @@ public class GuideLeaveButton : MonoBehaviour
     }
     public void Clicked()
     {
+        if (guide.IsOnGateKeeperTrial)
+            guide.ToggleGatekeeperTrialDisplay();
         guide.ToggleGuideDisplay();
     }
 }

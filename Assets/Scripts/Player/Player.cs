@@ -185,7 +185,11 @@ public class Player : MonoBehaviour
     private void DoActionGuide()
     {
         if (inputs.asset[GuideKey].WasPerformedThisFrame())
+        {
+            if (guide.IsOnGateKeeperTrial)
+                guide.ToggleGatekeeperTrialDisplay();
             guide.ToggleGuideDisplay();
+        }
 
         if (!guide.Visible)
             SetModeMove();
