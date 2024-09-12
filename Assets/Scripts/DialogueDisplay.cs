@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class DialogueDisplay : MonoBehaviour
 {
     private Dialogue dialogue;
@@ -12,12 +12,13 @@ public class DialogueDisplay : MonoBehaviour
         get => dialogue;
         set
         {
-            if (dialogue == value || visible)
+            if (dialogue == value || visible || value?.Texts.Length == 0)
                 return;
             
             dialogue = value;
-            textAdvanceTimer = 0f;
-            DisplayedCharacters = 0;
+            ResetTextPosition();
+            DialogueTextIndex = 0;
+            UpdateSprite();
 
             Show();
         }
@@ -25,27 +26,32 @@ public class DialogueDisplay : MonoBehaviour
     
     private float textAdvanceTimer;
 
-    public int DisplayedCharacters { get; private set; }
+    public DialogueText CurrentText => CurrentDialogue.Texts[DialogueTextIndex];
 
+    public int DisplayedCharacters { get; private set; }
+    
+    public int DialogueTextIndex { get; private set; }
+
+    [SerializeField]
     private TextMeshProUGUI textMesh;
 
     private bool visible;
     
-    private Vector3 initialParentPosition;
-    
     private PlayerActions input;
+
+    private Guide guide;
+
+    [SerializeField]
+    private Image characterImage;
+    
+    private Player player;
 
     private void Start()
     {
-        textMesh = GetComponent<TextMeshProUGUI>();
         input = new();
         input.Enable();
-    }
-
-    private void Awake()
-    {
-        initialParentPosition = transform.parent.position;
-        ResetPosition();
+        guide = FindObjectOfType<Guide>();
+        player = FindObjectOfType<Player>();
     }
 
     private void Update()
@@ -59,27 +65,43 @@ public class DialogueDisplay : MonoBehaviour
         if (input.asset["Interact"].WasPerformedThisFrame() && DisplayedCharacters > 0)
         {
             // When interacting again while the dialogue is displayed
-            int textLength = dialogue.Text.Length;
+            int textLength = CurrentText.Text.Length;
             if (DisplayedCharacters >= textLength)
             {
-                // If the text is already displayed in its entirety, close the dialogue
-                dialogue = null;
-                textMesh.text = string.Empty;
-                return;
+                // If the text is already displayed in its entirety, check whether the dialogue is finished
+                if (++DialogueTextIndex < dialogue.Texts.Length)
+                {
+                    // There is still more text to display, reset the current position and timer
+                    ResetTextPosition();
+                    UpdateSprite();
+                }
+                else
+                {
+                    // Unlock the information in the guide and close the dialogue
+                    foreach (DialogueInfo info in dialogue.RewardInformation)
+                        guide.UnlockInformation(info.Text, info.GatekeeperInformation);
+                    Hide();
+                    textMesh.text = string.Empty;
+                    dialogue.OnDialogueEnd.Invoke();
+                    dialogue = null;
+                    return;
+                }
             }
-            
-            // Otherwise, show the full dialogue text
-            DisplayedCharacters = textLength;
-            textAdvanceTimer = 0f;
+            else
+            {
+                // Otherwise, show the full dialogue text
+                DisplayedCharacters = textLength;
+                textAdvanceTimer = 0f;
+            }
         }
 
         if (textAdvanceTimer <= 0f)
         {
             // Increase the displayed characters by one, making sure it is still less than or equal to the text length
-            DisplayedCharacters = Math.Min(DisplayedCharacters + 1, dialogue.Text.Length);
-            textAdvanceTimer = dialogue.TextAdvanceDelay;
+            DisplayedCharacters = Math.Min(DisplayedCharacters + 1, CurrentText.Text.Length);
+            textAdvanceTimer = Dialogue.TextAdvanceDelay;
             
-            textMesh.text = dialogue.Text[..DisplayedCharacters];
+            textMesh.text = CurrentText.Text[..DisplayedCharacters].Replace('\\', '\n');
         }
         
         textAdvanceTimer -= Time.deltaTime;
@@ -88,14 +110,37 @@ public class DialogueDisplay : MonoBehaviour
     public void Show()
     {
         visible = true;
-        transform.parent.position = initialParentPosition;
+        player.SetModeDummy();
+        gameObject.SetActive(true);
     }
 
     public void Hide()
     {
         visible = false;
-        ResetPosition();
+        player.SetModeMove();
+        gameObject.SetActive(false);
     }
-    
-    private void ResetPosition() => transform.parent.position = initialParentPosition + Vector3.down * 150f;
+
+    private void ResetTextPosition()
+    {
+        DisplayedCharacters = 0;
+        textAdvanceTimer = 0f;
+    }
+
+    private void UpdateSprite()
+    {
+        if (dialogue is null)
+            return;
+
+        characterImage.sprite = dialogue.Texts[DialogueTextIndex].Sprite;
+        if (!characterImage.sprite && dialogue.TryGetComponent(out SpriteRenderer spriteRenderer))
+        {
+            characterImage.sprite = spriteRenderer.sprite;
+
+            if (!characterImage.sprite)
+                characterImage.sprite = dialogue.GetComponentInParent<SpriteRenderer>().sprite;
+        }
+
+        characterImage.color = characterImage.sprite ? Color.white : new(0f, 0f, 0f, 0f);
+    }
 }

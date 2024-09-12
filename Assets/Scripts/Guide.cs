@@ -1,25 +1,27 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Guide : MonoBehaviour
 {
-    private const int MaxInformationLeftPage = 10;
-    private int numberOfInformationLeft; // link with npc
-    private const int MaxInformationRightPage = 4;
-    private int numberOfInformationRight = 4; // link with npc
-
     private Information[] leftPageInformation;
     private Information[] rightPageInformation;
 
-    [SerializeField] private GameObject displayGuide;
+    [SerializeField]
+    private GameObject guideDisplay;
+    private bool visible = true;
+
+    [SerializeField]
+    private GatekeeperTrial GatekeeperTrial;
 
     private void Start()
     {
-        Information[] information = FindObjectsOfType<Information>();
-        leftPageInformation = information.Where(x => !x.isRight).ToArray();
-        rightPageInformation = information.Where(x => x.isRight).ToArray();
+        List<Information> information = FindObjectsOfType<Information>().ToList();
+        information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
+        leftPageInformation = information.Where(x => !x.IsRight).ToArray();
+        rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
-
         ToggleGuideDisplay();
     }
 
@@ -27,24 +29,40 @@ public class Guide : MonoBehaviour
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-        int validatedDialogues = 0;
+        int leftInfos = 0, rightInfos = 0;
 
         foreach (Dialogue p in npcs)
         {
-            if (!p.HasInformation)
-                continue;
-
-            Information info = p.GatekeeperInformation ? rightPageInformation[validatedDialogues] : leftPageInformation[validatedDialogues];
-            info.InformationText = p.InformationText;
-            info.SetTextUI();
-
-            validatedDialogues++;
+            foreach (DialogueInfo i in p.RewardInformation)
+            {
+                Information info = i.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
+                info.InformationText = i.Text;
+                info.IsTruth = i.Truth;
+                info.SetUI();
+            }
         }
     }
-    //private void ClearLeftPage() => leftPageInformation.;
 
     public void ToggleGuideDisplay()
     {
-        displayGuide.SetActive(!displayGuide.activeSelf);
+        visible = !visible;
+        guideDisplay.gameObject.SetActive(!guideDisplay.gameObject.activeSelf);
+
+        if (!visible && GatekeeperTrial.gameObject.activeSelf)
+            GatekeeperTrial.gameObject.SetActive(false);
+    }
+
+    public void ToggleGatekeeperTrialDisplay()
+    {
+        GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
+    }
+
+    public void UnlockInformation(string informationText, bool rightInfo)
+    {
+        foreach (Information info in rightInfo ? rightPageInformation : leftPageInformation)
+        {
+            if (info.InformationText == informationText)
+                info.gameObject.SetActive(true);
+        }
     }
 }

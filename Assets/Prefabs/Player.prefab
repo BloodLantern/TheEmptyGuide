@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4677106913510558630}
   - component: {fileID: 4847924738664246812}
   - component: {fileID: 5394559288089673425}
+  - component: {fileID: 923027059810124629}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -158,6 +159,8 @@ MonoBehaviour:
   groundedMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  sprite: {fileID: 0}
+  rayDistance: 1.7
 --- !u!58 &5394559288089673425
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -193,6 +196,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &923027059810124629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475529453773543500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453d019f3f1339746af3f2d257e57bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayGuide: {fileID: 0}
 --- !u!1 &4552820804055174737
 GameObject:
   m_ObjectHideFlags: 0
