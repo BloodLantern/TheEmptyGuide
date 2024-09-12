@@ -1,0 +1,555 @@
+fileFormatVersion: 2
+guid: ed08ba4c8c68f784b94b9625f9cac07c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Visage
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3763
+      width: 479
+      height: 249
+    spriteID: fdf42513449fd0b41b46a17bac177e01
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3763}
+    spritePosition: {x: 67, y: 1306}
+  - name: Main_frere
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 305
+      y: 3358
+      width: 66
+      height: 90
+    spriteID: de3183719933b684db8938925664f6b0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 305, y: 3358}
+    spritePosition: {x: 99, y: 1273}
+  - name: Bras_croiser
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1156
+      y: 4
+      width: 536
+      height: 154
+    spriteID: afa2acde581ced449b422294f768692c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1156, y: 4}
+    spritePosition: {x: 457, y: 1227}
+  - name: Corps
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1317
+      width: 425
+      height: 652
+    spriteID: 0996bd8619432d94492d902ea943e734
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1317}
+    spritePosition: {x: 103, y: 712}
+  - name: Bras_gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 552
+      height: 617
+    spriteID: 20f3f3c7d8ce2df49b6da6ef0dcce113
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 0, y: 751}
+  - name: Jambe_gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2735
+      width: 293
+      height: 730
+    spriteID: 4abe933172c0b39449f9ad4d60bd2330
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2735}
+    spritePosition: {x: 49, y: 51}
+  - name: Jambe_droite
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 564
+      y: 4
+      width: 282
+      height: 757
+    spriteID: af84e4bae9d0a9d4597fe52c34106914
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 564, y: 4}
+    spritePosition: {x: 351, y: 32}
+  - name: Visage
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3473
+      width: 472
+      height: 282
+    spriteID: 481f12a4a71fc6e4fa260f72ce3c96b7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3473}
+    spritePosition: {x: 563, y: 1298}
+  - name: Corps
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 629
+      width: 428
+      height: 680
+    spriteID: 30db89922dced6347aa23e5a605a78ce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 629}
+    spritePosition: {x: 526, y: 699}
+  - name: Bras_droit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 305
+      y: 2735
+      width: 149
+      height: 615
+    spriteID: ba3035c8b5b0b0d4ab2621f9c351b7d7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 305, y: 2735}
+    spritePosition: {x: 915, y: 712}
+  - name: Jambe_gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 854
+      y: 4
+      width: 294
+      height: 725
+    spriteID: 9260048c6ae0c7b42b45f8084fc173f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 854, y: 4}
+    spritePosition: {x: 417, y: 66}
+  - name: Jambe_droite
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1977
+      width: 299
+      height: 750
+    spriteID: ebee23e2258817f42925b2ac07183250
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1977}
+    spritePosition: {x: 765, y: 37}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Grenouille_6
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 6ca1fccecb429f74f82bdc20e982c7b5
+    layerID: 12
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: "Fr\xE8re_gauche"
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: 9e38190369ed1f641b1670cbbfd885c6
+    layerID: 112
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Visage
+    spriteName: Visage
+    isGroup: 0
+    parentIndex: 1
+    spriteID: fdf42513449fd0b41b46a17bac177e01
+    layerID: 97
+    mosaicPosition: {x: 4, y: 3763}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Main_frere
+    spriteName: Main_frere
+    isGroup: 0
+    parentIndex: 1
+    spriteID: de3183719933b684db8938925664f6b0
+    layerID: 117
+    mosaicPosition: {x: 305, y: 3358}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bras_croiser
+    spriteName: Bras_croiser
+    isGroup: 0
+    parentIndex: 1
+    spriteID: afa2acde581ced449b422294f768692c
+    layerID: 116
+    mosaicPosition: {x: 1156, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Corps
+    spriteName: Corps
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 0996bd8619432d94492d902ea943e734
+    layerID: 109
+    mosaicPosition: {x: 4, y: 1317}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bras_gauche
+    spriteName: Bras_gauche
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 20f3f3c7d8ce2df49b6da6ef0dcce113
+    layerID: 118
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_gauche
+    spriteName: Jambe_gauche
+    isGroup: 0
+    parentIndex: 1
+    spriteID: 4abe933172c0b39449f9ad4d60bd2330
+    layerID: 111
+    mosaicPosition: {x: 4, y: 2735}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_droite
+    spriteName: Jambe_droite
+    isGroup: 0
+    parentIndex: 1
+    spriteID: af84e4bae9d0a9d4597fe52c34106914
+    layerID: 110
+    mosaicPosition: {x: 564, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: "Fr\xE8re_droit"
+    spriteName: 
+    isGroup: 1
+    parentIndex: 0
+    spriteID: d21683584b599fe42b442c3f8ae7f852
+    layerID: 114
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Visage
+    spriteName: Visage
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 481f12a4a71fc6e4fa260f72ce3c96b7
+    layerID: 96
+    mosaicPosition: {x: 4, y: 3473}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Corps
+    spriteName: Corps
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 30db89922dced6347aa23e5a605a78ce
+    layerID: 103
+    mosaicPosition: {x: 4, y: 629}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bras_droit
+    spriteName: Bras_droit
+    isGroup: 0
+    parentIndex: 9
+    spriteID: ba3035c8b5b0b0d4ab2621f9c351b7d7
+    layerID: 119
+    mosaicPosition: {x: 305, y: 2735}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_gauche
+    spriteName: Jambe_gauche
+    isGroup: 0
+    parentIndex: 9
+    spriteID: 9260048c6ae0c7b42b45f8084fc173f7
+    layerID: 106
+    mosaicPosition: {x: 854, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_droite
+    spriteName: Jambe_droite
+    isGroup: 0
+    parentIndex: 9
+    spriteID: ebee23e2258817f42925b2ac07183250
+    layerID: 105
+    mosaicPosition: {x: 4, y: 1977}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Calque 0
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: abedbc4ccb87c7946966bd2c82582865
+    layerID: 2
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

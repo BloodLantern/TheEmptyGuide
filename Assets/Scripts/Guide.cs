@@ -1,57 +1,68 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.UI;
-
-
 
 public class Guide : MonoBehaviour
 {
-    [FormerlySerializedAs("numberOfInformationsPerPage")] [SerializeField]
-    private int numberOfInformationPerPage;
-    private int numberOfInformation = 9; // link with npc
+    private Information[] leftPageInformation;
+    private Information[] rightPageInformation;
 
-    private Image image;
-    private float width, height;
+    [SerializeField]
+    private GameObject guideDisplay;
+    private bool visible = true;
 
-    private Page[] pages;
+    [SerializeField]
+    private GatekeeperTrial GatekeeperTrial;
 
     private void Start()
     {
-        image = FindObjectsOfType<Image>().First(x => x.gameObject.name == "GuideImage");
-
-        int informationCount = numberOfInformation / numberOfInformationPerPage;
-        pages = new Page[numberOfInformation % numberOfInformationPerPage == 0 ? informationCount : informationCount + 1];
-
-        AddInformationToPages();
-
-        Debug.Log(pages.Length);
-        width = image.rectTransform.rect.width;
-        height = image.rectTransform.rect.height;
+        List<Information> information = FindObjectsOfType<Information>().ToList();
+        information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
+        leftPageInformation = information.Where(x => !x.IsRight).ToArray();
+        rightPageInformation = information.Where(x => x.IsRight).ToArray();
+        ExtractInformationFromNpcs();
+        ToggleGuideDisplay();
     }
 
-    private void Update() => DisplayPages();
-
-    private void AddInformationToPages()
+    private void ExtractInformationFromNpcs()
     {
-        foreach (Page page in pages)
-            page.informations.Add(new());
-    }
+        Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-    private void DisplayPages()
-    {
-        if (pages == null)
-            return;
-        
-        foreach (Page page in pages)
+        int leftInfos = 0, rightInfos = 0;
+
+        foreach (Dialogue p in npcs)
         {
-            //page.DisplayInformation(numberOfInformation);
+            foreach (DialogueInfo i in p.RewardInformation)
+            {
+                Information info = i.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
+                info.InformationText = i.Text;
+                info.IsTruth = i.Truth;
+                info.SetUI();
+            }
         }
     }
 
-    private void ClearPages() => Array.Clear(pages, 0, pages.Length);
+    public void ToggleGuideDisplay()
+    {
+        visible = !visible;
+        guideDisplay.gameObject.SetActive(!guideDisplay.gameObject.activeSelf);
+
+        if (!visible && GatekeeperTrial.gameObject.activeSelf)
+            GatekeeperTrial.gameObject.SetActive(false);
+    }
+
+    public void ToggleGatekeeperTrialDisplay()
+    {
+        GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
+    }
+
+    public void UnlockInformation(string informationText, bool rightInfo)
+    {
+        foreach (Information info in rightInfo ? rightPageInformation : leftPageInformation)
+        {
+            if (info.InformationText == informationText)
+                info.gameObject.SetActive(true);
+        }
+    }
 }

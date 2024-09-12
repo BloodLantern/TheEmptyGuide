@@ -1,43 +1,62 @@
-using NaughtyAttributes;
+using System;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
+
+[Serializable]
+public struct DialogueText
+{
+    [SerializeField]
+    private string text;
+    public string Text => text;
+    
+    [Tooltip("Sprite of the character that is currently talking. Set to the current SpriteRenderer if null")]
+    [SerializeField]
+    private Sprite sprite;
+    public Sprite Sprite => sprite;
+}
+
+[Serializable]
+public struct DialogueInfo
+{
+    [SerializeField]
+    private string text;
+    public string Text => text;
+
+    [SerializeField]
+    private bool truth;
+    public bool Truth => truth;
+        
+    [Tooltip("Whether the information comes from a gatekeeper and should be on the right page of the guide")]
+    [SerializeField]
+    private bool gatekeeperInformation;
+    public bool GatekeeperInformation => gatekeeperInformation;
+}
 
 public class Dialogue : MonoBehaviour
 {
-    [Tooltip("Dialogue text")]
+    public const float TextAdvanceDelay = 0.05f;
+    
     [SerializeField]
-    private string text = string.Empty;
-    public string Text => text;
-
-    [Tooltip("Delay in seconds between each character")]
+    private DialogueText[] texts;
+    public DialogueText[] Texts => texts;
+    
     [SerializeField]
-    private float textAdvanceDelay = 0.05f;
-    public float TextAdvanceDelay => textAdvanceDelay;
-
-    [Tooltip("Whether this dialogue gives an information")]
-    [SerializeField]
-    private bool hasInformation;
-
-    [Header("Information data")]
-    [Tooltip("If empty, will instead use the dialogue text")]
-    [ShowIf("hasInformation")]
-    [SerializeField]
-    private string informationText = string.Empty;
-    public string InformationText => informationText == string.Empty ? text : informationText;
-
-    [Tooltip("Whether the information is true or false")]
-    [ShowIf("hasInformation")]
-    [SerializeField]
-    private bool validInformation;
-    public bool ValidInformation => validInformation;
+    private DialogueInfo[] rewardInformation;
+    public DialogueInfo[] RewardInformation => rewardInformation;
 
     private DialogueDisplay dialogueDisplay;
 
+    [SerializeField]
+    private UnityEvent onDialogueEnd;
+    public UnityEvent OnDialogueEnd => onDialogueEnd;
+
     private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
 
-    private void Update()
+    private void Awake()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-            Display();
+        if (TryGetComponent(out Interactable i))
+            i.onInteract.AddListener(Display);
     }
 
     public void Display() => dialogueDisplay.CurrentDialogue = this;
