@@ -77,14 +77,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   timeInAir: 1
-  jumpHeight: 1
+  jumpHeight: 10
   jumpMask:
     serializedVersion: 2
     m_Bits: 0
   groundedMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 243
   sprite: {fileID: 0}
+  jumpDetectionDistance: 0.4
   rayDistance: 1.7
 --- !u!114 &923027059810124629
 MonoBehaviour:
@@ -132,8 +133,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.8204043, y: 4.0606174}
-  m_Size: {x: 3.3591914, y: 7.0359173}
+  m_Offset: {x: -0.8204043, y: 9.35}
+  m_Size: {x: 3.3591914, y: 16.34}
   m_Direction: 0
 --- !u!1001 &7674577214705299699
 PrefabInstance:
