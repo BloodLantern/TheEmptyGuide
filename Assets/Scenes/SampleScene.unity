@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   - component: {fileID: 519420036}
+  - component: {fileID: 519420037}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -281,11 +282,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1312525168
-      Data2: 1118386982
-      Data3: 803589288
-      Data4: 901902088
-    Path: event:/Music
+      Data1: 1021605966
+      Data2: 1099976617
+      Data3: 1466821310
+      Data4: -897244854
+    Path: event:/Music/Music_Menu
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -317,6 +318,37 @@ MonoBehaviour:
   - UI
   CollisionTag: 
   PreloadSamples: 0
+--- !u!114 &519420037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1381421622
+      Data2: 1277820222
+      Data3: -1074688893
+      Data4: -1963717725
+    Path: event:/SFX/Ambiance/Ambiance_Plage
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &527474786
 GameObject:
   m_ObjectHideFlags: 0
