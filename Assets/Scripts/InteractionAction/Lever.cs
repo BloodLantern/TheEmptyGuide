@@ -24,6 +24,9 @@ public class Lever : MonoBehaviour
     private GameObject obj;
     public GameObject Obj => obj;
 
+    [SerializeField]
+    private bool multipleActivations;
+
     public bool EnabledState { get; private set; }
 
     public bool DoorType => type == LeverType.Door;
@@ -57,7 +60,7 @@ public class Lever : MonoBehaviour
 
     private void Toggle()
     {
-        if (EnabledState)
+        if (EnabledState && !multipleActivations)
             return;
         
         EnabledState = !EnabledState;
