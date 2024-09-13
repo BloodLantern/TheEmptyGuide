@@ -27,6 +27,8 @@ namespace Com.EliottTan.SceneTransitions
         enum TransitionType { toScene, toMethod}
         TransitionType transitionType;
 
+        int delay = 1000;
+
         public async void TransitionToNextScene(int pSceneIndex,LoadSceneMode pMode = LoadSceneMode.Single)
         {
             transitionType = TransitionType.toScene;
@@ -34,7 +36,7 @@ namespace Com.EliottTan.SceneTransitions
 
             while (!startAnimationFinished)
             {
-                await Task.Delay(1000);
+                await Task.Delay(delay);
             }
 
             AsyncOperation lNextScene = SceneManager.LoadSceneAsync(pSceneIndex,pMode);
@@ -43,7 +45,7 @@ namespace Com.EliottTan.SceneTransitions
             while (lNextScene.progress < maxAnimationProgress)
             {
                 onAsyncLoadProgress?.Invoke(lNextScene.progress);
-                await Task.Delay(1000);
+                await Task.Delay(delay);
             }
 
             lNextScene.allowSceneActivation = true;
@@ -56,7 +58,7 @@ namespace Com.EliottTan.SceneTransitions
 
             while (!startAnimationFinished)
             {
-                await Task.Delay(1000);
+                await Task.Delay(delay);
             }
 
             AsyncOperation lNextScene = SceneManager.LoadSceneAsync(pSceneName, pMode);
@@ -65,7 +67,7 @@ namespace Com.EliottTan.SceneTransitions
             while (lNextScene.progress < maxAnimationProgress)
             {
                 onAsyncLoadProgress?.Invoke(lNextScene.progress);
-                await Task.Delay(1000);
+                await Task.Delay(delay);
             }
 
             lNextScene.allowSceneActivation = true;

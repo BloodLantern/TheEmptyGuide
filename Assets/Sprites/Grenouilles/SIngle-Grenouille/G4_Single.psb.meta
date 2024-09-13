@@ -1,0 +1,466 @@
+fileFormatVersion: 2
+guid: 1e5177452e141bb49b57ebd9d4d566f3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 1
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: G4_Single_1
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 1080
+      height: 1920
+    spriteID: 100602aad32cd964687a1b7d22f607d9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+    spritePosition: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Echarpe
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 701
+      width: 545
+      height: 692
+    spriteID: 52f90903a54ff4e40bf7f849a8b3b5c9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 701}
+    spritePosition: {x: 237, y: 828}
+  - name: Visage
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1401
+      width: 457
+      height: 317
+    spriteID: 0be05ee38bd5a594888fdc1dfac2b896
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1401}
+    spritePosition: {x: 278, y: 1412}
+  - name: Pull
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 641
+      height: 689
+    spriteID: 7704e097f49d8244c86e0b9828e089f0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+    spritePosition: {x: 200, y: 769}
+  - name: Bras_gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1578
+      y: 701
+      width: 264
+      height: 739
+    spriteID: 1926d542f537f7740afa3715d60f1b47
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1578, y: 701}
+    spritePosition: {x: 107, y: 712}
+  - name: Bras_droit
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1280
+      y: 701
+      width: 290
+      height: 737
+    spriteID: 40e0a8d5e9f89b24b924edba40b872ad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1280, y: 701}
+    spritePosition: {x: 678, y: 714}
+  - name: Jambe_droite
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 557
+      y: 701
+      width: 348
+      height: 920
+    spriteID: 51b0fe5ec2e64284198ce08e1754bbfe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 557, y: 701}
+    spritePosition: {x: 632, y: 41}
+  - name: Jambe_Gauche
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 913
+      y: 701
+      width: 359
+      height: 884
+    spriteID: c7a479b53e24bb849a0679b5ca45527c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 913, y: 701}
+    spritePosition: {x: 82, y: 63}
+  - name: Lampe
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1578
+      y: 1448
+      width: 293
+      height: 565
+    spriteID: 4d9b02bc1347ae84598fbc551ebd8c87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1578, y: 1448}
+    spritePosition: {x: 14, y: 222}
+  - name: Echarpe_arriere
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 557
+      y: 1629
+      width: 167
+      height: 293
+    spriteID: 315567ac753ab9147a47d99aa0a34440
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 557, y: 1629}
+    spritePosition: {x: 691, y: 616}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    pivot: {x: 0, y: 0}
+    boneReadOnly: 0
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  layerMappingOption: 2
+  generatePhysicsShape: 0
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  pipeline: {instanceID: 0}
+  pipelineVersion: 
+  padding: 4
+  spriteSizeExpand: 0
+  spriteCategoryList:
+    categories: []
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Grenouille_1_fusion
+    spriteName: 
+    isGroup: 1
+    parentIndex: -1
+    spriteID: 76ab91157228f8243854c34e440dd39a
+    layerID: 53
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 1
+  - name: Echarpe
+    spriteName: Echarpe
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 52f90903a54ff4e40bf7f849a8b3b5c9
+    layerID: 52
+    mosaicPosition: {x: 4, y: 701}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Visage
+    spriteName: Visage
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 0be05ee38bd5a594888fdc1dfac2b896
+    layerID: 48
+    mosaicPosition: {x: 4, y: 1401}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Pull
+    spriteName: Pull
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 7704e097f49d8244c86e0b9828e089f0
+    layerID: 46
+    mosaicPosition: {x: 4, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bras_gauche
+    spriteName: Bras_gauche
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 1926d542f537f7740afa3715d60f1b47
+    layerID: 44
+    mosaicPosition: {x: 1578, y: 701}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Bras_droit
+    spriteName: Bras_droit
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 40e0a8d5e9f89b24b924edba40b872ad
+    layerID: 42
+    mosaicPosition: {x: 1280, y: 701}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_droite
+    spriteName: Jambe_droite
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 51b0fe5ec2e64284198ce08e1754bbfe
+    layerID: 40
+    mosaicPosition: {x: 557, y: 701}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Jambe_Gauche
+    spriteName: Jambe_Gauche
+    isGroup: 0
+    parentIndex: 0
+    spriteID: c7a479b53e24bb849a0679b5ca45527c
+    layerID: 38
+    mosaicPosition: {x: 913, y: 701}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Lampe
+    spriteName: Lampe
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 4d9b02bc1347ae84598fbc551ebd8c87
+    layerID: 58
+    mosaicPosition: {x: 1578, y: 1448}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Echarpe_arriere
+    spriteName: Echarpe_arriere
+    isGroup: 0
+    parentIndex: 0
+    spriteID: 315567ac753ab9147a47d99aa0a34440
+    layerID: 36
+    mosaicPosition: {x: 557, y: 1629}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
+  - name: Calque 0
+    spriteName: 
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d423432aae81a254f9071e9476fa2761
+    layerID: 2
+    mosaicPosition: {x: 0, y: 0}
+    flatten: 0
+    isImported: 0
+    isVisible: 0
+  sharedRigPSDLayers: []
+  pSDLayerImportSetting: []
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  spriteSizeExpandChanged: 0
+  generateGOHierarchy: 0
+  textureAssetName: 
+  prefabAssetName: 
+  spriteLibAssetName: 
+  skeletonAssetName: 
+  secondarySpriteTextures: []

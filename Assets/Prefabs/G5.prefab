@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.013, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 897412056090061387}
@@ -48,8 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
-  rewardInformation: []
+  texts:
+  - text: 'Les braves comme moi ont besoin de nourriture. '
+    sprite: {fileID: -3130711134245174922, guid: 6ba8f94a100113143af2a8b1ccb4fe30, type: 3}
+  - text: "Malheureusement, le coffre est compl\xE8tement vide, combien de temps
+      vais-je tenir ?"
+    sprite: {fileID: -3130711134245174922, guid: 6ba8f94a100113143af2a8b1ccb4fe30, type: 3}
+  rewardInformation:
+  - text: "Malheureusement, le coffre est compl\xE8tement vide"
+    truth: 0
+    gatekeeperInformation: 0
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
