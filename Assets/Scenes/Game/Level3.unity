@@ -5081,11 +5081,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104896124160945812, guid: a7adf859182d8f9429650557b08329fa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.1143017
+      value: -3.563
       objectReference: {fileID: 0}
     - target: {fileID: 104896124160945812, guid: a7adf859182d8f9429650557b08329fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.488044
+      value: -3.001
       objectReference: {fileID: 0}
     - target: {fileID: 104896124160945812, guid: a7adf859182d8f9429650557b08329fa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23156,6 +23156,11 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4444426411966641861, guid: 228291132c457ea4ba984af9a3d5e716, type: 3}
+      propertyPath: texts.Array.data[0].text
+      value: "Je ne demande que 5 informations, ce n'est pas bien cher pay\xE9, vous
+        ne trouvez pas, l'ami ?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444426411966641861, guid: 228291132c457ea4ba984af9a3d5e716, type: 3}
       propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 553505925}
@@ -24638,6 +24643,11 @@ PrefabInstance:
     - target: {fileID: 104896124160945812, guid: 6f877ac84b952ff4b88d026a8806cdf7, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: 6f877ac84b952ff4b88d026a8806cdf7, type: 3}
+      propertyPath: texts.Array.data[1].text
+      value: "Le levier de l'autre c\xF4t\xE9 du ponton ouvre le coffre qui se trouve
+        dans l'impasse, mais j'ai trop peur pour sauter de l'autre c\xF4t\xE9. "
       objectReference: {fileID: 0}
     - target: {fileID: 822367152236517410, guid: 6f877ac84b952ff4b88d026a8806cdf7, type: 3}
       propertyPath: m_SortingOrder
