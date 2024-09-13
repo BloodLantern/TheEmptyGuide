@@ -46,6 +46,16 @@ public class Lever : MonoBehaviour
     private Color oldColor;
     private Sprite oldSprite;
 
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private Sprite enabledSprite;
+
+    private Sprite disabledSprite;
+
+    [SerializeField]
+    private Vector2 enabledSpriteOffset;
+
     private void Awake()
     {
         interactable = GetComponent<Interactable>();
@@ -56,6 +66,9 @@ public class Lever : MonoBehaviour
             oldColor = objRenderer.color;
             oldSprite = objRenderer.sprite;
         }
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        disabledSprite = spriteRenderer.sprite;
     }
 
     private void Toggle()
@@ -64,6 +77,17 @@ public class Lever : MonoBehaviour
             return;
         
         EnabledState = !EnabledState;
+
+        if (EnabledState)
+        {
+            spriteRenderer.sprite = enabledSprite;
+            spriteRenderer.transform.localPosition += (Vector3) enabledSpriteOffset;
+        }
+        else
+        {
+            spriteRenderer.sprite = disabledSprite;
+            spriteRenderer.transform.localPosition -= (Vector3) enabledSpriteOffset;
+        }
         
         switch (type)
         {
