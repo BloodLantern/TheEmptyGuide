@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4349432738298937313}
   - component: {fileID: 5560770456906511611}
   m_Layer: 0
-  m_Name: 0_Gatekeeper
+  m_Name: C1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,13 +50,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - text: "Bien le bonjour, la sortie de la grotte se trouve juste derri\xE8re moi."
-    sprite: {fileID: 0}
-  - text: "Je ne demande que 4 informations, ce n'est pas bien cher pay\xE9, vous
-      ne trouvez pas, l'ami ?"
-    sprite: {fileID: 0}
+  - text: "Vous \xEAtes le naufrag\xE9 n'est-ce pas ? Ces deux grenouilles m'ont
+      inform\xE9 de la situation."
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: Vous souhaitez certainement sortir, cependant pour cela, je suis au regret
+      de vous informer qu'il faudra payer pour passer.
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: "Je ne souhaite aucunement de l'or, ici la seule monnaie accept\xE9e est
+      l'information."
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: " Vous avez de la chance, je suis d'humeur g\xE9n\xE9reuse, je vous demanderais
+      seulement 2 informations"
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: Une vraie et une fausse.
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: "Avez-vous le n\xE9cessaire pour passer ?"
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
   rewardInformation:
-  - text: 
+  - text: "mais je vous rassure, il a \xE9t\xE9 bien accueilli"
     truth: 0
     gatekeeperInformation: 1
   onDialogueEnd:
@@ -185,8 +196,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 10.8, y: 19.2}
+  m_Offset: {x: -0.49137235, y: 1.5443099}
+  m_Size: {x: 24.698845, y: 32.70119}
   m_Direction: 0
 --- !u!1 &8373148609156842321
 GameObject:
