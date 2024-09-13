@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8030568714808552194}
@@ -48,8 +48,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
-  rewardInformation: []
+  texts:
+  - text: "Je vous en prie aidez moi ! Mes enfants, mes pauvres enfants ont \xE9t\xE9
+      enlev\xE9s par la sorci\xE8re du marais !"
+    sprite: {fileID: 4423918545858727496, guid: 9dbc5e78a8879b744a51606ff3918787, type: 3}
+  rewardInformation:
+  - text: "Mes enfants, mes pauvres enfants ont \xE9t\xE9 enlev\xE9s "
+    truth: 0
+    gatekeeperInformation: 0
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

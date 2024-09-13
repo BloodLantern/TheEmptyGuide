@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4548345919105331609}
@@ -48,8 +48,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts: []
-  rewardInformation: []
+  texts:
+  - text: "Les journ\xE9es sont longues dans cette grotte, le son de l'eau est hypnotisant... "
+    sprite: {fileID: -6699110398323923942, guid: 1e5177452e141bb49b57ebd9d4d566f3, type: 3}
+  - text: "Tu ne viens pas d'ici ? Il y a pas mal de secrets cach\xE9s ici. D'ailleurs,
+      il y a un levier dissimul\xE9 quelque part aux alentours."
+    sprite: {fileID: -6699110398323923942, guid: 1e5177452e141bb49b57ebd9d4d566f3, type: 3}
+  rewardInformation:
+  - text: "D'ailleurs, il y a un levier dissimul\xE9 quelque part aux alentours"
+    truth: 1
+    gatekeeperInformation: 0
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []
