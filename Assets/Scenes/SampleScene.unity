@@ -468,20 +468,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0600ab7cb7f9e524b931e477d96b4b35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <_sfxSucces>k__BackingField:
+  <noDrop>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -2039724352
+      Data2: 1260365898
+      Data3: 1886311571
+      Data4: -631694075
+    Path: event:/UI/Bouton/UI_Cochage_No
   _backBtn:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1673019425
+      Data2: 1248832134
+      Data3: -1143372385
+      Data4: -222326939
+    Path: event:/UI/Bouton/UI_Bouton_Back
+  yesDrop:
+    Guid:
+      Data1: 571677255
+      Data2: 1189485657
+      Data3: -1248650577
+      Data4: 1132131069
+    Path: event:/UI/Bouton/UI_Cochage_Yes
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,8 +6,9 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [field: SerializeField] public EventReference _sfxSucces { get; private set; }
+    [field: SerializeField] public EventReference noDrop { get; private set; }
     [SerializeField] public EventReference _backBtn;
+    public EventReference yesDrop;
 
     private static SoundManager _instance;
 
@@ -61,7 +62,6 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlaySucces(transform.position);
     }
 
     public float GetVolume(volType type)
@@ -109,11 +109,6 @@ public class SoundManager : MonoBehaviour
     public void PlayBackButton(Vector3 pPos)
     {
         PlaySFX(_backBtn, pPos);
-    }
-
-    public void PlaySucces(Vector3 pPosition)
-    {
-        PlaySFX(_sfxSucces, transform.position);
     }
 
 }
