@@ -189,7 +189,6 @@ public class Player : MonoBehaviour
         if (jumpDestination != Vector2.zero)
         {
             transform.position = newPosition;
-            SoundManager.Instance.PlaySFX(landingSound, transform.position);
         }
             
         
@@ -198,6 +197,7 @@ public class Player : MonoBehaviour
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
+            SoundManager.Instance.PlaySFX(landingSound, transform.position);
             animatorTransform.localPosition = new(animatorTransform.localPosition.x, jumpStart.y);
             SetModeMove();
         }
