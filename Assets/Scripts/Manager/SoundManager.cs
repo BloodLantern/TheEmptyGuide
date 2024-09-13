@@ -7,6 +7,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     [field: SerializeField] public EventReference _sfxSucces { get; private set; }
+    [SerializeField] public EventReference _backBtn;
 
     private static SoundManager _instance;
 
@@ -22,6 +23,7 @@ public class SoundManager : MonoBehaviour
     public VCA _masterBus;
     public VCA _sfxBus;
     public VCA _musicBus;
+
 
     public enum volType
     {
@@ -102,6 +104,11 @@ public class SoundManager : MonoBehaviour
     public void PlaySFX(EventReference pSound, Vector3 pPosition)
     {
         RuntimeManager.PlayOneShot(pSound, pPosition);
+    }
+
+    public void PlayBackButton(Vector3 pPos)
+    {
+        PlaySFX(_backBtn, pPos);
     }
 
     public void PlaySucces(Vector3 pPosition)

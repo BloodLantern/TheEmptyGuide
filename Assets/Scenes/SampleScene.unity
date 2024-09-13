@@ -475,6 +475,13 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
+  _backBtn:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,6 +659,90 @@ PrefabInstance:
     - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
       propertyPath: playScene
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditScene
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: playSfx.Path
+      value: event:/UI/Bouton/UI_Bouton_PLay
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: quitSfx.Path
+      value: event:/UI/Bouton/UI_Bouton_Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditSfx.Path
+      value: event:/UI/Bouton/UI_Bouton_Ingame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: settingSfx.Path
+      value: event:/UI/Bouton/UI_Bouton_Option
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: playSfx.Guid.Data1
+      value: 584370842
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: playSfx.Guid.Data2
+      value: 1104771417
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: playSfx.Guid.Data3
+      value: -1773175884
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: playSfx.Guid.Data4
+      value: 321484073
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: quitSfx.Guid.Data1
+      value: -974467687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: quitSfx.Guid.Data2
+      value: 1314168115
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: quitSfx.Guid.Data3
+      value: 1946267029
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: quitSfx.Guid.Data4
+      value: 514838504
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditSfx.Guid.Data1
+      value: -370274208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditSfx.Guid.Data2
+      value: 1113996239
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditSfx.Guid.Data3
+      value: 785677955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: creditSfx.Guid.Data4
+      value: 905409399
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: settingSfx.Guid.Data1
+      value: -2105901983
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: settingSfx.Guid.Data2
+      value: 1176644066
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: settingSfx.Guid.Data3
+      value: 1950161043
+      objectReference: {fileID: 0}
+    - target: {fileID: 5989609194406949043, guid: 9be093b37a2b3a444b8b0a3eea46669b, type: 3}
+      propertyPath: settingSfx.Guid.Data4
+      value: -1678156173
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

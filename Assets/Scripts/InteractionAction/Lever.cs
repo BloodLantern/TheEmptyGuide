@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -56,6 +57,10 @@ public class Lever : MonoBehaviour
     [SerializeField]
     private Vector2 enabledSpriteOffset;
 
+    [SerializeField] EventReference leverSound;
+    [SerializeField] EventReference chestSound;
+    [SerializeField] EventReference doorSound;
+
     private void Awake()
     {
         interactable = GetComponent<Interactable>();
@@ -80,6 +85,7 @@ public class Lever : MonoBehaviour
             interactable.canInteract = false;
         
         EnabledState = !EnabledState;
+        
 
         if (EnabledState)
         {
@@ -100,14 +106,17 @@ public class Lever : MonoBehaviour
             
             case LeverType.Door:
                 obj.SetActive(!obj.activeSelf);
+                SoundManager.Instance.PlaySFX(doorSound, objRenderer.transform.position);
                 break;
             
             case LeverType.Color:
                 objRenderer.color = EnabledState ? newColor : oldColor;
+                SoundManager.Instance.PlaySFX(chestSound, objRenderer.transform.position);
                 break;
             
             case LeverType.Sprite:
                 objRenderer.sprite = EnabledState ? newSprite : oldSprite;
+                SoundManager.Instance.PlaySFX(leverSound, objRenderer.transform.position);
                 break;
             
             default:

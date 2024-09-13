@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -64,6 +65,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Dialogue startingDialogue;
 
+    [SerializeField] EventReference walkSound, jumpSound, landingSound;
+
     private void Awake()
     {
         guide = GetComponent<Guide>();
@@ -109,10 +112,12 @@ public class Player : MonoBehaviour
     {
         currentMask = groundedMask;
         currentState = DoActionMove;
+        //Play walk sound
     }
 
     private void DoActionMove()
     {
+        
         animator.SetBool(RunAnimStateId, inputs.asset[MoveKey].IsPressed());
         float lHorizontal = inputs.asset[MoveKey].ReadValue<Vector2>().x;
         float lVertical = inputs.asset[MoveKey].ReadValue<Vector2>().y;
@@ -160,6 +165,7 @@ public class Player : MonoBehaviour
             break;
         }
 
+        SoundManager.Instance.PlaySFX(jumpSound, transform.position);
         currentState = DoActionJump;
     }
 
@@ -181,7 +187,11 @@ public class Player : MonoBehaviour
         };
 
         if (jumpDestination != Vector2.zero)
+        {
             transform.position = newPosition;
+            SoundManager.Instance.PlaySFX(landingSound, transform.position);
+        }
+            
         
         animatorTransform.localPosition = new(animatorTransform.localPosition.x, newY);
 

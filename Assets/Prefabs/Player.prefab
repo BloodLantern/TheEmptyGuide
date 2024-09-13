@@ -270,6 +270,27 @@ MonoBehaviour:
   rayDistance: 1.7
   interactIcon: {fileID: 1066006635566295430}
   startingDialogue: {fileID: 0}
+  walkSound:
+    Guid:
+      Data1: 170610039
+      Data2: 1158153865
+      Data3: 807652747
+      Data4: 2055063914
+    Path: event:/SFX/Poulpi/Poulpi_Marche
+  jumpSound:
+    Guid:
+      Data1: 809961839
+      Data2: 1075026191
+      Data3: -820595524
+      Data4: -615971327
+    Path: event:/SFX/Poulpi/Poulpi_Jump
+  landingSound:
+    Guid:
+      Data1: -137393796
+      Data2: 1341001404
+      Data3: -341216613
+      Data4: -739383856
+    Path: event:/SFX/Poulpi/Poulpi_Landing
 --- !u!114 &923027059810124629
 MonoBehaviour:
   m_ObjectHideFlags: 0
