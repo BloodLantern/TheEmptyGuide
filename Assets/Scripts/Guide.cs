@@ -17,7 +17,7 @@ public class Guide : MonoBehaviour
     [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
 
-    private void Start()
+    private void Awake()
     {
         List<Information> information = FindObjectsOfType<Information>().ToList();
         information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);

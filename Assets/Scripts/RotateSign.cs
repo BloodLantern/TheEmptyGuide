@@ -7,12 +7,6 @@ public class RotateSign : MonoBehaviour
     [SerializeField] Transform point, pointMirrored;
     [SerializeField] Transform canva;
 
-
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Mathf.Sign(transform.localScale.x) == Mathf.Sign(1))

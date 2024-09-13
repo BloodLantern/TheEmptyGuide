@@ -36,12 +36,12 @@ public class GatekeeperTrial : MonoBehaviour
 
         rightInfo1.IsRight = true;
         rightInfo1.IsTruth = false; // change according to the lore
-        rightInfo1.InformationText = "mais je vous rassure, il a été bien accueilli";
+        rightInfo1.InformationText = "mais je vous rassure, il a ï¿½tï¿½ bien accueilli";
         rightInfo1.informationTextUI.text = rightInfo1.InformationText;
 
         rightInfo2.IsRight = true;
         rightInfo2.IsTruth = false; // change according to the lore
-        rightInfo2.InformationText = "je peux vous dire qu'il va bien, il est heureux de son séjour ici.";
+        rightInfo2.InformationText = "je peux vous dire qu'il va bien, il est heureux de son sï¿½jour ici.";
         rightInfo2.informationTextUI.text = rightInfo2.InformationText;
 
         rightInfo3.IsRight = true;
@@ -51,7 +51,7 @@ public class GatekeeperTrial : MonoBehaviour
 
         rightInfo4.IsRight = true;
         rightInfo4.IsTruth = false; // change according to the lore
-        rightInfo4.InformationText = "Il est parti profiter d'un délicieux repas, une spécialité d'ici";
+        rightInfo4.InformationText = "Il est parti profiter d'un dï¿½licieux repas, une spï¿½cialitï¿½ d'ici";
         rightInfo4.informationTextUI.text = rightInfo4.InformationText;
 
         guide.rightPageInformation = new Information[4];

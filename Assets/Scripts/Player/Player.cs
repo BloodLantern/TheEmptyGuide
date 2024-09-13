@@ -61,21 +61,14 @@ public class Player : MonoBehaviour
 
     private Guide guide;
 
-    private void Start()
-    {
-        guide = GetComponent<Guide>();
-        interactIcon.SetActive(false);
-
-    }
-    private CapsuleCollider2D collider;
-
     [SerializeField]
     private Dialogue startingDialogue;
 
     private void Awake()
     {
         guide = GetComponent<Guide>();
-        collider = GetComponent<CapsuleCollider2D>();
+        interactIcon.SetActive(false);
+        guide = GetComponent<Guide>();
         animator = GetComponentInChildren<Animator>();
         inputs = new();
         inputs.Enable();
@@ -257,7 +250,7 @@ public class Player : MonoBehaviour
 
     public void LoadNextScene()
     {
-        if (SceneManager.GetActiveScene().name == "Level4")
+        if (SceneManager.GetActiveScene().name == "Level3")
         {
             SceneManager.LoadScene("CreditScene");
             return;

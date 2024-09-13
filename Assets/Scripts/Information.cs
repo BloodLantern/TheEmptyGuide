@@ -17,7 +17,7 @@ public class Information : MonoBehaviour
     [SerializeField]
     private Button toggleButton;
 
-    private void Start()
+    private void Awake()
     {
         informationTextUI = GetComponentInChildren<TextMeshProUGUI>();
         initialPosition = transform.localPosition;

@@ -256,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 966c7db87164b2740b8713d5a966d1e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 3.7
   timeInAir: 1
   jumpHeight: 10
   jumpMask:
@@ -282,7 +282,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453d019f3f1339746af3f2d257e57bd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightPageInformation: []
   guideDisplay: {fileID: 0}
+  IsOnGateKeeperTrial: 0
+  IsOnFinalGateKeeperTrial: 0
   GatekeeperTrial: {fileID: 0}
 --- !u!70 &4096497280012697338
 CapsuleCollider2D:
