@@ -43,8 +43,12 @@ public class Player : MonoBehaviour
 
     //Jump management
     private float elapsedTimeInJump;
-    private float jumpStartY;
+    private Vector2 jumpStart;
     private Transform animatorTransform;
+    private Vector2 jumpDestination;
+
+    [SerializeField]
+    private float jumpDetectionDistance = 3f;
 
     //Interactions
     private Interactable interactable;
@@ -54,13 +58,12 @@ public class Player : MonoBehaviour
 
     private Guide guide;
 
-    private void Start()
-    {
-        guide = GetComponent<Guide>();
-    }
+    private CapsuleCollider2D collider;
 
     private void Awake()
     {
+        guide = GetComponent<Guide>();
+        collider = GetComponent<CapsuleCollider2D>();
         animator = GetComponentInChildren<Animator>();
         inputs = new();
         inputs.Enable();
@@ -113,9 +116,13 @@ public class Player : MonoBehaviour
             lastDirection = new(lHorizontal, lVertical);
 
         //Movement with collisions checks
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(lHorizontal, 0), speed * Time.deltaTime, currentMask))
+        RaycastHit2D collision =
+            Physics2D.CircleCast(transform.position, colliderExtentSize, new(lHorizontal, 0), speed * Time.deltaTime, currentMask);
+        if (!collision || collision.collider.isTrigger)
             transform.position += new Vector3(lHorizontal, 0) * (speed * Time.deltaTime);
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask))
+
+        collision = Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask);
+        if (!collision || collision.collider.isTrigger)
             transform.position += new Vector3(0, lVertical) * (speed * Time.deltaTime);
 
         if (inputs.asset[JumpKey].WasPressedThisFrame())
@@ -131,7 +138,19 @@ public class Player : MonoBehaviour
         animator.SetTrigger(JumpAnimStateId);
         currentMask = jumpMask;
         elapsedTimeInJump = 0f;
-        jumpStartY = animatorTransform.position.y;
+        jumpStart = animatorTransform.position;
+
+        jumpDestination = Vector2.zero;
+        
+        Collider2D[] result = Physics2D.OverlapCircleAll(transform.position, jumpDetectionDistance);
+        foreach (Collider2D hit in result)
+        {
+            if (!hit.transform.TryGetComponent(out JumpArea jumpArea))
+                continue;
+
+            jumpDestination = jumpArea.Other.transform.position;
+            break;
+        }
 
         currentState = DoActionJump;
     }
@@ -141,18 +160,27 @@ public class Player : MonoBehaviour
         float progress = elapsedTimeInJump / timeInAir;
         float newY = progress switch
         {
-            < 0.4f => jumpStartY,
-            < 0.7f => Mathf.Lerp(jumpStartY, jumpStartY + jumpHeight, (progress - 0.4f) / 0.3f),
-            < 0.75f => jumpStartY + jumpHeight,
-            _ => Mathf.Lerp(jumpStartY + jumpHeight, jumpStartY, (progress - 0.75f) / 0.25f),
+            < 0.4f => jumpStart.y,
+            < 0.7f => Mathf.Lerp(jumpStart.y, jumpStart.y + jumpHeight, (progress - 0.4f) / 0.3f),
+            < 0.75f => jumpStart.y + jumpHeight,
+            _ => Mathf.Lerp(jumpStart.y + jumpHeight, jumpStart.y, (progress - 0.75f) / 0.25f)
         };
+        Vector2 newPosition = progress switch
+        {
+            < 0.4f => transform.position,
+            < 0.9f => Vector2.Lerp(jumpStart, jumpDestination, (progress - 0.4f) / 0.5f),
+            _ => jumpDestination
+        };
+
+        if (jumpDestination != Vector2.zero)
+            transform.position = newPosition;
         
-        animatorTransform.position = new(animatorTransform.position.x, newY, animatorTransform.position.z);
+        animatorTransform.localPosition = new(animatorTransform.localPosition.x, newY);
 
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
-            animatorTransform.position = new(animatorTransform.position.x, jumpStartY, animatorTransform.position.z);
+            animatorTransform.localPosition = new(animatorTransform.localPosition.x, jumpStart.y);
             SetModeMove();
         }
     }
