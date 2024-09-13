@@ -52,10 +52,7 @@ MonoBehaviour:
   texts:
   - text: "Pour acc\xE9der au village, il faudra me payer 4 informations"
     sprite: {fileID: -4949415552980642329, guid: b11ec1fcff4352d4db41d33b482f9ae5, type: 3}
-  rewardInformation:
-  - text: Votre camarade se balade tranquillement au village
-    truth: 0
-    gatekeeperInformation: 1
+  rewardInformation: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:
@@ -230,15 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - text: "J'ai entendu dire que vous cherchiez un camarade, nos chemins se sont
-      crois\xE9s, je peux vous dire qu'il va tr\xE8s bien, il est heureux de son
-      s\xE9jour ici !"
-    sprite: {fileID: 0}
   - text: Et je vous souhaite bon courage pour la suite de votre aventure, l'ami.
-    sprite: {fileID: 0}
+    sprite: {fileID: -4949415552980642329, guid: b11ec1fcff4352d4db41d33b482f9ae5, type: 3}
+  - text: Votre camarade se balade tranquillement au village, il prend le temps de
+      visiter les environs.
+    sprite: {fileID: -4949415552980642329, guid: b11ec1fcff4352d4db41d33b482f9ae5, type: 3}
   rewardInformation:
-  - text: Crapaud info
-    truth: 1
+  - text: Votre camarade se balade tranquillement au village
+    truth: 0
     gatekeeperInformation: 1
   onDialogueEnd:
     m_PersistentCalls:
