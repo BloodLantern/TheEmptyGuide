@@ -3241,6 +3241,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8329927146510503125, guid: 5e243f8cd71a8f94f8b912cfdbf28e7e, type: 3}
   m_PrefabInstance: {fileID: 451258351}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &563085465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+  m_PrefabInstance: {fileID: 1241822887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18f579b11cae234b8d0d2c5e96096bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &573297137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8329927146510503125, guid: 5e243f8cd71a8f94f8b912cfdbf28e7e, type: 3}
@@ -5821,7 +5832,7 @@ Transform:
   m_GameObject: {fileID: 1317753581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2728834, y: -2.5886033, z: -10}
+  m_LocalPosition: {x: -3.2741709, y: -2.5886056, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6544,6 +6555,10 @@ PrefabInstance:
       propertyPath: speed
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
+      propertyPath: startingDialogue
+      value: 
+      objectReference: {fileID: 563085465}
     - target: {fileID: 5844285257387682139, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.08
