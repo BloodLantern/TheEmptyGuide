@@ -259,7 +259,8 @@ public class Player : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Level4")
         {
-            // load credits;
+            SceneManager.LoadScene("CreditScene");
+            return;
         }
 
         SceneManager.LoadScene($"Level{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");

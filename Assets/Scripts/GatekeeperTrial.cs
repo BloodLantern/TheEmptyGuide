@@ -61,6 +61,12 @@ public class GatekeeperTrial : MonoBehaviour
         guide.rightPageInformation[3] = rightInfo4;
 
         guide.DisplayDiscoveredRightPageInfo();
+
+        if (guide.IsOnFinalGateKeeperTrial)
+        {
+            numberOfInformation = numberOfRightInformation;
+            Information = RightInformation;
+        }
     }
 
     private void Update()
