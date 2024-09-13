@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -43,24 +44,38 @@ public class Player : MonoBehaviour
 
     //Jump management
     private float elapsedTimeInJump;
-    private float jumpStartY;
+    private Vector2 jumpStart;
     private Transform animatorTransform;
+    private Vector2 jumpDestination;
+
+    [SerializeField]
+    private float jumpDetectionDistance = 3f;
 
     //Interactions
     private Interactable interactable;
     private Vector2 lastDirection;
     [SerializeField]
     private float rayDistance = 1f;
+    [SerializeField]
+    GameObject interactIcon;
 
     private Guide guide;
 
     private void Start()
     {
         guide = GetComponent<Guide>();
+        interactIcon.SetActive(false);
+
     }
+    private CapsuleCollider2D collider;
+
+    [SerializeField]
+    private Dialogue startingDialogue;
 
     private void Awake()
     {
+        guide = GetComponent<Guide>();
+        collider = GetComponent<CapsuleCollider2D>();
         animator = GetComponentInChildren<Animator>();
         inputs = new();
         inputs.Enable();
@@ -79,10 +94,14 @@ public class Player : MonoBehaviour
         
         SetModeMove();
 
-        if (SceneManager.GetActiveScene().name == "Level0")
-        {
-            
-        }
+        if (startingDialogue)
+            StartCoroutine(StartFirstDialogueRoutine());
+    }
+
+    private IEnumerator StartFirstDialogueRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        startingDialogue.Display();
     }
 
     // Update is called once per frame
@@ -113,9 +132,13 @@ public class Player : MonoBehaviour
             lastDirection = new(lHorizontal, lVertical);
 
         //Movement with collisions checks
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(lHorizontal, 0), speed * Time.deltaTime, currentMask))
+        RaycastHit2D collision =
+            Physics2D.CircleCast(transform.position, colliderExtentSize, new(lHorizontal, 0), speed * Time.deltaTime, currentMask);
+        if (!collision || collision.collider.isTrigger)
             transform.position += new Vector3(lHorizontal, 0) * (speed * Time.deltaTime);
-        if (!Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask))
+
+        collision = Physics2D.CircleCast(transform.position, colliderExtentSize, new(0, lVertical), speed * Time.deltaTime, currentMask);
+        if (!collision || collision.collider.isTrigger)
             transform.position += new Vector3(0, lVertical) * (speed * Time.deltaTime);
 
         if (inputs.asset[JumpKey].WasPressedThisFrame())
@@ -131,7 +154,18 @@ public class Player : MonoBehaviour
         animator.SetTrigger(JumpAnimStateId);
         currentMask = jumpMask;
         elapsedTimeInJump = 0f;
-        jumpStartY = animatorTransform.position.y;
+        jumpStart = animatorTransform.position;
+
+        jumpDestination = Vector2.zero;
+        
+        foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, jumpDetectionDistance))
+        {
+            if (!hit.transform.TryGetComponent(out JumpArea jumpArea))
+                continue;
+
+            jumpDestination = jumpArea.Other.transform.position;
+            break;
+        }
 
         currentState = DoActionJump;
     }
@@ -141,37 +175,46 @@ public class Player : MonoBehaviour
         float progress = elapsedTimeInJump / timeInAir;
         float newY = progress switch
         {
-            < 0.4f => jumpStartY,
-            < 0.7f => Mathf.Lerp(jumpStartY, jumpStartY + jumpHeight, (progress - 0.4f) / 0.3f),
-            < 0.75f => jumpStartY + jumpHeight,
-            _ => Mathf.Lerp(jumpStartY + jumpHeight, jumpStartY, (progress - 0.75f) / 0.25f),
+            < 0.4f => jumpStart.y,
+            < 0.7f => Mathf.Lerp(jumpStart.y, jumpStart.y + jumpHeight, (progress - 0.4f) / 0.3f),
+            < 0.75f => jumpStart.y + jumpHeight,
+            _ => Mathf.Lerp(jumpStart.y + jumpHeight, jumpStart.y, (progress - 0.75f) / 0.25f)
         };
+        Vector2 newPosition = progress switch
+        {
+            < 0.4f => transform.position,
+            < 0.9f => Vector2.Lerp(jumpStart, jumpDestination, (progress - 0.4f) / 0.5f),
+            _ => jumpDestination
+        };
+
+        if (jumpDestination != Vector2.zero)
+            transform.position = newPosition;
         
-        animatorTransform.position = new(animatorTransform.position.x, newY, animatorTransform.position.z);
+        animatorTransform.localPosition = new(animatorTransform.localPosition.x, newY);
 
         elapsedTimeInJump += Time.deltaTime;
         if (elapsedTimeInJump > timeInAir)
         {
-            animatorTransform.position = new(animatorTransform.position.x, jumpStartY, animatorTransform.position.z);
+            animatorTransform.localPosition = new(animatorTransform.localPosition.x, jumpStart.y);
             SetModeMove();
         }
     }
 
     private void CheckForInteractable()
     {
+        //RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
         RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
         foreach (RaycastHit2D hit in lHit)
         {
             Interactable lInteracter = hit.collider?.GetComponent<Interactable>();
             if (lInteracter is null)
                 continue;
-            
-            interactable?.DeactivateHighlight();
+
+            interactIcon.SetActive(true);
             interactable = lInteracter;
             break;
         }
 
-        interactable?.ActivateHighlight();
     }
 
     private void FreeInteractable()
@@ -182,8 +225,8 @@ public class Player : MonoBehaviour
         Vector3 distanceToInteractable = interactable.transform.position - transform.position;
         if (distanceToInteractable.sqrMagnitude <= rayDistance * rayDistance)
             return;
-        
-        interactable?.DeactivateHighlight();
+
+        interactIcon.SetActive(false);
         interactable = null;
     }
 

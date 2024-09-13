@@ -23,6 +23,7 @@ public class Guide : MonoBehaviour
         information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
         leftPageInformation = information.Where(x => !x.IsRight).ToArray();
         ExtractInformationFromNpcs();
+        GatekeeperTrial.Init();
         ToggleGuideDisplay();
         foreach (Information info in leftPageInformation)
         {

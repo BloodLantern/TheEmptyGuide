@@ -22,7 +22,7 @@ public class GatekeeperTrial : MonoBehaviour
 
     [SerializeField] private Dialogue correctDialogue;
 
-    private void Start()
+    public void Init()
     {
         foreach (Dialogue dialogue in FindObjectsOfType<Dialogue>())
         {
