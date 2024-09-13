@@ -140,6 +140,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: rewardInformation.Array.data[0].text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822450092513130965, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
       propertyPath: rewardInformation.Array.data[1].text
       value: Crapaud info
       objectReference: {fileID: 0}
@@ -207,6 +211,10 @@ PrefabInstance:
       propertyPath: texts.Array.data[2].text
       value: Achete ma formation les pilliers du toplaner pour la modique somme de
         5 000 euros
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444426411966641861, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
+      propertyPath: rewardInformation.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4444426411966641861, guid: 15bccac8653e20b4c89fc728d3efd47f, type: 3}
       propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -490,6 +498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3667965406457845453, guid: 045ce292c7261e24085072056deadef3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5018512825395592169, guid: 045ce292c7261e24085072056deadef3, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -595,7 +607,7 @@ PrefabInstance:
     - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: sprite
       value: 
-      objectReference: {fileID: 1339599889}
+      objectReference: {fileID: 0}
     - target: {fileID: 5844285257387682139, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.78
@@ -730,11 +742,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
---- !u!212 &1339599889 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7605353907381116496, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
-  m_PrefabInstance: {fileID: 1203758480}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1339599890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 923027059810124629, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
@@ -816,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: texts.Array.data[0].text
-      value: Maxime voucher
+      value: "Il a \xE9t\xE9 bien accueilli dans une belle maison et tout"
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: rewardInformation.Array.size
@@ -824,11 +831,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: rewardInformation.Array.data[0].text
-      value: Maxime voucher
+      value: "Il a \xE9t\xE9 bien accueilli dans une belle maison et tout"
       objectReference: {fileID: 0}
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: rewardInformation.Array.data[0].truth
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].gatekeeperInformation
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name
@@ -945,6 +956,10 @@ PrefabInstance:
     - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: texts.Array.data[0].text
       value: Chicot gap triboulet
+      objectReference: {fileID: 0}
+    - target: {fileID: 340980199308681205, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
+      propertyPath: rewardInformation.Array.data[0].gatekeeperInformation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3715836450100371414, guid: a5c304c4a5efc2a4abc1cab11659765b, type: 3}
       propertyPath: m_Name

@@ -12,7 +12,7 @@ public class Information : MonoBehaviour
 
     public bool IsDropped = false;
     public string InformationText { get; set; }
-    private TextMeshProUGUI informationTextUI;
+    public TextMeshProUGUI informationTextUI;
 
     [SerializeField]
     private Button toggleButton;

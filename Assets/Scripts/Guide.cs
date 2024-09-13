@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class Guide : MonoBehaviour
 {
     private Information[] leftPageInformation;
-    private static Information[] rightPageInformation = new Information[4];
+    public Information[] rightPageInformation;
 
     [SerializeField]
     private GameObject guideDisplay;
     public bool Visible { get; private set; } = true;
     public bool IsOnGateKeeperTrial;
-
+    public bool IsOnFinalGateKeeperTrial;
     [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
 
@@ -21,7 +22,6 @@ public class Guide : MonoBehaviour
         List<Information> information = FindObjectsOfType<Information>().ToList();
         information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
         leftPageInformation = information.Where(x => !x.IsRight).ToArray();
-        rightPageInformation = information.Where(x => x.IsRight).ToArray();
         ExtractInformationFromNpcs();
         ToggleGuideDisplay();
         foreach (Information info in leftPageInformation)
@@ -34,16 +34,19 @@ public class Guide : MonoBehaviour
     {
         Dialogue[] npcs = FindObjectsOfType<Dialogue>();
 
-        int leftInfos = 0, rightInfos = 0;
+        int leftInfos = 0;
 
         foreach (Dialogue p in npcs)
         {
             foreach (DialogueInfo i in p.RewardInformation)
             {
-                Information info = i.GatekeeperInformation ? rightPageInformation[rightInfos++] : leftPageInformation[leftInfos++];
-                info.InformationText = i.Text;
-                info.IsTruth = i.Truth;
-                info.SetUI();
+                if (!i.GatekeeperInformation)
+                {
+                    Information info = leftPageInformation[leftInfos++];
+                    info.InformationText = i.Text;
+                    info.IsTruth = i.Truth;
+                    info.SetUI();
+                }
             }
         }
     }
@@ -61,9 +64,19 @@ public class Guide : MonoBehaviour
     {
         IsOnGateKeeperTrial = !IsOnGateKeeperTrial;
         GatekeeperTrial.gameObject.SetActive(!GatekeeperTrial.gameObject.activeSelf);
-        foreach (Information info in leftPageInformation)
+        if (!IsOnFinalGateKeeperTrial)
         {
-            info.IsDraggable = !info.IsDraggable;
+            foreach (Information info in leftPageInformation)
+            {
+                info.IsDraggable = !info.IsDraggable;
+            }
+        }
+        else
+        {
+            foreach (Information info in rightPageInformation)
+            {
+                info.IsDraggable = !info.IsDraggable;
+            }
         }
     }
 
@@ -72,7 +85,24 @@ public class Guide : MonoBehaviour
         foreach (Information info in rightInfo ? rightPageInformation : leftPageInformation)
         {
             if (info.InformationText == informationText)
+            {
                 info.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void DisplayDiscoveredRightPageInfo()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            if (char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) > i)
+            {
+                rightPageInformation[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                rightPageInformation[i].gameObject.SetActive(false);
+            }
         }
     }
 }

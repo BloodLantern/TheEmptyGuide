@@ -214,6 +214,11 @@ public class Player : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene($"Levelo{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            // load credits;
+        }
+
+        SceneManager.LoadScene($"Level{char.GetNumericValue(SceneManager.GetActiveScene().name[^1]) + 1}");
     }
 }
