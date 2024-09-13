@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{c26e93a2-6ff9-4af9-a352-3fbf3d9a0f03}">
+		<property name="color">
+			<value>Red Light 1</value>
+		</property>
 		<property name="name">
 			<value>SFX</value>
 		</property>
@@ -8,7 +11,7 @@
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{98e962da-43f6-41a4-9693-b2fb8a648bec}</destination>
+			<destination>{1ec4351a-d2a4-4b16-adba-c23f3f94fae1}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{beed2286-d138-4f92-8a0b-dc733b299c4c}</destination>
@@ -49,6 +52,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{74b2cb8e-81ed-4cad-838c-da2eebd93f5c}">
+		<property name="color">
+			<value>Red Light 1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{f36c5877-beb7-4abb-9b8b-37a0a1d8f86b}</destination>
 		</relationship>
@@ -56,7 +62,7 @@
 			<destination>{32dc2dd8-f2da-43c9-bbbf-002cf047463e}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{7812f692-6d6f-4b4e-99cb-d36d04289119}</destination>
+			<destination>{6472d70b-60a5-4dc1-aa5e-ebb765bb97cc}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{9418e6f5-79b5-46e4-85c3-8a89045eea6a}" />
