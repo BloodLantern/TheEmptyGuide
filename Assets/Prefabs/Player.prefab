@@ -135,7 +135,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!114 &2495832705307803078
 MonoBehaviour:
@@ -269,6 +269,7 @@ MonoBehaviour:
   jumpDetectionDistance: 0.4
   rayDistance: 1.7
   interactIcon: {fileID: 1066006635566295430}
+  startingDialogue: {fileID: 0}
 --- !u!114 &923027059810124629
 MonoBehaviour:
   m_ObjectHideFlags: 0
