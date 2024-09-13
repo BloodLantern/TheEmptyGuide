@@ -236,7 +236,7 @@ public class Player : MonoBehaviour
     public void SetModeGuide()
     {
         guide.ToggleGuideDisplay();
-        
+        SoundManager.Instance.PlaySFX(SoundManager.Instance.openguide, transform.position);
         currentState = DoActionGuide;
     }
 
@@ -255,7 +255,10 @@ public class Player : MonoBehaviour
         }
 
         if (!guide.Visible)
+        {
             SetModeMove();
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.closeguide,transform.position);
+        }
     }
 
     public void LoadNextScene()

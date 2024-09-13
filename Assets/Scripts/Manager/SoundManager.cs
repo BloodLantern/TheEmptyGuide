@@ -10,6 +10,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] public EventReference _backBtn;
     public EventReference yesDrop;
 
+    public EventReference openguide, closeguide;
+
     private static SoundManager _instance;
 
     //Sound volume management

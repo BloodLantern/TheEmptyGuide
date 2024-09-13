@@ -489,6 +489,20 @@ MonoBehaviour:
       Data3: -1248650577
       Data4: 1132131069
     Path: event:/UI/Bouton/UI_Cochage_Yes
+  openguide:
+    Guid:
+      Data1: 483844127
+      Data2: 1116039355
+      Data3: -736637050
+      Data4: -246913063
+    Path: event:/UI/UI_Open_Book
+  closeguide:
+    Guid:
+      Data1: 196059030
+      Data2: 1151230448
+      Data3: 132974208
+      Data4: 682825590
+    Path: event:/UI/UI_Close_Book
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
