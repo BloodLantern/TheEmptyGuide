@@ -5,34 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
     path: Assets/Scenes/GameScene.unity
     guid: 9dcf63047c4e2da44bf695cd7d0feeb7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Level0.unity
     guid: 87bbdd7d965c85c4baeaec61fec7beec
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Level1.unity
     guid: 01e5287400ec28948a47e66d8063288f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game/Level2.unity
     guid: 591e386196077904da1602797465c2d6
   - enabled: 1
-    path: Assets/Scenes/IllegalFolder/Levelo0.unity
-    guid: 1fa7e448c15ab3c408d75b9bcc9a9d7e
+    path: Assets/Scenes/CreditScene.unity
+    guid: 9d7b7e6e6ccca2049ab67ef79759de41
   - enabled: 1
-    path: Assets/Scenes/IllegalFolder/Levelo1.unity
-    guid: fdee9c4eaeec7eb40a53f1a1716b130b
-  - enabled: 1
-    path: Assets/Scenes/IllegalFolder/Levelo2.unity
-    guid: 421f17343306fb34bb0c65be0d496cdd
-  - enabled: 1
-    path: Assets/Scenes/IllegalFolder/Levelo3.unity
-    guid: 9b1a094c8b0d0be4c8215f1e975e7aca
-  - enabled: 1
-    path: Assets/Scenes/IllegalFolder/Levelo4.unity
-    guid: ee786fa6b4c0b2e41872a86e860ebafe
+    path: Assets/Scenes/Game/Level3.unity
+    guid: 643b7297926d48342928455c22daa697
   m_configObjects: {}
