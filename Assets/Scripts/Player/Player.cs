@@ -250,7 +250,7 @@ public class Player : MonoBehaviour
 
     public void LoadNextScene()
     {
-        if (SceneManager.GetActiveScene().name == "Level3")
+        if (SceneManager.GetActiveScene().name == "Level4")
         {
             SceneManager.LoadScene("CreditScene");
             return;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -17,7 +18,9 @@ public class Guide : MonoBehaviour
     [SerializeField]
     private GatekeeperTrial GatekeeperTrial;
 
-    private void Awake()
+    private bool firstUpdate = true;
+
+    private void Init()
     {
         List<Information> information = FindObjectsOfType<Information>().ToList();
         information.Sort((x, y) => x.transform.position.y < y.transform.position.y ? 1 : -1);
@@ -29,6 +32,14 @@ public class Guide : MonoBehaviour
         {
             info.gameObject.SetActive(false);
         }
+
+        firstUpdate = false;
+    }
+
+    private void Update()
+    {
+        if (firstUpdate)
+            Init();
     }
 
     private void ExtractInformationFromNpcs()
