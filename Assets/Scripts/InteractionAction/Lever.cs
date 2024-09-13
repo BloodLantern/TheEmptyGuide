@@ -75,6 +75,9 @@ public class Lever : MonoBehaviour
     {
         if (EnabledState && !multipleActivations)
             return;
+
+        if (!multipleActivations)
+            interactable.canInteract = false;
         
         EnabledState = !EnabledState;
 

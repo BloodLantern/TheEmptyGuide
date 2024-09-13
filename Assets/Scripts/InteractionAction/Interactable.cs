@@ -5,5 +5,14 @@ public class Interactable : MonoBehaviour
 {
     public UnityEvent onInteract;
 
-    public void Interact() => onInteract?.Invoke();
+    [HideInInspector]
+    public bool canInteract = true;
+
+    public void Interact()
+    {
+        if (!canInteract)
+            return;
+        
+        onInteract?.Invoke();
+    }
 }

@@ -207,7 +207,7 @@ public class Player : MonoBehaviour
         foreach (RaycastHit2D hit in lHit)
         {
             Interactable lInteracter = hit.collider?.GetComponent<Interactable>();
-            if (lInteracter is null)
+            if (lInteracter is null || !lInteracter.canInteract)
                 continue;
 
             interactIcon.SetActive(true);
@@ -223,7 +223,7 @@ public class Player : MonoBehaviour
             return;
 
         Vector3 distanceToInteractable = interactable.transform.position - transform.position;
-        if (distanceToInteractable.sqrMagnitude <= rayDistance * rayDistance)
+        if (distanceToInteractable.sqrMagnitude <= rayDistance * rayDistance && interactable.canInteract)
             return;
 
         interactIcon.SetActive(false);
