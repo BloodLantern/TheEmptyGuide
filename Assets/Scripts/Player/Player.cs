@@ -51,12 +51,16 @@ public class Player : MonoBehaviour
     private Vector2 lastDirection;
     [SerializeField]
     private float rayDistance = 1f;
+    [SerializeField]
+    GameObject interactIcon;
 
     private Guide guide;
 
     private void Start()
     {
         guide = GetComponent<Guide>();
+        interactIcon.SetActive(false);
+
     }
 
     private void Awake()
@@ -159,19 +163,19 @@ public class Player : MonoBehaviour
 
     private void CheckForInteractable()
     {
+        //RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
         RaycastHit2D[] lHit = Physics2D.CircleCastAll(transform.position, colliderExtentSize, lastDirection, rayDistance);
         foreach (RaycastHit2D hit in lHit)
         {
             Interactable lInteracter = hit.collider?.GetComponent<Interactable>();
             if (lInteracter is null)
                 continue;
-            
-            interactable?.DeactivateHighlight();
+
+            interactIcon.SetActive(true);
             interactable = lInteracter;
             break;
         }
 
-        interactable?.ActivateHighlight();
     }
 
     private void FreeInteractable()
@@ -182,8 +186,8 @@ public class Player : MonoBehaviour
         Vector3 distanceToInteractable = interactable.transform.position - transform.position;
         if (distanceToInteractable.sqrMagnitude <= rayDistance * rayDistance)
             return;
-        
-        interactable?.DeactivateHighlight();
+
+        interactIcon.SetActive(false);
         interactable = null;
     }
 

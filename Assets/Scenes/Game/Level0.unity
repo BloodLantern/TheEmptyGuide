@@ -6537,6 +6537,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
+      propertyPath: child
+      value: 
+      objectReference: {fileID: 1777875344}
+    - target: {fileID: 4847924738664246812, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
       propertyPath: speed
       value: 2.5
       objectReference: {fileID: 0}
@@ -7609,6 +7613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ffeb8463fab3f46abdf497e35b194b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1777875344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9056252160882575661, guid: 1056d94b4f53ea24596cabc6ecb913c6, type: 3}
+  m_PrefabInstance: {fileID: 1656790578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1835486731
 GameObject:
   m_ObjectHideFlags: 0
