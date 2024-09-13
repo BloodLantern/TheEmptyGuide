@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -60,6 +61,9 @@ public class Player : MonoBehaviour
 
     private CapsuleCollider2D collider;
 
+    [SerializeField]
+    private Dialogue startingDialogue;
+
     private void Awake()
     {
         guide = GetComponent<Guide>();
@@ -82,10 +86,14 @@ public class Player : MonoBehaviour
         
         SetModeMove();
 
-        if (SceneManager.GetActiveScene().name == "Level0")
-        {
-            
-        }
+        if (startingDialogue)
+            StartCoroutine(StartFirstDialogueRoutine());
+    }
+
+    private IEnumerator StartFirstDialogueRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+        startingDialogue.Display();
     }
 
     // Update is called once per frame
@@ -142,8 +150,7 @@ public class Player : MonoBehaviour
 
         jumpDestination = Vector2.zero;
         
-        Collider2D[] result = Physics2D.OverlapCircleAll(transform.position, jumpDetectionDistance);
-        foreach (Collider2D hit in result)
+        foreach (Collider2D hit in Physics2D.OverlapCircleAll(transform.position, jumpDetectionDistance))
         {
             if (!hit.transform.TryGetComponent(out JumpArea jumpArea))
                 continue;
