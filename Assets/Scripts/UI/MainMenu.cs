@@ -35,4 +35,9 @@ public class MainMenu : MonoBehaviour
     {
         Instantiate(soundSettingPrefab);
     }
+
+    void QuitGame()
+    {
+        Application.Quit();
+    }
 }
