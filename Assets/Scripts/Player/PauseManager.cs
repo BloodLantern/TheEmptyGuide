@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
-    [SerializeField] Button quitBtn, resumeBtn;
+    [SerializeField] Button quitBtn, resumeBtn,settingBtn;
+
+    [SerializeField] GameObject soundSettings;
 
     public bool gamePaused { get; private set; } = false;
 
@@ -18,6 +20,7 @@ public class PauseManager : MonoBehaviour
     {
         quitBtn.onClick.AddListener(QuitGame);
         resumeBtn.onClick.AddListener(TogglePause);
+        settingBtn.onClick.AddListener(OpenSettings);
     }
 
     void Start()
@@ -43,6 +46,11 @@ public class PauseManager : MonoBehaviour
         else Time.timeScale = 1f;
 
         pauseMenu.SetActive(gamePaused);
+    }
+
+    void OpenSettings()
+    {
+        Instantiate(soundSettings);
     }
 
     void QuitGame()
