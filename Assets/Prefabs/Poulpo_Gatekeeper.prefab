@@ -50,14 +50,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - text: "Je ne demande que 4 informations, ce n'est pas bien cher pay\xE9, vous
-      ne trouvez pas, l'ami ?"
-    sprite: {fileID: -2460484338307624789, guid: a6565864f12513d4c95bfc47b8efbd09, type: 3}
-  rewardInformation:
-  - text: " Il est parti profiter d'un d\xE9licieux repas, une sp\xE9cialit\xE9 d'ici
-      !"
-    truth: 0
-    gatekeeperInformation: 1
+  - text: "C'est toi ? Je pensais t'avoir perdu\u2026"
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  - text: "Je me suis \xE9chou\xE9 ici il y a une semaine d\xE9j\xE0, j'ai \xE0 peine
+      ouvert les yeux qu'on m'a attrap\xE9 pour m'enfermer dans cet \xE9trange endroit."
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  - text: "J'ai \xE9t\xE9 bless\xE9 dans le processus et je n'ai rien mang\xE9 depuis
+      plusieurs jours."
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  - text: Je suis tellement heureux de te revoir, mais l'heure n'est pas aux retrouvailles,
+      il faut qu'on parte maintenant !
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  - text: Il va nous falloir des informations pour ouvrir cette porte.
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  - text: Celles des crapauds !
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  rewardInformation: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:
@@ -232,16 +240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - text: "J'ai entendu dire que vous cherchiez un camarade, nos chemins se sont
-      crois\xE9s, je peux vous dire qu'il va tr\xE8s bien, il est heureux de son
-      s\xE9jour ici !"
-    sprite: {fileID: 0}
-  - text: Et je vous souhaite bon courage pour la suite de votre aventure, l'ami.
-    sprite: {fileID: 0}
-  rewardInformation:
-  - text: Crapaud info
-    truth: 1
-    gatekeeperInformation: 1
+  - text: "Partons ! Vite... ! Ces satan\xE9s crapauds, ils nous en auront fait voir
+      jusqu'au bout !"
+    sprite: {fileID: 1343689114404366110, guid: 6b85f804aeba910488122b4ce8364d9d, type: 3}
+  rewardInformation: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:

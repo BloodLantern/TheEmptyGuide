@@ -18,10 +18,14 @@ public class GatekeeperReceiver : MonoBehaviour, IDropHandler
         if (image.color == Color.green)
         {
             info.IsAssumption = true;
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.yesDrop, transform.position);
+
         }
         else if (image.color == Color.red)
         {
             info.IsAssumption = false;
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.noDrop, transform.position);
+
         }
         GatekeeperTrial.Information.Add(info);
         info.IsDropped = true;

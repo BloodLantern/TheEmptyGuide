@@ -23,7 +23,7 @@ public class SplashScreen : MonoBehaviour
 
     [SerializeField] Transition fade;
 
-    private void Start()
+    private void Awake()
     {
         textColor = text.color;
         imageColor = image.color;

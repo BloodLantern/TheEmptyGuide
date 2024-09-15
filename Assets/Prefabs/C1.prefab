@@ -66,10 +66,7 @@ MonoBehaviour:
     sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
   - text: "Avez-vous le n\xE9cessaire pour passer ?"
     sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
-  rewardInformation:
-  - text: "mais je vous rassure, il a \xE9t\xE9 bien accueilli"
-    truth: 0
-    gatekeeperInformation: 1
+  rewardInformation: []
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:
@@ -244,15 +241,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - text: "J'ai entendu dire que vous cherchiez un camarade, nos chemins se sont
-      crois\xE9s, je peux vous dire qu'il va tr\xE8s bien, il est heureux de son
-      s\xE9jour ici !"
-    sprite: {fileID: 0}
-  - text: Et je vous souhaite bon courage pour la suite de votre aventure, l'ami.
-    sprite: {fileID: 0}
+  - text: Bien, bien, je vous remercie.
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: "J'ai un petit cadeau pour vous en \xE9change, \xE9coutez bien."
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
+  - text: "Un de vos camarades poulpe s'est \xE9galement \xE9chou\xE9 ici, mais je
+      vous rassure, il a \xE9t\xE9 bien accueilli, nous lui avons fourni un beau
+      logement le temps de son s\xE9jour \xE0 nos c\xF4t\xE9s. "
+    sprite: {fileID: -7083432124464270792, guid: c9c7439c4f02b454699488c745900618, type: 3}
   rewardInformation:
-  - text: Crapaud info
-    truth: 1
+  - text: "mais je vous rassure, il a \xE9t\xE9 bien accueilli"
+    truth: 0
     gatekeeperInformation: 1
   onDialogueEnd:
     m_PersistentCalls:

@@ -1285,6 +1285,13 @@ MonoBehaviour:
   masterSlider: {fileID: 8950407105561222365}
   sfxSlider: {fileID: 8513201810102798715}
   musicSlider: {fileID: 2094002868228186582}
+  backSound:
+    Guid:
+      Data1: 1673019425
+      Data2: 1248832134
+      Data3: -1143372385
+      Data4: -222326939
+    Path: event:/UI/Bouton/UI_Bouton_Back
 --- !u!1 &7624596051790319908
 GameObject:
   m_ObjectHideFlags: 0

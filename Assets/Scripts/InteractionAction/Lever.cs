@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -24,6 +25,9 @@ public class Lever : MonoBehaviour
     private GameObject obj;
     public GameObject Obj => obj;
 
+    [SerializeField]
+    private bool multipleActivations;
+
     public bool EnabledState { get; private set; }
 
     public bool DoorType => type == LeverType.Door;
@@ -43,6 +47,20 @@ public class Lever : MonoBehaviour
     private Color oldColor;
     private Sprite oldSprite;
 
+    private SpriteRenderer spriteRenderer;
+
+    [SerializeField]
+    private Sprite enabledSprite;
+
+    private Sprite disabledSprite;
+
+    [SerializeField]
+    private Vector2 enabledSpriteOffset;
+
+    [SerializeField] EventReference leverSound;
+    [SerializeField] EventReference chestSound;
+    [SerializeField] EventReference doorSound;
+
     private void Awake()
     {
         interactable = GetComponent<Interactable>();
@@ -53,14 +71,32 @@ public class Lever : MonoBehaviour
             oldColor = objRenderer.color;
             oldSprite = objRenderer.sprite;
         }
+
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        disabledSprite = spriteRenderer.sprite;
     }
 
     private void Toggle()
     {
-        if (EnabledState)
+        if (EnabledState && !multipleActivations)
             return;
+
+        if (!multipleActivations)
+            interactable.canInteract = false;
         
         EnabledState = !EnabledState;
+        
+
+        if (EnabledState)
+        {
+            spriteRenderer.sprite = enabledSprite;
+            spriteRenderer.transform.localPosition += (Vector3) enabledSpriteOffset;
+        }
+        else
+        {
+            spriteRenderer.sprite = disabledSprite;
+            spriteRenderer.transform.localPosition -= (Vector3) enabledSpriteOffset;
+        }
         
         switch (type)
         {
@@ -70,14 +106,17 @@ public class Lever : MonoBehaviour
             
             case LeverType.Door:
                 obj.SetActive(!obj.activeSelf);
+                SoundManager.Instance.PlaySFX(doorSound, objRenderer.transform.position);
                 break;
             
             case LeverType.Color:
                 objRenderer.color = EnabledState ? newColor : oldColor;
+                SoundManager.Instance.PlaySFX(chestSound, objRenderer.transform.position);
                 break;
             
             case LeverType.Sprite:
                 objRenderer.sprite = EnabledState ? newSprite : oldSprite;
+                SoundManager.Instance.PlaySFX(leverSound, objRenderer.transform.position);
                 break;
             
             default:

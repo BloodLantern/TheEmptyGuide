@@ -11,12 +11,14 @@ public class GuideLeaveButton : MonoBehaviour
 
     private Guide guide;
 
-    private void Start()
+    private void Awake()
     {
         guide = FindObjectOfType<Guide>();
     }
     public void Clicked()
     {
+        if (guide.IsOnGateKeeperTrial)
+            guide.ToggleGatekeeperTrialDisplay();
         guide.ToggleGuideDisplay();
     }
 }

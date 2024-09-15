@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [field: SerializeField] public EventReference _sfxSucces { get; private set; }
+    [field: SerializeField] public EventReference noDrop { get; private set; }
+    [SerializeField] public EventReference _backBtn;
+    public EventReference yesDrop;
+
+    public EventReference openguide, closeguide;
 
     private static SoundManager _instance;
 
@@ -22,6 +26,7 @@ public class SoundManager : MonoBehaviour
     public VCA _masterBus;
     public VCA _sfxBus;
     public VCA _musicBus;
+
 
     public enum volType
     {
@@ -59,7 +64,6 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlaySucces(transform.position);
     }
 
     public float GetVolume(volType type)
@@ -104,9 +108,9 @@ public class SoundManager : MonoBehaviour
         RuntimeManager.PlayOneShot(pSound, pPosition);
     }
 
-    public void PlaySucces(Vector3 pPosition)
+    public void PlayBackButton(Vector3 pPos)
     {
-        PlaySFX(_sfxSucces, transform.position);
+        PlaySFX(_backBtn, pPos);
     }
 
 }

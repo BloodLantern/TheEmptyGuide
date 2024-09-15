@@ -13,7 +13,7 @@ public class Credit : MonoBehaviour
     List<RectTransform> textList = new List<RectTransform>();
     bool ended = false;
 
-    private void Start()
+    private void Awake()
     {
         foreach (RectTransform text in transform.GetComponentsInChildren<RectTransform>())
         {

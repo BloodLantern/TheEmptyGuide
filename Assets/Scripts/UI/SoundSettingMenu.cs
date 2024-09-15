@@ -1,3 +1,4 @@
+using FMODUnity;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -10,6 +11,7 @@ public class SoundSettingMenu : MonoBehaviour
     [SerializeField] Button backBtn;
     [SerializeField] Slider masterSlider, sfxSlider, musicSlider;
 
+    [SerializeField] EventReference backSound;
     void Awake()
     {
         backBtn.onClick.AddListener(CloseScreen);
@@ -27,6 +29,7 @@ public class SoundSettingMenu : MonoBehaviour
     }
 
     void CloseScreen() {
+        SoundManager.Instance.PlaySFX(backSound, transform.position);
         Destroy(gameObject);
     }
 
