@@ -1614,19 +1614,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.18719687
+      value: -0.1414834
       objectReference: {fileID: 0}
     - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19527139
+      value: 0.14758612
+      objectReference: {fileID: 0}
+    - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.11722488
       objectReference: {fileID: 0}
     - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.912001
+      value: -13.79
       objectReference: {fileID: 0}
     - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8249998
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 8199615881414852393, guid: b01800793082e094ba199cbced3f0bc3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3456,12 +3460,24 @@ PrefabInstance:
       value: GA3-A_Lesillard_Lea_GW_Props_Tonneau_Debout
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14633176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.14633176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14633176
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.753202
+      value: -13.669999
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.3248236
+      value: -2.372
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4797,12 +4813,24 @@ PrefabInstance:
       value: GA3-A_Lesillard_Lea_GW_Props_Champi_1
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1442613
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1429747
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14788447
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.20031285
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.796836
+      value: -4.78
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4835,6 +4863,10 @@ PrefabInstance:
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052921848392459755, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5059,19 +5091,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.19361176
+      value: 0.14633177
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19361176
+      value: 0.14633177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.14633176
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.785
+      value: -13.693999
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.629
+      value: -1.8461001
       objectReference: {fileID: 0}
     - target: {fileID: 7051761228815405441, guid: 2a72e50e70001dc4b9821828df33cec8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5787,12 +5823,24 @@ PrefabInstance:
       value: GA3-A_Lesillard_Lea_GW_Props_Champi_1 (1)
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.13742208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13742208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.13742208
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.26284
+      value: -6.45
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.726293
+      value: -4.15
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6215,12 +6263,24 @@ PrefabInstance:
       value: GA3-A_Lesillard_Lea_GW_Props_Champi_1
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.12527332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.12527332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.12527332
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.663
+      value: 7.65
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.72
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6253,6 +6313,14 @@ PrefabInstance:
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052921848392459755, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052921848392459755, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7235,7 +7303,7 @@ Transform:
   m_GameObject: {fileID: 1317753581}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.2728834, y: -2.5886033, z: -10}
+  m_LocalPosition: {x: -2.794354, y: -2.5873578, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11647,6 +11715,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GA3-A_Lesillard_Lea_GW_Props_Champi 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4175147842152735442, guid: 1acc65eda7bdcd04b857aae648fd84a3, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11809,11 +11881,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7868290991955611980, guid: 6827b228ebf3ffe469a6a8448931f71c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.418
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 7868290991955611980, guid: 6827b228ebf3ffe469a6a8448931f71c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.0699997
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 7868290991955611980, guid: 6827b228ebf3ffe469a6a8448931f71c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12545,12 +12617,24 @@ PrefabInstance:
       value: GA3-A_Lesillard_Lea_GW_Props_Champi_1
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.116462894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.116462894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.116462894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08
+      value: 1.2316
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.42
+      value: 0.3082
       objectReference: {fileID: 0}
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12583,6 +12667,10 @@ PrefabInstance:
     - target: {fileID: 5885091365593621893, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6052921848392459755, guid: 0b9aa8b8163970a4892d1a3b75153595, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
