@@ -6,14 +6,11 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    [field: SerializeField] public EventReference _sfxSucces { get; private set; }
-    [field: SerializeField] public EventReference _sfxDeath { get; private set; }
-    [field: SerializeField] public EventReference _sfxDamagePlayer { get; private set; }
-    [field: SerializeField] public EventReference _sfxDamageFoe { get; private set; }
-    [field: SerializeField] public EventReference _sfxWin { get; private set; }
-    [field: SerializeField] public EventReference _sfxKeyboard { get; private set; }
-    [field: SerializeField] public EventReference _sfxValidateWord { get; private set; }
-    [field: SerializeField] public EventReference _sfxJumpNSlide { get; private set; }
+    [field: SerializeField] public EventReference noDrop { get; private set; }
+    [SerializeField] public EventReference _backBtn;
+    public EventReference yesDrop;
+
+    public EventReference openguide, closeguide;
 
     private static SoundManager _instance;
 
@@ -29,6 +26,7 @@ public class SoundManager : MonoBehaviour
     public VCA _masterBus;
     public VCA _sfxBus;
     public VCA _musicBus;
+
 
     public enum volType
     {
@@ -66,7 +64,6 @@ public class SoundManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlaySucces(transform.position);
     }
 
     public float GetVolume(volType type)
@@ -74,10 +71,13 @@ public class SoundManager : MonoBehaviour
         switch (type)
         {
             case volType.master:
+                _masterBus.getVolume(out _masterVolume);
                 return _masterVolume;
             case volType.music:
+                _musicBus.getVolume(out _musicVolume);
                 return _musicVolume;
             case volType.sfx:
+                _sfxBus.getVolume(out _SFXVolume);
                 return _SFXVolume;
             default:
                 return 0f;
@@ -108,9 +108,9 @@ public class SoundManager : MonoBehaviour
         RuntimeManager.PlayOneShot(pSound, pPosition);
     }
 
-    public void PlaySucces(Vector3 pPosition)
+    public void PlayBackButton(Vector3 pPos)
     {
-        PlaySFX(_sfxSucces, transform.position);
+        PlaySFX(_backBtn, pPos);
     }
 
 }

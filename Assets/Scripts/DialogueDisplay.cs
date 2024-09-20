@@ -46,7 +46,7 @@ public class DialogueDisplay : MonoBehaviour
     
     private Player player;
 
-    private void Start()
+    private void Awake()
     {
         input = new();
         input.Enable();

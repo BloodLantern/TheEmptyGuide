@@ -51,10 +51,9 @@ public class Dialogue : MonoBehaviour
     private UnityEvent onDialogueEnd;
     public UnityEvent OnDialogueEnd => onDialogueEnd;
 
-    private void Start() => dialogueDisplay = FindObjectOfType<DialogueDisplay>();
-
     private void Awake()
     {
+        dialogueDisplay = FindObjectOfType<DialogueDisplay>();
         if (TryGetComponent(out Interactable i))
             i.onInteract.AddListener(Display);
     }

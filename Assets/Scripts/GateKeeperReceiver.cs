@@ -13,23 +13,22 @@ public class GatekeeperReceiver : MonoBehaviour, IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Image image = GetComponent<Image>();
+        GameObject go = eventData.pointerDrag.gameObject;
+        Information info = go.GetComponent<Information>();
         if (image.color == Color.green)
         {
-            Debug.Log("Green");
-            GameObject go = eventData.pointerDrag.gameObject;
-            Information info = go.GetComponent<Information>();
             info.IsAssumption = true;
-            GatekeeperTrial.information.Add(info);
-            info.IsDropped = true;
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.yesDrop, transform.position);
+
         }
         else if (image.color == Color.red)
         {
-            Debug.Log("Red");
-            GameObject go = eventData.pointerDrag.gameObject;
-            Information info = go.GetComponent<Information>();
             info.IsAssumption = false;
-            GatekeeperTrial.information.Add(info);
-            info.IsDropped = true;
+            SoundManager.Instance.PlaySFX(SoundManager.Instance.noDrop, transform.position);
+
         }
+        GatekeeperTrial.Information.Add(info);
+        info.IsDropped = true;
+        GatekeeperTrial.NumberOfInformationDropped++;
     }
 }

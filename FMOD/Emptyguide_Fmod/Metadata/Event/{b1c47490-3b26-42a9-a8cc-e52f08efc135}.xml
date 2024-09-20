@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{b1c47490-3b26-42a9-a8cc-e52f08efc135}">
+		<property name="color">
+			<value>Purple Light 1</value>
+		</property>
 		<property name="name">
 			<value>Music</value>
 		</property>
@@ -8,7 +11,7 @@
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{98e962da-43f6-41a4-9693-b2fb8a648bec}</destination>
+			<destination>{4086922a-666b-4175-9477-3573163407f7}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{b70c0343-56fd-4a27-b837-a52d87ec2301}</destination>
@@ -46,6 +49,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{b251900b-2548-4d21-9545-182e9239ef0b}">
+		<property name="color">
+			<value>Purple Light 1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{f7edce73-90f6-4bd7-b2c3-ed93031dce6c}</destination>
 		</relationship>
@@ -53,7 +59,7 @@
 			<destination>{595afbf9-f65c-4212-968d-da969e078e53}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{7812f692-6d6f-4b4e-99cb-d36d04289119}</destination>
+			<destination>{feb4f67d-c625-430f-8f9c-a82e790aacce}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{6668b89a-a442-469d-aae8-09e3f68b6a43}" />
